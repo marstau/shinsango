@@ -1,0 +1,38 @@
+#!/bin/sh
+
+version=3-6-1
+
+resources="paintown-$version.app/Contents/Resources"
+root="../../.."
+
+if [ ! -f paintown-static ]; then
+    echo "Cannot find the 'paintown-static' binary. Building it for you.."
+    scons -f scons/main.py static
+    if [ ! -f paintown-static ]; then
+        echo "Could not build paintown-static. Build it manually"
+        exit 0
+    fi
+fi
+if [ ! -f editor/editor.jar ]; then
+    echo "Cannot find 'editor/editor.jar'. Building it for you.."
+    (cd editor; make)
+    if [ ! -f editor/editor.jar ]; then
+        echo "Could not build editor.jar. Build it manually"
+        exit 0
+    fi
+fi
+
+cp paintown-static paintown-$version
+rm -rf paintown-$version.app
+echo "Create bundle"
+misc/make-bundle.py paintown-$version $version "Paintown $version" misc/icon.png
+# cp scripts.zip $resources
+cp editor/editor.jar $resources
+cp editor/run.sh $resources
+echo "Copy data"
+(cd $resources; cp -a $root/data .; find . -name .svn | xargs rm -rf)
+echo "Create .dmg file"
+# misc/buildDMG.pl -compressionLevel 9 -dmgName paintown-$version paintown-$version.app/
+hdiutil create paintown-$version.dmg -srcfolder paintown-$version.app -ov
+echo "Created paintown-$version.dmg"
+ls -l paintown-$version.dmg
