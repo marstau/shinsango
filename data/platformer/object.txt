@@ -1,0 +1,18 @@
+; Defines an object using the state-machine mentioned in doc/state-machine
+
+; Object
+(object
+    ; Types, could be seperated for cpu, player, etc objects
+    (type "player")
+    
+    (idle)
+    (walk
+	(forward)
+	(backward)
+	(downward)
+	(upward))
+    (jump
+	(upward))
+    (falling)
+    (attack)
+)

@@ -1,0 +1,279 @@
+; Defines a game/world using the platform engine
+
+; This may be seperated out later
+(platformer
+    (name "Platform Test")
+    
+    ; Intro cutscene
+    ;@(cutscene 
+        ; Name of cutscene
+        (name "intro")
+        (scene
+            ; Shows this current scene for 5000 ticks
+            (time 500)
+            (fade 
+                (in (color 0 0 0) (time 50)) 
+                (out (color 0 0 0) (time 50))
+            )
+            (anim
+                (depth background bottom)
+                (image 0 "menu/paintown.png")
+                (velocity -.001 0)
+                (frame (alpha 255) (image 0) (time 500))
+            )
+            (anim
+                (depth background middle)
+                (image 0 "menu/paintown.png")
+                (velocity -.001 -.001)
+                (frame (alpha 40) (image 0) (time 500))
+            )
+            (anim
+                (depth background top)
+                (image 0 "menu/paintown.png")
+                (velocity -.001 .001)
+                (frame (alpha 40) (image 0) (time 500))
+            )
+        )
+    )
+    
+    ; Important stuff
+    ; World definition or another script
+    (world
+        ; Name of world
+        (name "World 1-1")
+        ; Resolution (upscaled or downscaled according to paintowns screen size)
+        ; Also used to calculate nodes (generally good idea to make dimensions divisibly even so that you can have even sectors, though it's not necessary as the remainder will be considered the last node horizontally/vertically)
+        ; Nodes go from top left to right, top to bottom starting from 0 to N
+        (resolution 320 240)
+        ; Size of world in pixels
+        (dimensions 3200 240) ; ie this is just a regular side scroller since there is no movement vertically
+        ; Mechanics in the world that have influence upon objects within it
+        (mechanics
+            ; Gravitational pull on objects in the world on the x and y planes (0 0 means there is no pull, could be usefull for zelda type games)
+            (gravity 0 1.5)
+            ; Acceleration of the gravitational pull
+            (acceleration .02)
+        )
+        ; Player Info (more details will be added later)
+        (players
+            ; Use node numbers omit to default to 0 (cannot be less than zero, if node exceeds the amount of nodes available the player will be placed in the last node)
+            (p1-start 0 
+                ; Position in node (in pixels)
+                (position 50 20)
+                ; Facing
+                (facing right))
+            (p2-start 0
+                (position 100 20)
+                (facing right))
+        )
+        ; Camera info (There can be multiple cameras for multiplayer, split views, etc)
+        (camera
+            ; Set id of camera
+            (id 0)
+            ; If unspecified it will default to world dimensions
+            (dimensions 3200 240)
+            ; Starting location defaults to 0,0 upper left hand corner of world
+            (start 0 0)
+            ; Viewport constrained within the size limit of the world set resolution if it exceeds this it will fall back to resolution size
+            ; (Note that it does still have the same resolution set in world, just that what's visible is confined to below)
+            (viewport 0 0 160 240)
+            ; Speed of camera
+            (speed 1.5)
+            ; Velocity of camera movement
+            (velocity .5)
+            ; Follow velocity
+            (follow-variance 1.5)
+            ; Smooth scrolling (if set to true speed, velocity and follow-variance are ignored)
+            (smooth-scrolling 1)
+            ; Smooth scroll modifier (how many ticks before next movement)
+            (smooth-scroll-modifier 5)
+        )
+        ; Camera 2 Test
+        (camera
+            ; Set id of camera
+            (id 2)
+            ; If unspecified it will default to world dimensions
+            (dimensions 3200 240)
+            ; Starting location defaults to 0,0 upper left hand corner of world
+            (start 0 0)
+            ; Viewport constrained within the size limit of the world set resolution if it exceeds this it will fall back to resolution size
+            ; (Note that it does still have the same resolution set in world, just that what's visible is confined to below)
+            (viewport 160 0 320 120)
+            ; Speed of camera
+            (speed 1.5)
+            ; Velocity of camera movement
+            (velocity .5)
+            ; Follow velocity
+            (follow-variance 1.5)
+        )
+        (camera
+            ; Set id of camera
+            (id 1)
+            ; If unspecified it will default to world dimensions
+            (dimensions 3200 240)
+            ; Starting location defaults to 0,0 upper left hand corner of world
+            (start 0 0)
+            ; Viewport constrained within the size limit of the world set resolution if it exceeds this it will fall back to resolution size
+            ; (Note that it does still have the same resolution set in world, just that what's visible is confined to below)
+            (viewport 160 120 320 240)
+            ; Speed of camera
+            (speed 1.5)
+            ; Velocity of camera movement
+            (velocity .5)
+            ; Follow velocity
+            (follow-variance 1.5)
+            ; Smooth scrolling (if set to true speed, velocity and follow-variance are ignored)
+            (smooth-scrolling 1)
+            ; Smooth scroll modifier (how many ticks before next movement)
+            (smooth-scroll-modifier 5)
+        )
+        ; Images / Animations for tiles
+        (animation (id "question-tile") 
+            (basedir "data/platformer/images/")
+            (image 0 "question01-tile.png")
+            (image 1 "question02-tile.png")
+            (image 2 "question03-tile.png")
+            (frame (image 0) (time 15))
+            (frame (image 1) (time 15))
+            (frame (image 2) (time 15))
+            (frame (image 1) (time 15))
+            (loop 0))
+        (animation (id "hills") (basedir "data/platformer/images/") (image 0 "hills.png") (frame (image 0) (time -1)))
+        (animation (id "mountains") (basedir "data/platformer/images/") (image 0 "mountains.png") (frame (image 0) (time -1)))
+        (animation (id "clouds") (basedir "data/platformer/images/") (image 0 "clouds.png") (frame (image 0) (time -1)))
+        (animation (id "block-tile") (basedir "data/platformer/images/") (image 0 "block-tile.png") (frame (image 0) (time -1)))
+        (animation (id "brick-tile") (basedir "data/platformer/images/") (image 0 "brick-tile.png") (frame (image 0) (time -1)))
+        (animation (id "square-tile") (basedir "data/platformer/images/") (image 0 "square-tile.png") (frame (image 0) (time -1)))
+        (animation (id "left-floor-tile") (basedir "data/platformer/images/") (image 0 "floor-left-tile.png") (frame (image 0) (time -1)))
+        (animation (id "right-floor-tile") (basedir "data/platformer/images/") (image 0 "floor-right-tile.png") (frame (image 0) (time -1)))
+        (animation (id "mid-floor-tile") (basedir "data/platformer/images/") (image 0 "floor-mid-tile.png") (frame (image 0) (time -1)))
+        
+        (animation (id "left-bush-tile") 
+            (basedir "data/platformer/images/")
+            (image 0 "bush01-left-tile.png")
+            (image 1 "bush02-left-tile.png")
+            (image 2 "bush03-left-tile.png")
+            (frame (image 0) (time 25))
+            (frame (image 1) (time 25))
+            (frame (image 2) (time 25))
+            (frame (image 1) (time 25))
+            (loop 0))
+        (animation (id "mid-bush-tile") 
+            (basedir "data/platformer/images/")
+            (image 0 "bush01-mid-tile.png")
+            (image 1 "bush02-mid-tile.png")
+            (image 2 "bush03-mid-tile.png")
+            (frame (image 0) (time 25))
+            (frame (image 1) (time 25))
+            (frame (image 2) (time 25))
+            (frame (image 1) (time 25))
+            (loop 0))
+        (animation (id "right-bush-tile") 
+            (basedir "data/platformer/images/")
+            (image 0 "bush01-right-tile.png")
+            (image 1 "bush02-right-tile.png")
+            (image 2 "bush03-right-tile.png")
+            (frame (image 0) (time 25))
+            (frame (image 1) (time 25))
+            (frame (image 2) (time 25))
+            (frame (image 1) (time 25))
+            (loop 0))
+        (animation (id "top-left-vertical-pipe-tile") (basedir "data/platformer/images/") (image 0 "vertical-pipe-top-left-tile.png") (frame (image 0) (time -1)))
+        (animation (id "top-right-vertical-pipe-tile") (basedir "data/platformer/images/") (image 0 "vertical-pipe-top-right-tile.png") (frame (image 0) (time -1)))
+        (animation (id "left-vertical-pipe-tile") (basedir "data/platformer/images/") (image 0 "vertical-pipe-left-tile.png") (frame (image 0) (time -1)))
+        (animation (id "right-vertical-pipe-tile") (basedir "data/platformer/images/") (image 0 "vertical-pipe-right-tile.png") (frame (image 0) (time -1)))
+        ; Backgrounds they are drawn from the order they are listed here
+        (background
+            ; Either animation or tileset
+            (type animation)
+            ; Animation - Use the animation name from the collection of anims above
+            (animation "clouds")
+            ; Scroll Velocity X
+            (scroll-x .4)
+            ; Scroll Velocity Y
+            (scroll-y 1)
+        )
+        ; Foreground image (clouds or poles or something)
+        (background (type animation) (animation "mountains") (scroll-x .6) (scroll-y 1))
+        ; Tileset
+        (background
+            (type tileset)
+            (scroll-x .8)
+            ; Tiles in this background
+            (tileset
+                ; Tile size of the tiles in this tilemap width and height
+                (tile-size 16 16)
+                ; Dimensions of each individual tile (best to stay with something evenly divisible by the world dimensions)
+                (dimensions 200 15) ; 40 tiles left to right and 8 tiles top to bottom
+                (tile
+                    ; Animation name from collection of animations above
+                    (animation "question-tile")
+                    ; Position by tile not pixel
+                    (position 10 20))
+                (tile (animation "brick-tile") (position 10 24))
+                (tile (animation "question-tile") (position 10 25))
+                (tile (animation "brick-tile") (position 10 26))
+                (tile (animation "question-tile") (position 10 27))
+                (tile (animation "brick-tile") (position 10 28))
+                ; Pipe
+                (tile (animation "top-left-vertical-pipe-tile") (position 12 32))
+                (tile (animation "top-right-vertical-pipe-tile") (position 12 33))
+                (tile (animation "left-vertical-pipe-tile") (position 13 32))
+                (tile (animation "right-vertical-pipe-tile") (position 13 33))
+                ; Pipe
+                (tile (animation "top-left-vertical-pipe-tile") (position 11 41))
+                (tile (animation "top-right-vertical-pipe-tile") (position 11 42))
+                (tile (animation "left-vertical-pipe-tile") (position 12 41))
+                (tile (animation "right-vertical-pipe-tile") (position 12 42))
+                (tile (animation "left-vertical-pipe-tile") (position 13 41))
+                (tile (animation "right-vertical-pipe-tile") (position 13 42))
+                ; Pipe
+                (tile (animation "top-left-vertical-pipe-tile") (position 10 50))
+                (tile (animation "top-right-vertical-pipe-tile") (position 10 51))
+                (tile (animation "left-vertical-pipe-tile") (position 11 50))
+                (tile (animation "right-vertical-pipe-tile") (position 11 51))
+                (tile (animation "left-vertical-pipe-tile") (position 12 50))
+                (tile (animation "right-vertical-pipe-tile") (position 12 51))
+                (tile (animation "left-vertical-pipe-tile") (position 13 50))
+                (tile (animation "right-vertical-pipe-tile") (position 13 51))
+                ; Pipe
+                (tile (animation "top-left-vertical-pipe-tile") (position 10 60))
+                (tile (animation "top-right-vertical-pipe-tile") (position 10 61))
+                (tile (animation "left-vertical-pipe-tile") (position 11 60))
+                (tile (animation "right-vertical-pipe-tile") (position 11 61))
+                (tile (animation "left-vertical-pipe-tile") (position 12 60))
+                (tile (animation "right-vertical-pipe-tile") (position 12 61))
+                (tile (animation "left-vertical-pipe-tile") (position 13 60))
+                (tile (animation "right-vertical-pipe-tile") (position 13 61))
+                
+                ; Floor
+                (tile
+                    (animation "mid-floor-tile")
+                    (position 14 0)
+                    ; Repeatable tile repeate-dir [up, down, left, right] number of times
+                    (repeat-right 70))
+                (tile (animation "right-floor-tile") (position 14 71))
+                ; Bushes
+                (tile (animation "left-bush-tile") (position 13 14))
+                (tile (animation "mid-bush-tile") (position 13 15))
+                (tile (animation "mid-bush-tile") (position 13 16))
+                (tile (animation "right-bush-tile") (position 13 17))
+                
+                (tile (animation "left-bush-tile") (position 13 28))
+                (tile (animation "right-bush-tile") (position 13 29))
+                
+                (tile (animation "left-bush-tile") (position 13 45))
+                (tile (animation "mid-bush-tile") (position 13 46))
+                (tile (animation "right-bush-tile") (position 13 47))
+                
+                (tile (animation "left-bush-tile") (position 13 63))
+                (tile (animation "mid-bush-tile") (position 13 64))
+                (tile (animation "mid-bush-tile") (position 13 65))
+                (tile (animation "right-bush-tile") (position 13 66))
+            )
+        )
+    
+    )
+    ;(world "data/platform/world/1-2.txt")
+    ; etc etc
+)
