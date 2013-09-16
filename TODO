@@ -1,0 +1,114 @@
+DONE * use parallax - scroll background slower than the rest of the game
+DONE * allow enemies to throw things like daggers and stars
+DONE * networking, of course!
+DONE * better menus - being done by juvinious
+DONE * level effects like snow and rain
+DONE * better "you win"/"you lose" screen
+DONE * be able to gib characters - meaning they explode sometimes when they die
+DONE * computer assisted adventure mode?
+DONE * show translucent mini-map of friends
+DONE * finish level 11
+DONE * add more widgets to network host screen
+DONE * debug network code a bit
+DONE * add widget to select number of buddy npc's
+DONE * make network client screen not flicker
+DONE * fix races in grabbing
+DONE * use new menuing system
+DONE * continuous levels
+DONE * add buttons to editor that add random enemies and random items
+DONE * fix threading in windows, use -mthread
+DONE * better key input in network chat
+DONE * Get python scripting module in a useable state
+DONE * Be able to scale the screen to arbitrary sizes
+DONE * use CPP to define DATA_PATH
+DONE * read and tokenize basic Mugen scripts
+DONE * load sff, snd and fnt files
+DONE * Mugen fonts useable within paintown
+DONE * add pause mode in network play
+DONE * fix bug with data directory in network mode, like when install-sh is used
+DONE * if there is only one level to load, skip the level selection screen
+DONE * add tabs to menu - example: (option (tabmenu (name ...) (position ...) (menu (name ...) (option ...))))
+
+
+Future
+-------
+* network versus play
+done * use joystick
+* fix bug with setting max lives
+* separate z planes for each block
+100% * level lighting. lamps/objects can make the level brighter as the user gets close to them
+* infinite enemy mode like in super smash brothers
+* breakable inanimate objects like boxes and trash cans
+* RPG mode???
+* allow level to go left or right
+* tutorial mode
+* allow characters to run
+* allow characters to block
+* give enemies 'behaviors' which model how they act
+* make network mode use versions
+10% * allow level sets to only allow explicit players
+90% * make a console like in quake where debug output can go
+* port to psp/nds
+maybe done? * network players need their health/name drawn in front of background stuff
+* allow more characters in the network host boxes (like '-')
+DONE * make "Loading Paintown" text configurable
+* make credits screen configurable
+* triggers during the level. send arbitrary s-expressions to objects/anything
+  (trigger (to (object 2)) (message (increase health 20)))
+* bitmaps should be able to swap themselves out on demand. if memory is constrained then save to disk or completely unload some bitmaps. when those bitmaps need to be used again reload them. this can be done for sounds as well.
+* turn around animations. when a character is facing left and turns right, instead of just instantly facing right there should be a "turn" animation in between.
+
+mugen
+-----
+* mugen sound system
+  - Handle oggs and digi files (ignore mp3 for now)
+  - Sounds are loadable now and play fine. Make MugenSound implement paintown's interface instead of wrapping it.
+* mugen main system
+  - load in menus
+    Select Screens:
+	80% - Character select - Need to add in support for modes and teams
+	20% - Team Character select
+	DONE - Allow to be used independently from menu
+    - Option Menu (To an extent.... Mainly rely on paintowns system)
+    90% - Storyboards - Needs correction, mainly due to background issues...
+    50% - load in fight.def info from mugen for the stage mechanics (i.e. Round indicators, 
+    Round Ticker, Players Health and Power bars) etc.
+    DONE - Menuing system utilize paintowns menus to render itself and its options
+    DONE - Each submenu subclass MenuOption to produce the arcade/versus/demo etc
+* mugen stages in paintown
+  - correct camera y movement
+  DONE - correct camera x movement
+  DONE - correct character placement
+  - replace vs mode with mugen stages
+* mugen characters in paintown
+  - replace (attack (x y w h)) with (attack (box x y w h) (box x y w h)) to support
+    multiple attack boxes. clearing attack boxes will consist of (attack).
+  - create a new MugenCharacter (either extends Character or ObjectAttack) to deal 
+    with mugen things like state.
+  - Replicate Finite State Machine
+    - Expressions lexer
+  - Correct shadow CMYK (stage related?)
+* mugen backgrounds in paintown
+  DONE - correct tiling of elements
+  - correct parallax
+  - correct background controllers
+  - correct trans effects
+* mugen config and txt files
+  50% - parse data using peg
+    100% - peg generator in python
+    95% - def parser
+    50% - air parser
+    50% - cns parser
+    50% - cmd parser
+* mugen sff files
+  - Correct issues with loading certain files like (High/Low) Resolution images and their palettes
+  - Support sffv2 format
+
+For 3.3
+-------
+done * finish lamp lighting
+90% * make console useable
+50% * parse mugen files
+40% * implement at least partially working mugen
+
+

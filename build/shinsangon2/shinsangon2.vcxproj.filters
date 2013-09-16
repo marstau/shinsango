@@ -1,0 +1,2879 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="paintown">
+      <UniqueIdentifier>{3f6524e4-9c59-4a64-bdfd-f0ce1f7775b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\asteroids">
+      <UniqueIdentifier>{b7ebef0f-f5cf-47b3-87e9-370cce01142f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\factory">
+      <UniqueIdentifier>{d36f1913-82b1-4af4-bd5e-859622006816}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\missile-defend">
+      <UniqueIdentifier>{4b9cf665-8e69-4948-8c97-0757c7d4610b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\mugen">
+      <UniqueIdentifier>{08466f03-7d74-495e-8f80-0e3693ebcd45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\paintown-engine">
+      <UniqueIdentifier>{8e6e1c72-eaf9-4f8a-aefd-d842b5bdebdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\platformer">
+      <UniqueIdentifier>{c16ea1cb-1567-4199-9ef2-f61b669c531e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\util">
+      <UniqueIdentifier>{116aaf58-4647-4516-8b0c-82530ebb375e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\util\7z">
+      <UniqueIdentifier>{0a2a2cb5-e2dd-4a1f-a737-e66665806882}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\util\exceptions">
+      <UniqueIdentifier>{77855a9d-60df-4277-a693-75907b25411d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\util\gui">
+      <UniqueIdentifier>{d8229165-a6e4-421d-a959-9ea93cb6e45b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\util\input">
+      <UniqueIdentifier>{ee4df058-3308-4acd-b233-8814414635d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\util\lz4">
+      <UniqueIdentifier>{7372310c-9266-45bc-8af9-684b3b9576fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\util\menu">
+      <UniqueIdentifier>{1e7aef1d-a4dc-4f8e-af84-d1046aa25d96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\util\nacl">
+      <UniqueIdentifier>{0c356efb-cdd8-42a7-ba67-ba52d3d30429}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\util\network">
+      <UniqueIdentifier>{6b4cc619-86bc-459f-89ab-8712d6958881}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\util\network\hawknl">
+      <UniqueIdentifier>{8ea91bbb-8acb-422f-85a2-b256a1474a97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\util\sfl">
+      <UniqueIdentifier>{41f4801e-17b1-46c9-8daf-16915e2b5e71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\util\sound">
+      <UniqueIdentifier>{80db72cc-50c5-4b46-b8af-9e409e48f4ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\util\windows">
+      <UniqueIdentifier>{2da513af-a668-499e-9516-f91114945ec9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\util\zip">
+      <UniqueIdentifier>{153ad8df-96dd-44ec-9d6b-8bf2fd8ba584}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\paintown-engine\environment">
+      <UniqueIdentifier>{5ce8c446-01d7-42d7-a7c3-6ec62b723132}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\paintown-engine\factory">
+      <UniqueIdentifier>{19c1d746-e1f5-4116-b1ef-94c83f359314}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\paintown-engine\game">
+      <UniqueIdentifier>{2a39df66-6cc9-42af-9fb5-feadac28ac59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\paintown-engine\level">
+      <UniqueIdentifier>{630b7894-ab7d-4467-8e6e-dca3ba3769d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\paintown-engine\network">
+      <UniqueIdentifier>{d68b1ff9-73d3-4c24-9be7-57bc1c418a86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\paintown-engine\object">
+      <UniqueIdentifier>{1edc67c6-fbb0-421d-b942-aa2392643540}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\paintown-engine\script">
+      <UniqueIdentifier>{cb319b70-bdd9-4aeb-8aa6-06dc16a183a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\paintown-engine\trigger">
+      <UniqueIdentifier>{398be40d-925e-4e5b-b603-9b3e93e2dc3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\mugen\ast">
+      <UniqueIdentifier>{0c0ebcb9-dc8e-43de-a300-57ce2ebbed62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDL">
+      <UniqueIdentifier>{ad4ce38e-053e-44c6-8cbb-ee835f942433}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDL\include">
+      <UniqueIdentifier>{d9abccd1-74ba-40c8-b2a3-b08f33958ed1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDL\src">
+      <UniqueIdentifier>{c9f5f833-43a2-4362-bf6e-45d9b13b3d30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDL\src\core">
+      <UniqueIdentifier>{ee3bda3a-027f-4306-91e4-8720e621d0f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDL\src\cpuinfo">
+      <UniqueIdentifier>{3a70c3a2-cd38-4438-92f8-26c8e1dcb218}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDL\src\events">
+      <UniqueIdentifier>{165aa879-9764-4cc2-a61c-81b7ab70fef0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDL\src\file">
+      <UniqueIdentifier>{e5ac0495-7009-4679-81f9-99ba6e37f9f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDL\src\filesystem">
+      <UniqueIdentifier>{720f5bb7-d742-4aae-a89e-c832ad54384a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDL\src\haptic">
+      <UniqueIdentifier>{c04e5606-da57-4eff-b833-621b9133150b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDL\src\joystick">
+      <UniqueIdentifier>{54f18ddc-b87a-4b76-bb93-ec1e732aa02d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDL\src\libm">
+      <UniqueIdentifier>{88adf00e-3a7d-4150-b5ab-703a439e78db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDL\src\loadso">
+      <UniqueIdentifier>{3b9900b6-5547-4e7a-b4a9-343932fb0733}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDL\src\main">
+      <UniqueIdentifier>{2a727d96-c67d-4575-8c84-878f728eadbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDL\src\power">
+      <UniqueIdentifier>{2468e90d-f20b-45c1-ab08-7c405f7e93c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDL\src\render">
+      <UniqueIdentifier>{75e16ea3-98d3-448f-a23e-8e8bda30800b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDL\src\stdlib">
+      <UniqueIdentifier>{90357212-eb2a-471b-b4ae-752e5c013043}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDL\src\thread">
+      <UniqueIdentifier>{aa42f445-2c3b-448e-9889-44ba4da690a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDL\src\timer">
+      <UniqueIdentifier>{ed839cdb-71cd-4575-96ab-eea590528fbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDL\src\video">
+      <UniqueIdentifier>{58a83d97-2f77-44d8-85cb-b2d5fc05c95d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDL\src\audio">
+      <UniqueIdentifier>{ea8ac6dc-6ca3-4dcf-b0cc-ecd393ca1231}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDL\src\audio\winmm">
+      <UniqueIdentifier>{6fdbda23-d251-4f99-a5ba-88328e6eb331}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDL\src\atomic">
+      <UniqueIdentifier>{167286d4-c9ed-49cf-9809-6af7067a9f12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\util\pcre">
+      <UniqueIdentifier>{705b6f35-8103-4a31-a6f3-23ab669673a3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="small.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="shinsangon2.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\src\util\7z\CMakeLists.txt">
+      <Filter>paintown\util\7z</Filter>
+    </None>
+    <None Include="..\..\src\util\7z\SConscript">
+      <Filter>paintown\util\7z</Filter>
+    </None>
+    <None Include="..\..\src\mugen\SConscript">
+      <Filter>paintown\mugen</Filter>
+    </None>
+    <None Include="..\..\src\mugen\CMakeLists.txt">
+      <Filter>paintown\mugen</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shinsangon2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\globals.h">
+      <Filter>paintown</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\asteroids\argument.h">
+      <Filter>paintown\asteroids</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\asteroids\game.h">
+      <Filter>paintown\asteroids</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\factory\collector.h">
+      <Filter>paintown\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\factory\font_render.h">
+      <Filter>paintown\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\missile-defend\argument.h">
+      <Filter>paintown\missile-defend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\missile-defend\game.h">
+      <Filter>paintown\missile-defend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\console.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\init.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\token_exception.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\font.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\message-queue.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\argument.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\compress.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\debug.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\loading.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\file-system.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\scale2x.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\utf.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\events.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\memory.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\ebox.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\language-string.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\scale.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\version.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\reader.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\configuration.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\font_factory.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\funcs.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\main.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\messages.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\parameter.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\regex.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\resource.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\system.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\thread.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\timedifference.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\timer.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\tokenreader.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\pointer.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\token.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\platformer\argument.h">
+      <Filter>paintown\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\platformer\game\animation.h">
+      <Filter>paintown\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\platformer\game\background.h">
+      <Filter>paintown\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\platformer\game\camera.h">
+      <Filter>paintown\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\platformer\game\game.h">
+      <Filter>paintown\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\platformer\game\options.h">
+      <Filter>paintown\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\platformer\game\tile.h">
+      <Filter>paintown\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\platformer\game\world.h">
+      <Filter>paintown\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\platformer\script\script.h">
+      <Filter>paintown\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\platformer\object\object.h">
+      <Filter>paintown\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\7z.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\7zAlloc.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\7zBuf.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\7zCrc.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\7zFile.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\7zVersion.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\Alloc.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\Bcj2.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\Bra.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\CpuArch.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\Delta.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\LzFind.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\LzFindMt.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\LzHash.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\Lzma2Dec.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\Lzma2Enc.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\Lzma86.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\LzmaDec.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\LzmaEnc.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\LzmaLib.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\MtCoder.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\Ppmd7.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\Ppmd.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\RotateDefs.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\Sha256.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\Threads.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\Types.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\Xz.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\XzCrc64.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\7z\XzEnc.h">
+      <Filter>paintown\util\7z</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\exceptions\exception.h">
+      <Filter>paintown\util\exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\exceptions\load_exception.h">
+      <Filter>paintown\util\exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\exceptions\shutdown_exception.h">
+      <Filter>paintown\util\exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\gui\animation.h">
+      <Filter>paintown\util\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\gui\box.h">
+      <Filter>paintown\util\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\gui\container.h">
+      <Filter>paintown\util\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\gui\context-box.h">
+      <Filter>paintown\util\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\gui\coordinate.h">
+      <Filter>paintown\util\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\gui\cutscene.h">
+      <Filter>paintown\util\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\gui\fadetool.h">
+      <Filter>paintown\util\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\gui\lineedit.h">
+      <Filter>paintown\util\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\gui\list.h">
+      <Filter>paintown\util\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\gui\popup-box.h">
+      <Filter>paintown\util\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\gui\rectarea.h">
+      <Filter>paintown\util\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\gui\scroll-list.h">
+      <Filter>paintown\util\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\gui\select-list.h">
+      <Filter>paintown\util\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\gui\tabbed-box.h">
+      <Filter>paintown\util\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\gui\tab-container.h">
+      <Filter>paintown\util\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\gui\timer.h">
+      <Filter>paintown\util\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\gui\widget.h">
+      <Filter>paintown\util\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\input\text-input.h">
+      <Filter>paintown\util\input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\input\input.h">
+      <Filter>paintown\util\input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\input\input-manager.h">
+      <Filter>paintown\util\input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\input\input-map.h">
+      <Filter>paintown\util\input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\input\input-source.h">
+      <Filter>paintown\util\input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\input\joystick.h">
+      <Filter>paintown\util\input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\input\keyboard.h">
+      <Filter>paintown\util\input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\input\linux_joystick.h">
+      <Filter>paintown\util\input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\input\sdl\joystick.h">
+      <Filter>paintown\util\input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\lz4\lz4.h">
+      <Filter>paintown\util\lz4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\menu\action_speed.h">
+      <Filter>paintown\util\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\menu\actionfactory.h">
+      <Filter>paintown\util\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\menu\font-info.h">
+      <Filter>paintown\util\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\menu\menu.h">
+      <Filter>paintown\util\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\menu\menu_action.h">
+      <Filter>paintown\util\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\menu\menu_option.h">
+      <Filter>paintown\util\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\menu\menu-exception.h">
+      <Filter>paintown\util\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\menu\optionfactory.h">
+      <Filter>paintown\util\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\menu\options.h">
+      <Filter>paintown\util\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\nacl\network-system.h">
+      <Filter>paintown\util\nacl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\network\irc.h">
+      <Filter>paintown\util\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\network\network.h">
+      <Filter>paintown\util\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\network\chat.h">
+      <Filter>paintown\util\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\network\hawknl\hawknl\group.h">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\network\hawknl\hawknl\hawklib.h">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\network\hawknl\hawknl\hawkthreads.h">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\network\hawknl\hawknl\htinternal.h">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\network\hawknl\hawknl\ipx.h">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\network\hawknl\hawknl\loopback.h">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\network\hawknl\hawknl\nl.h">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\network\hawknl\hawknl\nlinternal.h">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\network\hawknl\hawknl\parallel.h">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\network\hawknl\hawknl\serial.h">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\network\hawknl\hawknl\sock.h">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\network\hawknl\hawknl\wsock.h">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\pcre\config.h">
+      <Filter>paintown\util\pcre</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\pcre\pcre.h">
+      <Filter>paintown\util\pcre</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\pcre\pcre_internal.h">
+      <Filter>paintown\util\pcre</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\pcre\pcre_scanner.h">
+      <Filter>paintown\util\pcre</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\pcre\pcre_stringpiece.h">
+      <Filter>paintown\util\pcre</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\pcre\pcrecpp.h">
+      <Filter>paintown\util\pcre</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\pcre\pcrecpp_internal.h">
+      <Filter>paintown\util\pcre</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\pcre\pcrecpparg.h">
+      <Filter>paintown\util\pcre</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\pcre\pcreposix.h">
+      <Filter>paintown\util\pcre</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\pcre\ucp.h">
+      <Filter>paintown\util\pcre</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\prelude.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sfl.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflbits.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflcomp.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflconv.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflcryp.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sfldate.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sfldbio.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sfldir.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflenv.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflexdr.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflfort.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflhead.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflhttp.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sfllist.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflmath.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflmem.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflmesg.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflmime.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflnode.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflprint.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflprocx.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflslot.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflsock.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflstr.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflsymb.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflsyst.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sfltree.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sfltron.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflcons.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflfile.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflfind.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflini.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sfllang.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sfllbuf.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflmail.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflmysql.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sfltok.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sfluid.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflvers.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sfl\sflxml.h">
+      <Filter>paintown\util\sfl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sound\sound.h">
+      <Filter>paintown\util\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sound\audio.h">
+      <Filter>paintown\util\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sound\music.h">
+      <Filter>paintown\util\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sound\music-exception.h">
+      <Filter>paintown\util\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sound\music-player.h">
+      <Filter>paintown\util\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\sound\music-renderer.h">
+      <Filter>paintown\util\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\zip\crypt.h">
+      <Filter>paintown\util\zip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\zip\ioapi.h">
+      <Filter>paintown\util\zip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\zip\unzip.h">
+      <Filter>paintown\util\zip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\zip\zip.h">
+      <Filter>paintown\util\zip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\environment\atmosphere.h">
+      <Filter>paintown\paintown-engine\environment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\environment\fog_atmosphere.h">
+      <Filter>paintown\paintown-engine\environment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\environment\night_atmosphere.h">
+      <Filter>paintown\paintown-engine\environment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\environment\rain_atmosphere.h">
+      <Filter>paintown\paintown-engine\environment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\environment\snow_atmosphere.h">
+      <Filter>paintown\paintown-engine\environment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\factory\object_factory.h">
+      <Filter>paintown\paintown-engine\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\factory\shadow.h">
+      <Filter>paintown\paintown-engine\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\game\adventure_world.h">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\game\argument.h">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\game\character-select.h">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\game\game.h">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\game\mod.h">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\game\move-list.h">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\game\nameplacer.h">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\game\select_player.h">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\game\versus_world.h">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\game\world.h">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\game\options.h">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\level\block.h">
+      <Filter>paintown\paintown-engine\level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\level\blockobject.h">
+      <Filter>paintown\paintown-engine\level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\level\cacher.h">
+      <Filter>paintown\paintown-engine\level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\level\random-scene.h">
+      <Filter>paintown\paintown-engine\level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\level\scene.h">
+      <Filter>paintown\paintown-engine\level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\level\utils.h">
+      <Filter>paintown\paintown-engine\level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\network\cacher.h">
+      <Filter>paintown\paintown-engine\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\network\chat.h">
+      <Filter>paintown\paintown-engine\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\network\chat_client.h">
+      <Filter>paintown\paintown-engine\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\network\chat_server.h">
+      <Filter>paintown\paintown-engine\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\network\chat-widget.h">
+      <Filter>paintown\paintown-engine\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\network\client.h">
+      <Filter>paintown\paintown-engine\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\network\network.h">
+      <Filter>paintown\paintown-engine\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\network\network_world.h">
+      <Filter>paintown\paintown-engine\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\network\network_world_client.h">
+      <Filter>paintown\paintown-engine\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\network\server.h">
+      <Filter>paintown\paintown-engine\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\trigger\trigger.h">
+      <Filter>paintown\paintown-engine\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\script\script.h">
+      <Filter>paintown\paintown-engine\script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\actor.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\alliance.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\animation.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\animation_event.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\animation_trail.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\attack.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\buddy_player.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\cat.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\character.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\display_character.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\draw-effect.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\effect.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\enemy.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\gib.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\item.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\network_character.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\network_player.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\object.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\object_attack.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\object_messages.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\object_nonattack.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\player.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\player-common.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\projectile.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\stimulation.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\trigger.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\versus_enemy.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\paintown-engine\object\versus_player.h">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\all.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\argument.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\ast.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\attribute.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\attribute-array.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\attribute-keyword.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\attribute-simple.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\collectable.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\compiled.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\Configuration.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\exception.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\Expression.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\extra.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\filename.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\function.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\helper.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\hitdef.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\identifier.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\key.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\keyword.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\Modifier.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\number.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\range.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\resource.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\Section.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\string.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\Value.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\value-attribute.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\value-list.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\variable.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\ast\walker.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\constraint.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\argument.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\background.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\characterhud.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\character-select.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\config.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\effect.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\font.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\menu.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\network.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\options.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\section.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\sprite.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\storyboard.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\util.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\item.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\projectile.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\stage-state.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\state-controller.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\animation.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\object.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\parse-cache.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\reader.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\sound.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\versus.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\widgets.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\common.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\exception.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\game.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\helper.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\item-content.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\match.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\random.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\state.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\behavior.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\character.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\character-state.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\command.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\compiler.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\network-behavior.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\search.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\serialize.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\stage.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\world.h">
+      <Filter>paintown\mugen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\begin_code.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\close_code.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_assert.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_atomic.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_audio.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_bits.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_blendmode.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_clipboard.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_config.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_cpuinfo.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_endian.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_error.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_events.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_gamecontroller.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_gesture.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_haptic.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_hints.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_joystick.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_keyboard.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_keycode.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_loadso.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_log.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_main.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_messagebox.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_mouse.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_mutex.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_name.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_opengl.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_opengles2.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_opengles.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_pixels.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_platform.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_power.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_quit.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_rect.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_render.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_revision.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_rwops.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_scancode.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_shape.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_stdinc.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_surface.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_system.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_syswm.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_test.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_test_assert.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_test_common.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_test_compare.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_test_crc32.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_test_font.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_test_fuzzer.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_test_harness.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_test_images.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_test_log.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_test_md5.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_test_random.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_thread.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_timer.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_touch.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_types.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_version.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\include\SDL_video.h">
+      <Filter>SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\SDL_assert_c.h">
+      <Filter>SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\SDL_error_c.h">
+      <Filter>SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\core\windows\SDL_windows.h">
+      <Filter>SDL\src\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\audio\SDL_audiodev_c.h">
+      <Filter>SDL\src\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\audio\SDL_audiomem.h">
+      <Filter>SDL\src\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\audio\SDL_sysaudio.h">
+      <Filter>SDL\src\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\audio\SDL_wave.h">
+      <Filter>SDL\src\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\audio\SDL_audio_c.h">
+      <Filter>SDL\src\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\audio\winmm\SDL_winmm.h">
+      <Filter>SDL\src\audio\winmm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\events\blank_cursor.h">
+      <Filter>SDL\src\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\events\default_cursor.h">
+      <Filter>SDL\src\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\events\scancodes_darwin.h">
+      <Filter>SDL\src\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\events\scancodes_linux.h">
+      <Filter>SDL\src\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\events\scancodes_windows.h">
+      <Filter>SDL\src\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\events\scancodes_xfree86.h">
+      <Filter>SDL\src\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\events\SDL_clipboardevents_c.h">
+      <Filter>SDL\src\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\events\SDL_dropevents_c.h">
+      <Filter>SDL\src\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\events\SDL_events_c.h">
+      <Filter>SDL\src\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\events\SDL_gesture_c.h">
+      <Filter>SDL\src\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\events\SDL_keyboard_c.h">
+      <Filter>SDL\src\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\events\SDL_mouse_c.h">
+      <Filter>SDL\src\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\events\SDL_sysevents.h">
+      <Filter>SDL\src\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\events\SDL_touch_c.h">
+      <Filter>SDL\src\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\events\SDL_windowevents_c.h">
+      <Filter>SDL\src\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\haptic\SDL_syshaptic.h">
+      <Filter>SDL\src\haptic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\haptic\SDL_haptic_c.h">
+      <Filter>SDL\src\haptic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\joystick\SDL_sysjoystick.h">
+      <Filter>SDL\src\joystick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\joystick\SDL_gamecontrollerdb.h">
+      <Filter>SDL\src\joystick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\joystick\SDL_joystick_c.h">
+      <Filter>SDL\src\joystick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\joystick\windows\SDL_dxjoystick_c.h">
+      <Filter>SDL\src\joystick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\libm\math_libm.h">
+      <Filter>SDL\src\libm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\libm\math_private.h">
+      <Filter>SDL\src\libm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\SDL_sysvideo.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\SDL_blit.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\SDL_blit_auto.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\SDL_blit_copy.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\SDL_blit_slow.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\SDL_egl.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\SDL_pixels_c.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\SDL_rect_c.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\SDL_RLEaccel_c.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\SDL_shape_internals.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_msctf.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_vkeys.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowsclipboard.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowsevents.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowsframebuffer.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowskeyboard.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowsmessagebox.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowsmodes.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowsmouse.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowsopengl.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowsshape.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowsvideo.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowswindow.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\video\windows\wmmsg.h">
+      <Filter>SDL\src\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\timer\SDL_timer_c.h">
+      <Filter>SDL\src\timer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\thread\SDL_thread_c.h">
+      <Filter>SDL\src\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\thread\SDL_systhread.h">
+      <Filter>SDL\src\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\thread\windows\SDL_systhread_c.h">
+      <Filter>SDL\src\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\render\SDL_yuv_sw_c.h">
+      <Filter>SDL\src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\render\mmx.h">
+      <Filter>SDL\src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\render\SDL_sysrender.h">
+      <Filter>SDL\src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\render\opengl\SDL_glfuncs.h">
+      <Filter>SDL\src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\SDL\src\render\opengl\SDL_shaders_gl.h">
+      <Filter>SDL\src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\ftalleg.h">
+      <Filter>paintown\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\platform.h">
+      <Filter>paintown</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shinsangon2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\globals.cpp">
+      <Filter>paintown</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\main-menu.cpp">
+      <Filter>paintown</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\asteroids\argument.cpp">
+      <Filter>paintown\asteroids</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\asteroids\game.cpp">
+      <Filter>paintown\asteroids</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\factory\collector.cpp">
+      <Filter>paintown\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\factory\font_render.cpp">
+      <Filter>paintown\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\missile-defend\argument.cpp">
+      <Filter>paintown\missile-defend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\missile-defend\game.cpp">
+      <Filter>paintown\missile-defend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\token.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\configuration.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\events.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\messages.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\thread.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\tokenreader.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\utf.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\loading.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\compress.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\file-system.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\scale2x.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\system.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\directory.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\argument.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\console.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\debug.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\ebox.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\font.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\funcs.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\language-string.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\message-queue.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\regex.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\resource.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\timedifference.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\timer.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\version.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\xmain.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\font_factory.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\init.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\platformer\argument.cpp">
+      <Filter>paintown\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\platformer\game\animation.cpp">
+      <Filter>paintown\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\platformer\game\background.cpp">
+      <Filter>paintown\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\platformer\game\camera.cpp">
+      <Filter>paintown\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\platformer\game\game.cpp">
+      <Filter>paintown\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\platformer\game\options.cpp">
+      <Filter>paintown\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\platformer\game\tile.cpp">
+      <Filter>paintown\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\platformer\game\world.cpp">
+      <Filter>paintown\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\platformer\script\script.cpp">
+      <Filter>paintown\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\platformer\object\object.cpp">
+      <Filter>paintown\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\7zAlloc.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\7zBuf2.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\7zBuf.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\7zCrc.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\7zCrcOpt.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\7zDec.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\7zFile.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\7zIn.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\7zStream.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\Alloc.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\Bcj2.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\Bra86.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\Bra.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\BraIA64.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\CpuArch.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\Delta.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\LzFind.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\LzFindMt.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\Lzma2Dec.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\Lzma2Enc.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\Lzma86Dec.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\Lzma86Enc.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\LzmaDec.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\LzmaEnc.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\LzmaLib.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\MtCoder.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\Ppmd7.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\Ppmd7Dec.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\Ppmd7Enc.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\Sha256.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\Threads.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\Xz.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\XzCrc64.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\XzDec.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\XzEnc.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\7z\XzIn.c">
+      <Filter>paintown\util\7z</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\exceptions\exception.cpp">
+      <Filter>paintown\util\exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\exceptions\load_exception.cpp">
+      <Filter>paintown\util\exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\gui\animation.cpp">
+      <Filter>paintown\util\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\gui\box.cpp">
+      <Filter>paintown\util\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\gui\container.cpp">
+      <Filter>paintown\util\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\gui\context-box.cpp">
+      <Filter>paintown\util\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\gui\coordinate.cpp">
+      <Filter>paintown\util\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\gui\cutscene.cpp">
+      <Filter>paintown\util\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\gui\fadetool.cpp">
+      <Filter>paintown\util\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\gui\lineedit.cpp">
+      <Filter>paintown\util\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\gui\list.cpp">
+      <Filter>paintown\util\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\gui\popup-box.cpp">
+      <Filter>paintown\util\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\gui\rectarea.cpp">
+      <Filter>paintown\util\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\gui\select-list.cpp">
+      <Filter>paintown\util\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\gui\tab-container.cpp">
+      <Filter>paintown\util\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\gui\timer.cpp">
+      <Filter>paintown\util\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\gui\widget.cpp">
+      <Filter>paintown\util\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\gui\scroll-list.cpp">
+      <Filter>paintown\util\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\gui\tabbed-box.cpp">
+      <Filter>paintown\util\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\input\input.cpp">
+      <Filter>paintown\util\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\input\input-manager.cpp">
+      <Filter>paintown\util\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\input\input-source.cpp">
+      <Filter>paintown\util\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\input\joystick.cpp">
+      <Filter>paintown\util\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\input\keyboard.cpp">
+      <Filter>paintown\util\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\input\linux_joystick.cpp">
+      <Filter>paintown\util\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\input\text-input.cpp">
+      <Filter>paintown\util\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\input\sdl\joystick.cpp">
+      <Filter>paintown\util\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\input\sdl\keyboard.cpp">
+      <Filter>paintown\util\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\lz4\lz4.c">
+      <Filter>paintown\util\lz4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\menu\action_speed.cpp">
+      <Filter>paintown\util\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\menu\actionfactory.cpp">
+      <Filter>paintown\util\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\menu\font-info.cpp">
+      <Filter>paintown\util\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\menu\menu.cpp">
+      <Filter>paintown\util\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\menu\menu_action.cpp">
+      <Filter>paintown\util\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\menu\menu_option.cpp">
+      <Filter>paintown\util\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\menu\optionfactory.cpp">
+      <Filter>paintown\util\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\menu\options.cpp">
+      <Filter>paintown\util\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\nacl\module.cpp">
+      <Filter>paintown\util\nacl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\nacl\network-system.cpp">
+      <Filter>paintown\util\nacl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\network\network.cpp">
+      <Filter>paintown\util\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\network\chat.cpp">
+      <Filter>paintown\util\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\network\irc.cpp">
+      <Filter>paintown\util\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\network\hawknl\src\crc.cpp">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\network\hawknl\src\err.cpp">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\network\hawknl\src\errorstr.cpp">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\network\hawknl\src\group.cpp">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\network\hawknl\src\htcondition.cpp">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\network\hawknl\src\hthread.cpp">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\network\hawknl\src\htmutex.cpp">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\network\hawknl\src\ipx.cpp">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\network\hawknl\src\loopback.cpp">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\network\hawknl\src\nl.cpp">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\network\hawknl\src\nltime.cpp">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\network\hawknl\src\sock.cpp">
+      <Filter>paintown\util\network\hawknl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\pcre\dftables.c">
+      <Filter>paintown\util\pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\pcre\pcre_chartables.c">
+      <Filter>paintown\util\pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\pcre\pcre_compile.c">
+      <Filter>paintown\util\pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\pcre\pcre_config.c">
+      <Filter>paintown\util\pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\pcre\pcre_dfa_exec.c">
+      <Filter>paintown\util\pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\pcre\pcre_exec.c">
+      <Filter>paintown\util\pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\pcre\pcre_fullinfo.c">
+      <Filter>paintown\util\pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\pcre\pcre_get.c">
+      <Filter>paintown\util\pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\pcre\pcre_globals.c">
+      <Filter>paintown\util\pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\pcre\pcre_info.c">
+      <Filter>paintown\util\pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\pcre\pcre_maketables.c">
+      <Filter>paintown\util\pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\pcre\pcre_newline.c">
+      <Filter>paintown\util\pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\pcre\pcre_ord2utf8.c">
+      <Filter>paintown\util\pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\pcre\pcre_refcount.c">
+      <Filter>paintown\util\pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\pcre\pcre_study.c">
+      <Filter>paintown\util\pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\pcre\pcre_tables.c">
+      <Filter>paintown\util\pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\pcre\pcre_try_flipped.c">
+      <Filter>paintown\util\pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\pcre\pcre_ucd.c">
+      <Filter>paintown\util\pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\pcre\pcre_valid_utf8.c">
+      <Filter>paintown\util\pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\pcre\pcre_version.c">
+      <Filter>paintown\util\pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\pcre\pcre_xclass.c">
+      <Filter>paintown\util\pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\pcre\pcregrep.c">
+      <Filter>paintown\util\pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\pcre\pcreposix.c">
+      <Filter>paintown\util\pcre</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflbits.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflcomp.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflconv.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflcryp.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflcvds.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflcvsb.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflcvsd.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflcvsn.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflcvts.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sfldate.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sfldbio.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sfldir.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflenv.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflexdr.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflfort.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflhttp.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sfllist.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflmath.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflmem.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflmesg.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflmime.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflprint.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflslot.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflsock.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflstr.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflsymb.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflsyst.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sfltree.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sfltron.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sfluid.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflcons.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflcvbs.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflcvdp.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflcvns.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflcvtp.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflfile.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflfind.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflini.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sfllang.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sfllbuf.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflmail.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflmysql.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflnode.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sfltok.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sfl\sflxml.c">
+      <Filter>paintown\util\sfl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sound\audio.cpp">
+      <Filter>paintown\util\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sound\music.cpp">
+      <Filter>paintown\util\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sound\music-player.cpp">
+      <Filter>paintown\util\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sound\music-renderer.cpp">
+      <Filter>paintown\util\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sound\sound.cpp">
+      <Filter>paintown\util\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\windows\funcs.cpp">
+      <Filter>paintown\util\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\windows\system.cpp">
+      <Filter>paintown\util\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\zip\ioapi.c">
+      <Filter>paintown\util\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\zip\unzip.c">
+      <Filter>paintown\util\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\zip\zip.c">
+      <Filter>paintown\util\zip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\environment\atmosphere.cpp">
+      <Filter>paintown\paintown-engine\environment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\factory\object_factory.cpp">
+      <Filter>paintown\paintown-engine\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\factory\shadow.cpp">
+      <Filter>paintown\paintown-engine\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\game\adventure_world.cpp">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\game\argument.cpp">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\game\character-select.cpp">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\game\game.cpp">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\game\mod.cpp">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\game\move-list.cpp">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\game\nameplacer.cpp">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\game\select_player.cpp">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\game\versus_world.cpp">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\game\world.cpp">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\game\options.cpp">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\level\block.cpp">
+      <Filter>paintown\paintown-engine\level</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\level\blockobject.cpp">
+      <Filter>paintown\paintown-engine\level</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\level\cacher.cpp">
+      <Filter>paintown\paintown-engine\level</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\level\random-scene.cpp">
+      <Filter>paintown\paintown-engine\level</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\level\scene.cpp">
+      <Filter>paintown\paintown-engine\level</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\level\utils.cpp">
+      <Filter>paintown\paintown-engine\level</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\network\cacher.cpp">
+      <Filter>paintown\paintown-engine\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\network\chat_client.cpp">
+      <Filter>paintown\paintown-engine\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\network\chat_server.cpp">
+      <Filter>paintown\paintown-engine\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\network\chat-widget.cpp">
+      <Filter>paintown\paintown-engine\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\network\client.cpp">
+      <Filter>paintown\paintown-engine\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\network\network_world.cpp">
+      <Filter>paintown\paintown-engine\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\network\network_world_client.cpp">
+      <Filter>paintown\paintown-engine\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\network\server.cpp">
+      <Filter>paintown\paintown-engine\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\network\network.cpp">
+      <Filter>paintown\paintown-engine\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\trigger\trigger.cpp">
+      <Filter>paintown\paintown-engine\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\script\script.cpp">
+      <Filter>paintown\paintown-engine\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\actor.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\alliance.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\animation.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\animation_event.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\animation_trail.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\attack.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\buddy_player.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\cat.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\character.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\display_character.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\draw-effect.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\effect.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\enemy.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\gib.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\item.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\network_character.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\network_player.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\object.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\object_attack.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\object_nonattack.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\player.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\player-common.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\projectile.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\stimulation.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\trigger.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\versus_enemy.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\versus_player.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\ast\ast.cpp">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\characterhud.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\config.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\game.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\helper.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\item.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\menu.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\projectile.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\reader.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\search.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\widgets.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\background.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\exception.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\item-content.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\match.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\option-options.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\sff.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\sound.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\util.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\effect.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\random.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\state.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\animation.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\font.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\parse-cache.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\section.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\sprite.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\state-controller.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\storyboard.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\versus.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\run-match.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\argument.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\behavior.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\character.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\character-select.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\command.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\compiler.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\network.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\network-behavior.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\serialize.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\serialize-auto.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\stage.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\world.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\constraint.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\SDL.c">
+      <Filter>SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\SDL_assert.c">
+      <Filter>SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\SDL_compat.c">
+      <Filter>SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\SDL_error.c">
+      <Filter>SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\SDL_hints.c">
+      <Filter>SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\SDL_log.c">
+      <Filter>SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\core\windows\SDL_windows.c">
+      <Filter>SDL\src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\audio\SDL_audiocvt.c">
+      <Filter>SDL\src\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\audio\SDL_audiodev.c">
+      <Filter>SDL\src\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\audio\SDL_audiotypecvt.c">
+      <Filter>SDL\src\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\audio\SDL_mixer.c">
+      <Filter>SDL\src\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\audio\SDL_wave.c">
+      <Filter>SDL\src\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\audio\SDL_audio.c">
+      <Filter>SDL\src\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\audio\winmm\SDL_winmm.c">
+      <Filter>SDL\src\audio\winmm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\atomic\SDL_spinlock.c">
+      <Filter>SDL\src\atomic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\atomic\SDL_atomic.c">
+      <Filter>SDL\src\atomic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\cpuinfo\SDL_cpuinfo.c">
+      <Filter>SDL\src\cpuinfo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\events\SDL_clipboardevents.c">
+      <Filter>SDL\src\events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\events\SDL_dropevents.c">
+      <Filter>SDL\src\events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\events\SDL_events.c">
+      <Filter>SDL\src\events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\events\SDL_gesture.c">
+      <Filter>SDL\src\events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\events\SDL_keyboard.c">
+      <Filter>SDL\src\events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\events\SDL_mouse.c">
+      <Filter>SDL\src\events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\events\SDL_quit.c">
+      <Filter>SDL\src\events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\events\SDL_touch.c">
+      <Filter>SDL\src\events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\events\SDL_windowevents.c">
+      <Filter>SDL\src\events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\file\SDL_rwops.c">
+      <Filter>SDL\src\file</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\filesystem\windows\SDL_sysfilesystem.c">
+      <Filter>SDL\src\filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\haptic\windows\SDL_syshaptic.c">
+      <Filter>SDL\src\haptic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\haptic\SDL_haptic.c">
+      <Filter>SDL\src\haptic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\joystick\SDL_gamecontroller.c">
+      <Filter>SDL\src\joystick</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\joystick\SDL_joystick.c">
+      <Filter>SDL\src\joystick</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\joystick\windows\SDL_dxjoystick.c">
+      <Filter>SDL\src\joystick</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\joystick\windows\SDL_mmjoystick.c">
+      <Filter>SDL\src\joystick</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\libm\e_atan2.c">
+      <Filter>SDL\src\libm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\libm\e_log.c">
+      <Filter>SDL\src\libm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\libm\e_pow.c">
+      <Filter>SDL\src\libm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\libm\e_rem_pio2.c">
+      <Filter>SDL\src\libm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\libm\e_sqrt.c">
+      <Filter>SDL\src\libm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\libm\k_cos.c">
+      <Filter>SDL\src\libm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\libm\k_rem_pio2.c">
+      <Filter>SDL\src\libm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\libm\k_sin.c">
+      <Filter>SDL\src\libm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\libm\s_atan.c">
+      <Filter>SDL\src\libm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\libm\s_copysign.c">
+      <Filter>SDL\src\libm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\libm\s_cos.c">
+      <Filter>SDL\src\libm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\libm\s_fabs.c">
+      <Filter>SDL\src\libm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\libm\s_floor.c">
+      <Filter>SDL\src\libm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\libm\s_scalbn.c">
+      <Filter>SDL\src\libm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\libm\s_sin.c">
+      <Filter>SDL\src\libm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\loadso\dummy\SDL_sysloadso.c">
+      <Filter>SDL\src\loadso</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\main\windows\SDL_windows_main.c">
+      <Filter>SDL\src\main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\SDL_video.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\SDL_blit.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\SDL_blit_0.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\SDL_blit_1.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\SDL_blit_A.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\SDL_blit_auto.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\SDL_blit_copy.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\SDL_blit_N.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\SDL_blit_slow.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\SDL_bmp.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\SDL_clipboard.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\SDL_egl.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\SDL_fillrect.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\SDL_pixels.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\SDL_rect.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\SDL_RLEaccel.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\SDL_shape.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\SDL_stretch.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\SDL_surface.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowsclipboard.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowsevents.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowsframebuffer.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowskeyboard.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowsmessagebox.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowsmodes.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowsmouse.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowsopengl.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowsshape.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowsvideo.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowswindow.c">
+      <Filter>SDL\src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\timer\SDL_timer.c">
+      <Filter>SDL\src\timer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\timer\windows\SDL_systimer.c">
+      <Filter>SDL\src\timer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\thread\SDL_thread.c">
+      <Filter>SDL\src\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\thread\windows\SDL_sysmutex.c">
+      <Filter>SDL\src\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\thread\windows\SDL_syssem.c">
+      <Filter>SDL\src\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\thread\windows\SDL_systhread.c">
+      <Filter>SDL\src\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\thread\windows\SDL_systls.c">
+      <Filter>SDL\src\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\stdlib\SDL_string.c">
+      <Filter>SDL\src\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\stdlib\SDL_getenv.c">
+      <Filter>SDL\src\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\stdlib\SDL_iconv.c">
+      <Filter>SDL\src\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\stdlib\SDL_malloc.c">
+      <Filter>SDL\src\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\stdlib\SDL_qsort.c">
+      <Filter>SDL\src\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\stdlib\SDL_stdlib.c">
+      <Filter>SDL\src\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\power\SDL_power.c">
+      <Filter>SDL\src\power</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\power\windows\SDL_syspower.c">
+      <Filter>SDL\src\power</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\render\SDL_render.c">
+      <Filter>SDL\src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\render\SDL_yuv_mmx.c">
+      <Filter>SDL\src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\render\SDL_yuv_sw.c">
+      <Filter>SDL\src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\render\opengl\SDL_render_gl.c">
+      <Filter>SDL\src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\SDL\src\render\opengl\SDL_shaders_gl.c">
+      <Filter>SDL\src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\ftalleg.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="shinsangon2.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

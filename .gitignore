@@ -1,0 +1,15 @@
+/.svn
+
+/build/Debug
+
+/build/*.suo
+
+/build/*.sdf
+
+/build/shinsangon2/Debug
+
+/build/shinsangon2/*.user
+
+/data/.svn
+
+/mods/.svn
