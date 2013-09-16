@@ -1,0 +1,97 @@
+3.5.0 10/14/2010
+-----
+Paintown Engine:
+ - A new move list dialog shows all the attack moves for a player
+ - Local multiplayer co-op
+ - Much improved joystick support
+
+Paintown Editor:
+ - Re-organized the layout
+ - Onion skinning
+ - The background color of the animation window can be changed
+ - Additional convienence tools were added
+
+Mugen Engine:
+ - Characters and stages are discovered in the background without having
+ to modify select.def
+ - Many parser bugs were fixed
+
+Menu:
+ - Menu items can be customized
+
+Other:
+ - Ports to Android, PS3, Wii, Native Client
+ - MP3 and Ogg support
+
+3.4.0 12/26/2010
+-----
+Paintown Engine:
+ - Pressing ESC brings up a menu in the game
+ - Input uses events in the menu
+ - New thunder and rain effects
+ - Added character MJ
+ - Ported backend to SDL
+ - Added ability to play .nsf, .gym, etc files
+
+Mugen Engine:
+ - Parsers much improved
+ - Helpers implemented
+ - A few more characters work besides KFM
+ - Mugen script is compiled much more efficiently
+ - Tons of other bug fixes
+ - Roughly 80% done
+
+Other:
+ - Mostly functional to the Wii
+ - Partial port to the psp
+
+3.3.1 2/25/2010
+-----
+
+Paintown Engine:
+ - removed versus mode completely (it was still referenced by the menu)
+
+3.3 2/21/2010
+---
+
+Paintown Engine:
+ - added dynamic lights
+ - network mode checks for versions
+ - chatting in network mode
+
+Paintown Menus:
+ - Added Animations
+ - Added Tabbed Menus
+ - Clean ups removing most things from global space ie:
+ - Removed option info box from global space and made it part of menu.
+ - Made menu info and option info default to specific locations
+ - Added static doDialog to Box
+ - Use return exception in menus
+
+Paintown Utilities:
+
+Mugen Engine:
+ - Implemented base file readers for Mugen
+ - Created necessary classes to handle the Engine:
+ - Fonts
+ - Sprites
+ - Animations
+ - Sounds
+ - Backgrounds
+ - Menus
+ - Utils
+ - Characters
+ - Game
+ - Parser
+
+3.2 1/11/2009
+---
+add stuff
+
+3.1 8/3/2008
+---
+add stuff
+
+3.0 1/28/2008
+---
+add stuff

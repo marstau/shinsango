@@ -1,0 +1,19 @@
+<panel layout="GridBagLayout">
+	<vbox>
+		<gridbagconstraints
+			gridx="0"
+			gridy="0"
+			weightx="1"
+			weighty="1"
+			gridheight="1"
+			anchor="GridBagConstraints.NORTHWEST"
+			fill="GridBagConstraints.BOTH"
+			/>
+		<hbox>
+			<button text="Stop" id="stop" />
+			<button text="Play" id="play" />
+			<button text="Show Token" id="token" />
+			<glue />
+		</hbox>
+	</vbox>
+</panel>

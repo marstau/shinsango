@@ -1,0 +1,33 @@
+<panel layout="GridBagLayout">
+	<label text="Set Delay">
+		<gridbagconstraints
+			gridx="0"
+			gridy="0"
+			weightx="0.1"
+			weighty="1"
+			gridheight="1"
+			fill="GridBagConstraints.HORIZONTAL"
+			/>
+	</label>
+	<spinner id="delay">
+		<gridbagconstraints
+			gridx="1"
+			gridy="0"
+			weightx="0.5"
+			weighty="1"
+			gridheight="1"
+			fill="GridBagConstraints.HORIZONTAL"
+			/>
+
+	</spinner>
+    <combobox id="kind">
+        <gridbagconstraints
+			gridx="2"
+			gridy="0"
+			weightx="0.5"
+			weighty="1"
+			gridheight="1"
+			fill="GridBagConstraints.HORIZONTAL"
+			/>
+    </combobox>
+</panel>

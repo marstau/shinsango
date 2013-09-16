@@ -1,0 +1,46 @@
+#!/usr/bin/make -f
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+build: build-stamp
+build-stamp:
+	dh_testdir
+	@make -j `python misc/cores.py`
+	touch build-stamp
+
+clean:
+	dh clean
+	find -name "*.pyc" -delete
+	rm -rf .sconf_temp .sconsign.dblite build misc/libpng.a misc/libfreetype.a config.log fail.log
+
+install: build install-stamp
+install-stamp:
+	dh install --before dh_auto_configure
+	dh install --after dh_auto_test
+	touch install-stamp
+
+binary-pre:
+	#package paintown-data
+	#mv -v $(CURDIR)/debian/paintown-data/usr/share/paintown/ $(CURDIR)/debian/paintown-data/usr/share/paintown
+	#find $(CURDIR)/debian/paintown-data/usr/share/paintown/data/ -type f -exec chmod 644 "{}" \;
+	#package paintown
+	#mv -v $(CURDIR)/debian/paintown-data/usr/share/paintown/paintown-bin $(CURDIR)/debian/paintown/usr/games/paintown-bin
+	mkdir -p $(CURDIR)/debian/paintown/usr/share/paintown
+	cp $(CURDIR)/paintown $(CURDIR)/debian/paintown/usr/share/paintown/paintown-bin
+	mkdir -p $(CURDIR)/debian/paintown/usr/games
+	cp -av $(CURDIR)/debian/usr_games_paintown $(CURDIR)/debian/paintown/usr/games/paintown
+	dh_fixperms
+	#ls -lR $(CURDIR)/debian/
+
+override_dh_auto_test:
+	echo Ignoring tests
+
+binary-arch:
+	dh binary-arch
+
+binary-indep:
+	dh binary-indep
+
+binary: install binary-pre binary-arch binary-indep
+
+.PHONY: binary binary-pre binary-arch binary-indep build clean install

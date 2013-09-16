@@ -1,0 +1,109 @@
+<panel layout="GridBagLayout">
+	<vbox>
+		<gridbagconstraints
+			gridx="0"
+			gridy="0"
+			weightx="1"
+			weighty="1"
+			gridheight="1"
+			anchor="GridBagConstraints.NORTHWEST"
+			fill="GridBagConstraints.BOTH"
+			/>
+		<hbox>
+			<label text="Min Z plane" />
+			<spinner id="min-z" />
+			<glue />
+		</hbox>
+		<hbox>
+			<label text="Max Z plane" />
+			<spinner id="max-z" />
+			<glue />
+		</hbox>
+        <hbox>
+            <label text="Intro" />
+            <textfield id="intro" />
+            <button id="intro-pick" text="File" />
+        </hbox>
+        <hbox>
+            <label text="Ending" />
+            <textfield id="ending" />
+            <button id="ending-pick" text="File" />
+        </hbox>
+		<hbox>
+			<label text="Atmosphere" />
+			<combobox id="atmosphere" />
+			<glue />
+		</hbox>
+        <hbox>
+            <label text="Description" />
+            <textfield id="description" />
+        </hbox>
+		<hbox>
+			<label text="Background parallax" />
+			<slider id="background-parallax-slider" minimum="1" maximum="20" />
+			<label text="0" id="background-parallax-amount" />
+			<glue />
+		</hbox>
+		<hbox>
+			<label text="Foreground parallax" />
+			<slider id="foreground-parallax-slider" minimum="1" maximum="100" />
+			<label text="0" id="foreground-parallax-amount" />
+			<glue />
+		</hbox>
+		<hbox>
+			<label text="Background: " />
+			<textfield id="background" />
+			<button text="Change" id="change-background" />
+		</hbox>
+		<vbox>
+			<label text="Front panels" />
+			<scrollpane>
+				<list id="front-panels" minimumsize="5" />
+			</scrollpane>
+			<hbox>
+				<button text="Add" id="add-front-panel" />
+				<glue size="1" />
+				<button text="Delete" id="delete-front-panel" />
+				<glue size="1" />
+				<!--
+				<button text="Move Up" id="up-front-panel" />
+				<glue size="1" />
+				<button text="Move Down" id="down-front-panel" />
+				<glue size="1" />
+				-->
+			</hbox>
+		</vbox>
+		<glue size="1" />
+		<vbox>
+			<label text="Back panels" />
+			<scrollpane>
+				<list id="back-panels" />
+			</scrollpane>
+			<hbox>
+				<button text="Add" id="add-back-panel" />
+				<glue size="1" />
+				<button text="Delete" id="delete-back-panel" />
+				<glue size="1" />
+				<!--
+				<button text="Move Up" id="up-back-panel" />
+				<glue size="1" />
+				<button text="Move Down" id="down-back-panel" />
+				<glue size="1" />
+				-->
+			</hbox>
+		</vbox>
+		<glue size="1" />
+		<label text="Back Panel Order" />
+		<scrollpane>
+			<textarea id="order" editable="false" rows="5" cols="3" />
+		</scrollpane>
+		<glue size="1" />
+		<combobox id="pick-order" />
+		<hbox>
+			<button id="add-order" text="Add to end" />
+			<glue size="1" />
+			<button id="remove-order" text="Remove Last" />
+			<glue />
+		</hbox>
+	</vbox>
+</panel>

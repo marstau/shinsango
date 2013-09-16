@@ -1,0 +1,23 @@
+* Network mode for MUGEN *
+
+Each client will update their own world state in real-time as if they were playing a local game. The server will serialize its world state and send it to all the clients so they can synchronize to the same state. Each client will send key presses using UDP to all other clients to ensure keys are activated as soon as possible, but its ok if the message is lost because the next world update will just reset things to a clean slate.
+
+World serialization:
+  all character transient data
+  state controller data (like persisent)
+  projectiles
+  helpers
+
+No object should use a pointer to reference any other object, instead integer ids will be used which are regulated by the server. This is so the server and client can refer to the same object in a machine independant way.
+
+Each client should store the last N non-deterministic events to the system so that they can be replayed when a new world state shows up. Once the new world state shows up the current state is equal to the new world state that is simulated for N ticks.
+
+example:
+  server and client start from world 0 at time 0
+  server sends world 1 at time 1
+  client receives world 1 at time 5
+  client should set the current world to world 1 and then replay any events that occured between time 1 and time 5
+
+The client's world at time 5 might diverge from world 1 but hopefully so little time has passed that things aren't too out of sync. Hopefully the entire world state will not be that large, possibly <10k, so it should be able to be sent relatively quickly. The frequency of sending world states can be dynamically controlled based on ping. Lower pings can send world states more frequently while higher pings will send more infrequently (and thus see more jitter).
+
+Key presses should be sent with UDP and the current time. If a key press is within some small delta from the current time then it should be considered legal. Something like within 50ms should be ok, possibly even 100ms.

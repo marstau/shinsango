@@ -1,0 +1,46 @@
+<panel layout="GridBagLayout">
+	<vbox>
+		<gridbagconstraints
+			gridx="0"
+			gridy="0"
+			weightx="1"
+			weighty="1"
+			gridheight="1"
+			anchor="GridBagConstraints.NORTHWEST"
+			fill="GridBagConstraints.HORIZONTAL"
+			/>
+		<hbox>
+			<label text="Length:" />
+			<textfield size="10" id="length" />
+		</hbox>
+		<hbox>
+			<label text="Id:" />
+			<spinner id="id" />
+		</hbox>
+		<hbox>
+			<checkbox id="is-finish" />
+			<glue size="1" />
+			<label text="Finish:" />
+			<textfield size="4" id="finish" />
+		</hbox>
+		<hbox>
+			<checkbox id="is-continuous" />
+			<label text="Continuous" />
+			<glue />
+		</hbox>
+	</vbox>
+	<hbox>
+		<gridbagconstraints
+			gridx="0"
+			gridy="1"
+			weightx="1"
+			weighty="0.5"
+			gridheight="1"
+			anchor="GridBagConstraints.NORTHWEST"
+			fill="GridBagConstraints.HORIZONTAL"
+			/>
+
+		<button id="save" text="Save" />
+		<button id="close" text="Close" />
+	</hbox>
+</panel>

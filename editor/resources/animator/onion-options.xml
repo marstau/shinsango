@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<panel layout="GridBagLayout">
+    <hbox>
+        <gridbagconstraints
+            gridx="0"
+            gridy="0"
+            weightx="1"
+            weighty="0.1"
+            gridheight="1"
+            anchor="GridBagConstraints.NORTHWEST"
+            fill="GridBagConstraints.BOTH"
+            />
+        <checkbox id="onion-skinning" />
+        <label text="Onion Skinning" />
+    </hbox>
+    <vbox>
+        <gridbagconstraints
+            gridx="0"
+            gridy="1"
+            weightx="1"
+            weighty="0.1"
+            gridheight="1"
+            anchor="GridBagConstraints.NORTHWEST"
+            fill="GridBagConstraints.BOTH"
+            />
+        <label text="Showing no frames" id="how-many" />
+        <slider id="skins" value="0" minimum="-10" maximum="10" />
+    </vbox>
+
+    <vbox>
+        <gridbagconstraints
+            gridx="0"
+            gridy="2"
+            weightx="1"
+            weighty="0.1"
+            gridheight="1"
+            anchor="GridBagConstraints.NORTHWEST"
+            fill="GridBagConstraints.BOTH"
+            />
+        <buttongroup>
+            <radiobutton id="front" selected="true" text="Show in front of current animation" />
+            <radiobutton id="back" text="Show behind current animation" />
+        </buttongroup>
+    </vbox>
+</panel>

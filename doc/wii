@@ -1,0 +1,49 @@
+Issues with porting paintown to the Wii:
+  * Wii has a memory limit of 78 megs or so. 24m from mem1 and 64m from mem2 but 10m is reserved which leaves 78m. On Linux, Paintown usually uses around 100m so this had to be reduced to fit on the Wii.
+  The resolution was to make palette swaps for characters only if they are used. This reduced memory usage by about 20m when playing with Akuma on stage 1 of Paintown. Another reduction was not creating buffer bitmaps in the menu in the constructor. Instead the buffers are created when then menu is executing since that is the only time the buffers are needed. In total memory usage is about 50m down from 100m.
+
+  * Wii input (wiimote, gamecube pad, classic controller, nunchuck), these things weren't very well supported, Juvinious added code to read them.
+
+  * Reading data files is incredibly slow. WiiOs doesn't cache files and reading from FAT partition is slow in itself which yields load times upto 10x slower than Paintown on the PC.
+
+  * Default stack size in new threads created by libogc is 8kb. The peg parsers require a bit more space than this so I changed SDL to call LWP_CreateThread with 32*1024 bytes of space. This allows mugen mode to work properly.
+
+* How to install on homebrew:
+  1. Get the wii build environment:
+    svn co https://paintown.svn.sourceforge.net/svnroot/paintown/build-environments/devkitpro
+
+  2. Make symlinks to the devkitpro directory you just checked out in /opt
+    ln -s /path/to/devkitpro /opt/devkitpro
+
+  3. Set some devkitpro environment variables
+    export DEVKITPRO=/opt/devkitpro
+    export DEVKITPPC=/opt/devkitpro/devkitPPC/
+
+  4. Set the build type environment variable to 'wii' and build paintown
+    export SDL=1
+    export wii=1
+    cd /path/to/paintown
+    make
+
+  5. The build system will tell you to run 'elf2dol' on the resulting 'paintown' executable.
+    /opt/devkitpro/devkitPPC/bin/elf2dol paintown paintown.dol
+
+  6. Copy paintown.dol, data/wii/meta.xml, data/wii/icon.png and the data/ directory into a directory inside the apps directory of the homebrew channel SD card that you can insert into the wii. Load up the homebrew channel, navigate to paintown and play.
+
+* Running on the Dolphin emulator
+
+  1. Build paintown.dol using the same steps above for the wii
+  2. Make an sd card that dolphin will use and copy the data in. Dolphin comes with
+  a default sd.raw card in the User directory you can use
+    $ mkdir x
+    $ mount -o loop dolphin/User/sd.raw x
+    $ mkdir x/paintown
+    $ cp -a data x/paintown/.
+    $ umount x
+  3. Load paintown.dol in dolphin
+
+  Extra: Jon uses an ubuntu box running in virtualbox to build the wii version. To mount
+  a windows directory inside virtualbox do this:
+   1. devices -> shared folders -> add, add the dolphin root directory and give it a name, like 'foo'
+   2. mkdir x2
+      mount -t vboxsf foo x2

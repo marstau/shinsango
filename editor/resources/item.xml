@@ -1,0 +1,81 @@
+<panel layout="GridBagLayout">
+	<vbox>
+		<gridbagconstraints
+			gridx="0"
+			gridy="0"
+			weightx="1"
+			weighty="1"
+			gridheight="1"
+			anchor="GridBagConstraints.NORTHWEST"
+			fill="GridBagConstraints.HORIZONTAL"
+			/>
+		<hbox>				
+			<label text="Name:" />
+			<textfield size="20" id="name" />
+			<glue size="1" />
+		</hbox>
+		<hbox>
+			<label text="X: " />
+			<textfield size="3" id="x" />
+		</hbox>
+		<hbox>
+			<label text="Y: " />
+			<textfield size="3" id="y" />
+		</hbox>
+		<hbox>
+			<label text="Path: " />
+			<textfield size="15" id="path" />
+		</hbox>
+		<hbox>
+			<label text="Block: " />
+			<spinner id="block" />
+		</hbox>
+		<hbox>
+			<label text="Id: " />
+			<spinner id="id" />
+		</hbox>
+		<buttongroup>
+			<hbox>
+				<radiobutton id="none" selected="true" HorizontalAlignment="SwingConstants.LEFT" text="None" />
+				<glue />
+			</hbox>
+			<hbox>
+				<radiobutton id="health" HorizontalAlignment="SwingConstants.LEFT" text="Health" />
+				<spinner enabled="false" id="health-spinner" />
+				<glue />
+			</hbox>
+            <hbox>
+				<radiobutton id="invincibility" HorizontalAlignment="SwingConstants.LEFT" text="Invincibility" />
+                <glue />
+                <label text="Duration" />
+				<spinner enabled="false" id="invincibility-spinner" />
+				<glue />
+            </hbox>
+            <hbox>
+				<radiobutton id="speed" HorizontalAlignment="SwingConstants.LEFT" text="Speed" />
+                <glue />
+                <label text="Multiplier" />
+				<spinner enabled="false" id="speed-spinner" />
+                <label text="Duration" />
+				<spinner enabled="false" id="speed-duration" />
+				<glue />
+            </hbox>
+		</buttongroup>
+	</vbox>
+	<hbox>
+		<gridbagconstraints
+			gridx="0"
+			gridy="1"
+			weightx="1"
+			weighty="0.5"
+			gridheight="1"
+			anchor="GridBagConstraints.NORTHWEST"
+			fill="GridBagConstraints.HORIZONTAL"
+			/>
+
+		<button id="save" text="Save" />
+		<glue size="1" />
+		<button id="close" text="Cancel" />
+		<glue />
+	</hbox>
+</panel>

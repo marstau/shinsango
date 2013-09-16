@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<panel layout="GridBagLayout">
+    <splitpane id="split">
+        <gridbagconstraints
+            gridx="0"
+            gridy="0"
+            weightx="1"
+            weighty="1"
+            gridheight="1"
+            anchor="GridBagConstraints.NORTHWEST"
+            fill="GridBagConstraints.BOTH"
+            />
+        <panel id="canvas" layout="GridBagLayout">
+            <gridbagconstraints
+                gridx="0"
+                gridy="0"
+                weightx="0.7"
+                weighty="0.8"
+                gridheight="1"
+                anchor="GridBagConstraints.NORTHWEST"
+                fill="GridBagConstraints.BOTH"
+                />
+        </panel>
+        <vbox>
+        <button id="pop-out" text="Pop out" />
+        <panel layout="GridBagLayout">
+            <tabbedpane id="tabs">
+                <gridbagconstraints
+                    gridx="0"
+                    gridy="0"
+                    weightx="1"
+                    weighty="0.9"
+                    gridheight="1"
+                    anchor="GridBagConstraints.NORTHWEST"
+                    fill="GridBagConstraints.BOTH"
+                    />
+            </tabbedpane>
+            <vbox>
+                <gridbagconstraints
+                    gridx="0"
+                    gridy="1"
+                    weightx="1"
+                    weighty="0.1"
+                    gridheight="1"
+                    anchor="GridBagConstraints.NORTHWEST"
+                    fill="GridBagConstraints.BOTH"
+                    />
+                <!--
+                <vbox>
+                    <gridbagconstraints
+                        gridx="0"
+                        gridy="0"
+                        weightx="0.1"
+                        weighty="0.1"
+                        gridheight="1"
+                        gridwidth="1"
+                        fill="GridBagConstraints.NONE"
+                        anchor="GridBagConstraints.NORTHWEST"
+                        />
+                    <label text="Tools" />
+                    <combobox id="tools" />
+                    <panel id="tool-area" layout="GridBagLayout" />
+                </vbox>
+                -->
+                <hbox>
+                    <button id="previous-frame" text="Previous Frame" />
+                    <glue size="1" />
+                    <button id="play" icon="animator/play.png" />
+                    <glue size="1" />
+                    <button id="stop" icon="animator/stop.png" />
+                    <glue size="1" />
+                    <button id="next-frame" text="Next Frame" />
+                    <glue />
+                </hbox>
+            </vbox>
+        </panel>
+        </vbox>
+    </splitpane>
+</panel>

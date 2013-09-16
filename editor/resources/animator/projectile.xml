@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<panel layout="GridBagLayout">
+    <tabbedpane id="tabs">
+        <gridbagconstraints
+            gridx="0"
+            gridy="0"
+            weightx="1"
+            weighty="1"
+            fill="GridBagConstraints.BOTH"
+            anchor="GridBagConstraints.NORTHWEST"
+            />
+    </tabbedpane>
+    <!--
+    <panel id="canvas" layout="GridBagLayout" border="MatteBorder(2,2,2,2,667A63)">
+        <gridbagconstraints
+            gridx="0"
+            gridy="0"
+            weightx="0.9"
+            weighty="1"
+            gridheight="1"
+            fill="GridBagConstraints.BOTH"
+            anchor="GridBagConstraints.NORTHWEST"
+            />
+    </panel>
+	<panel id="context" border="MatteBorder(2,2,2,2,667A63)">
+		<gridbagconstraints
+			gridx="1"
+			gridy="0"
+			insets="1,1,1,1"
+			weightx="0.1"
+			weighty="0.9"
+			gridwidth="1"
+			anchor="GridBagConstraints.NORTH" />
+
+		<vbox>
+			<scrollpane>
+				<list id="animations" />
+			</scrollpane>
+			<hbox>
+				<button id="start" text="Play" />
+				<button id="stop" text="Stop" />
+				<button id="edit" text="Edit" />
+			</hbox>
+		</vbox>
+	</panel>
+    -->
+</panel>
