@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo Trimming $1
+convert $1 -trim $1

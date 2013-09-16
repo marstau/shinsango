@@ -1,0 +1,734 @@
+   -------------------------------------
+    The AF File Format - vulture / 1998
+   -------------------------------------
+
+    Note: This is best viewed either in DOS or with a Courier font.
+
+    All the following information was produced during a 3 hour hacking
+    process in late 1997. It is now 1998, and everybody wants this
+    information. A lot of this information is a bit sketchy, but should help
+    in producing any programs or utilities that edit AF files. As always,
+    my AF Compiler/Decompiler should be available on WWW.OMF.COM , or you
+    may send me an email at Srstanek@aol.com to get the latest version. Some
+    of the information about the AF file is still unknown by me. If you have
+    any clues or insights, please share them with me and I'll include them
+    in the next release of this file, with a "Thanks" along with your name.
+    Or, if you plan to use this information, please include my name in your
+    production (vulture is all lowercase - don't confuse me with the other
+    guy). Thanks!
+
+        - vulture a.k.a. Sean Stanek
+
+Part 1: Basic Info
+
+    First of all, I will explain what each of the directories are that are
+    produced with my AF Decompiler, and used by my AF Compiler. Whenever
+    I talk about files that may not appear to have any source, they may have
+    come from my AF Compiler/Decompiler. Each of the actual formats will be
+    discussed in detail in part 3.
+
+Part 2: Directories
+
+    \HEADERS - This directory contains all the header information. Basically,
+        the very beginning of the AF file contains an initial header that
+        describes the robot. For example: endurance, power, movement speed,
+        jump speed, etc. This is saved as \HEADERS\FIGHTER. All the other
+        files in here are given numbers, starting at 0. Basically, each move
+        that a robot makes is given a separate entry in the AF file. Starting
+        with specific moves, each move is given a number that is not changed.
+        After all the major moves are assigned, other moves and animation
+        sequences may be defined as whatever you want. For example, the jump
+        animation number is given as 1. When you're squating, the animation
+        number is 4. All of the possible numbers will be discussed later on.
+        Other information is also given in the header files. The number of
+        frames is given here. A number that tells how many "overlays" is
+        also given here. I'm not 100% sure how these work, so they might
+        not even be overlays. These will be discussed in more detail later
+        on.
+
+    \FOOTERS - Like headers, footers contain a little bit of information.
+        An example of information contained here would be the keyboard
+        sequence or joystick sequence that explains the move. More
+        information is contained in here - perhaps some animation string
+        sequences. I'm not sure if they are really used, but they still have
+        structure that MUST be followed. A unique file in here is the FGHED
+        file. I call it that because it has an ASCII sequence inside it that
+        says 'FGHED' . Basically, it tells the OMF engine that we are at the
+        end of the AF file.
+
+    \STRINGS - This directory contains all the animation string sequences.
+        In short, these strings tell a move how to move. For example, when
+        you see a robot jump, the frames change to make it look like it's
+        jumping. The OMF engine does the actual movement for the jump move,
+        but the animation string sequence for the jump move is defined here.
+        Here is an example: 'A20-B20-C20-B20' - Basically, A=1, B=2, etc.
+        So that animation string sequence tells the OMF engine to display
+        the first frame, give a 20 tick wait, the second, then a wait, the
+        third, a wait, then the second frame again, and a wait. There are of
+        course special prefixes that may be used in front of each letter to
+        give a special use. For example, 'rA20' will reflect the first frame
+        left to right and use it like that. All of these will be discussed
+        later.
+
+    \PICS - The heart of all the actual graphics. This directory contains all
+        of the graphics in the OMF graphic file format. This format will be
+        discussed later.
+
+    \XREF - This directory is used for the reconstruction of AF files. The
+        PARTS file contains N numbers where N = (filelen/4). The numbers
+        are DWORDS (4 bytes long, Intel format). Each number represents a
+        header number. The first number in the file corresponds to the file
+        named XREF\0. Each subsequent number in the file corresponds to the
+        next header. These will be discussed later too. Remember: these files
+        are not part of the AF file, but are required to assemble a
+        disassembled fighter.
+
+Part 3: Formats
+
+    This is probably the information that everyone wants. Here are the file
+    formats and other format information.
+
+    --------------
+     AF Structure
+    --------------
+        Fighter header : 29 bytes.
+        N blocks of animations:
+            Animation header : 12+X*4 bytes
+            Header string : Y bytes
+            Z blocks of pictures:
+                Picture header : 12+W bytes
+                Picture data : V bytes
+            Footer string : U bytes
+        Fighter footer : T bytes (usually 31 bytes)
+
+    ----------------
+     Fighter Header
+    ----------------
+
+        Starting from here, information will be presented in a cleaner,
+        more informative table. A "BYTE" is 8 bits, a "WORD" is 2 BYTEs, and
+        a "DWORD" is 4 BYTEs. Note that if a "+" (plus sign) comes under the
+        offset column, it probably means that the previous entry had a
+        variable size length and the "+" represents the length from the
+        previous entry. In other words, it just follows right after where
+        you left off (keep in mind you left off at a variable spot).
+
+----------+----------+-------------------------------------------------------
+  Offset  |   Size   |  Description
+----------+----------+-------------------------------------------------------
+  0x0000  |  1 WORD  |  Robot Number (FIGHTRx.AF) - If this is unequal to
+          |          |  the same number as shown in the filename, then OMF
+          |          |  will refuse to load it. Make sure that if you choose
+          |          |  to rename an AF file, that you change this byte.
+----------+----------+-------------------------------------------------------
+  0x0002  |  3 BYTEs |  ??? : [ 0A 00 00 ]
+----------+----------+-------------------------------------------------------
+  0x0005  |  3 BYTEs |  Endurance - Maximum is 2,143,755. Anything above
+          |          |  that or below zero will result in a robot that can't
+          |          |  seem to keep his balance at any time (he'll always
+          |          |  be stunned). I have no idea as to why a 3 byte
+          |          |  integer was used or as to why 2,143,755 was chosen.
+----------+----------+-------------------------------------------------------
+  0x0008  |  1 BYTE  |  ??? : [ 01 ] or [ 02 ]
+----------+----------+-------------------------------------------------------
+  0x0009  |  1 WORD  |  Power - The amount of damage the robot can take. The
+          |          |  maximum is 8717. This one still puzzles me like the
+          |          |  endurance field. At least this one is a word.
+----------+----------+-------------------------------------------------------
+  0x000B  | 1 DWORD  |  Forward Movement - This is the speed at which the
+          |          |  robot can move forward. If this is put too high, you
+          |          |  may not be able to walk anywhere in the middle of
+          |          |  arena due to the poor precision for each step. I
+          |          |  could be wrong, but I do believe that this number is
+          |          |  just a plain, signed DWORD; thus the maximum would
+          |          |  be 2,147,483,647. Because this is a signed integer,
+          |          |  it is (strangely enough) possible to move backward
+          |          |  if you used a negative value. The minimum would be
+          |          |  -2,147,483,648.
+----------+----------+-------------------------------------------------------
+  0x000F  | 1 DWORD  |  Backward Movement - The speed at which the robot
+          |          |  moves backward. The maximum is 2,147,483,647.
+----------+----------+-------------------------------------------------------
+  0x0013  | 1 DWORD  |  Up Movement - When you jump, this is the speed of
+          |          |  how you move. When you move up, in computer
+          |          |  coordinates, you are decreasing, so a negative value
+          |          |  is needed here. The normal DWORD min/max applies
+          |          |  here (like the other movement types). This is your
+          |          |  initial speed when you jump.
+----------+----------+-------------------------------------------------------
+  0x0017  | 1 DWORD  |  Down Movement - Somewhat like gravity. After you
+          |          |  jump, this value is added to your vertical movement
+          |          |  velocity; thus it is an acceleration (for you
+          |          |  Calculus people out there). This should be positive
+          |          |  if you wish to eventually land.
+----------+----------+-------------------------------------------------------
+  0x001B  |  1 WORD  |  ??? : [ 32 14 ]
+----------+----------+-------------------------------------------------------
+
+
+    ------------------
+     Animation Header
+    ------------------
+
+----------+----------+-------------------------------------------------------
+  Offset  |   Size   |  Description
+----------+----------+-------------------------------------------------------
+  0x0000  |  1 BYTE  |  Motion Number - This number identifies the animation
+          |          |  as a unique animation. There are several predefined
+          |          |  animation numbers that must be followed, but
+          |          |  starting with 0Fh (15 decimal), your animations need
+          |          |  to have a unique number. Here's a list of numbers
+          |          |  and animations that are predefined:
+          |          |    1: Jumping
+          |          |    2: Getting up from being knocked down
+          |          |    3: Stunned
+          |          |    4: Squatting
+          |          |    5: Blocking while standing
+          |          |    6: Blocking while squatting
+          |          |    7: ???
+          |          |    8: Block metal scrape animation (defender's drawn)
+          |          |    9: Stance right before being thrown
+          |          |   10: Walking
+          |          |   11: Standing Still
+          |          |   12: Body part 1 (Scrap Metal)
+          |          |   13: Body part 2 (Bolt)
+          |          |   14: Body part 3 (Screw)
+          |          |  250: End of animations, start of fighter footer.
+          |          |
+          |          |  Note that for some reason, the walking animation
+          |          |  utilizes some of the pictures from the standing
+          |          |  animation. This is still unclear. The body parts are
+          |          |  the parts that get knocked off when you get hit.
+          |          |  For example, the BIG+# code allows more or less of
+          |          |  them on the screen at once.
+----------+----------+-------------------------------------------------------
+  0x0001  |  8 BYTEs |  [ 00 00 00 00 00 00 00 00 ]
+          |          |  Just a zero padding.
+----------+----------+-------------------------------------------------------
+  0x0009  |  1 WORD  |  Overlay Header Amount - This number tells how many
+          |          |  "overlays" there are. I have no clue as to how these
+          |          |  work, so they may not even be overlays. I'm just
+          |          |  GUESSING that these are used to copy duplicate
+          |          |  pictures between different animation sequences.
+          |          |  Any information here is appreciated.
+----------+----------+-------------------------------------------------------
+  0x000B  |  1 BYTE  |  Number Of Frames - This simply tells how many
+          |          |  pictures will be following. The picture (or sprite)
+          |          |  format will be discussed more below (no discussion
+          |          |  here! =o)  ).
+----------+----------+-------------------------------------------------------
+  0x000C  | 4n BYTEs |  Overlay Table - This table contains 'n' number of
+          |          |  overlays obtained from the Overlay Header Amount
+          |          |  value. Each entry is a DWORD (4 bytes). I don't know
+          |          |  what these actually do other than perhaps copy the
+          |          |  pictures from other animations for use in another
+          |          |  one to conserve file size. I've noticed that some
+          |          |  pictures have a byte set which makes it so that
+          |          |  no picture information actually follows. You can
+          |          |  read more about this in the Sprite Format, below.
+----------+----------+-------------------------------------------------------
+  0xNNNN  |          |  The String Header follows directly after the
+          |          |  Animation Header and is part of it. I'm going to
+          |          |  start a new table so that all the offsets can be
+          |          |  understood (although it is quite dynamic).
+----------+----------+-------------------------------------------------------
+
+
+    ---------------
+     String Header
+    ---------------
+
+----------+----------+-------------------------------------------------------
+  Offset  |   Size   |  Description
+----------+----------+-------------------------------------------------------
+  0x0000  |  1 WORD  |  String #1 Length - This defines how long the first
+          |          |  animation string will be. Don't worry about the
+          |          |  word "first" here. Just think of it as the main
+          |          |  animation string. It is the one that is used.
+----------+----------+-------------------------------------------------------
+  0x0002  |  L BYTEs |  Animation String - This string is the heart of all
+          |          |  of the moves you see in OMF. If you want to punch,
+          |          |  there is an animation string that describes the
+          |          |  motion of the punch. If you shoot something, the
+          |          |  animation string tells the motion of the robot
+          |          |  through the animation by different pictures and by
+          |          |  perhaps moving the coordinates of the fighter. Also,
+          |          |  any external objects (i.e. Katana's fireball) will
+          |          |  be told to be created here. There is a whole other
+          |          |  animation header that declares what, exactly, the
+          |          |  fireball does. Basically, if you want to make an
+          |          |  extra object in a special move, you do it here. If
+          |          |  you want the robot to do anything special, you
+          |          |  define it here. The "scripting" language will be
+          |          |  described later.
+----------+----------+-------------------------------------------------------
+    +L    |  1 BYTE  |  [ 00 ]
+          |          |  Just a zero to declare end of string from the
+          |          |  animation string. Note that this byte is NOT
+          |          |  included in the String Length value.
+----------+----------+-------------------------------------------------------
+ +0x0001  |  1 BYTE  |  Number Of Extra Strings - If you wish to have extra
+          |          |  strings (I'm not sure how they're accessed from the
+          |          |  main string), define them after here. If this is
+          |          |  just a zero, you can assume that no extra strings
+          |          |  follow and that the next three entries are
+          |          |  meaningless. Otherwise, you will need to assume that
+          |          |  'n' strings follow.
+==========+==========+=======================================================
+|+0x0001  |  1 WORD  |  Extra String Length - Length of the string directly |
+|         |          |  after this value. See above at String #1 Length for |
+|         |          |  details (the few that there may be).                |
+|---------+----------+------------------------------------------------------|
+|+0x0002  |  L BYTEs |  Extra Animation String - An addition animation      |
+|         |          |  string. See above at Animation String for details.  |
+|---------+----------+------------------------------------------------------|
+|   +L    |  1 BYTE  |  [ 00 ]                                              |
+|         |          |  Just a zero to declare end of string. Again, this   |
+|         |          |  does not count towards the String Length value.     |
+|         |          |  Remember that these last three entries are to be    |
+|         |          |  repeated however many times the Number Of Extra     |
+|         |          |  Strings value says you need to.                     |
+==========+==========+=======================================================
+ +0x0001  | n frames |  'n' Sprite entries immediately follow here. This
+          |          |  format will be discussed below. The number of
+          |          |  sprites following is determined by the Number Of
+          |          |  Frames value, as declared up above in the Animation
+          |          |  Header. Immediately after the sprites comes the
+          |          |  Animation Footer.
+----------+----------+-------------------------------------------------------
+
+
+    ------------------
+     Animation Footer
+    ------------------
+
+----------+----------+-------------------------------------------------------
+  Offset  |   Size   |  Description
+----------+----------+-------------------------------------------------------
+  0x0000  | 21 BYTEs |  Unknown data. Seems to be different in each fighter,
+          |          |  but I don't know what it does. Perhaps this tells
+          |          |  whether or not a move or animation can be done in
+          |          |  mid-air or if it is the SCRAP/DESTRUCTION animation.
+          |          |  If anyone has information on this, please email me.
+----------+----------+-------------------------------------------------------
+  0x0015  | 21 BYTEs |  Movement String - If anyone remembers those OLD
+          |          |  attempts by OTHER people to hack AF files, you may
+          |          |  remember the "move" finding programs. Well, all
+          |          |  those programs did was search the ENTIRE AF file for
+          |          |  this little string, even though the string exists
+          |          |  in only specific locations. This led to several or
+          |          |  even hundreds of misreported existing moves. Anyhow,
+          |          |  the basic format here is a letter, either a captial
+          |          |  "P" (Punch) or "K" (Kick). This is followed by
+          |          |  potentially several numbers indicating a motion on
+          |          |  the keypad (or numpad). This is stored in reverse
+          |          |  order, and is setup for the fighter being on the
+          |          |  left side of the screen. For example, the common
+          |          |  "fireball" move: "down,down-forward,forward+punch"
+          |          |  would be coded as "P632" because 6 is forward on the
+          |          |  keypad, 2 is down, etc. Remember it goes in reverse
+          |          |  order. For those of you who kept pestering Rob Elam
+          |          |  whether or not there was a Fire/Ice move for Nova
+          |          |  and I kept telling you "NO!" : well, this movement
+          |          |  string was what I was looking at and all the moves
+          |          |  were accounted for. For some animation strings, like
+          |          |  jumping, standing, walking, or anything that doesn't
+          |          |  require any special keypad movement or button, you
+          |          |  can expect that there be neither a "P" or "K" here.
+          |          |  A "0" or "!" or ""!"" (exclamation mark inside
+          |          |  quotes) is usually used if there is no special
+          |          |  movement required to invoke the move or animation.
+          |          |  Note here that the movement string is zero
+          |          |  terminated, meaning the standard fireball move
+          |          |  should be coded as [ "P632" 00 ] .
+          |          |  The remainder of the 21 bytes can be filled with
+          |          |  anything, as far as I know. Just make sure that the
+          |          |  zero terminator fits inside the 21 bytes.
+          |          |  Another thing: if you want a pause between
+          |          |  directions, put a "5" between the two directions.
+          |          |  For example, one of the Shadow's moves is "down,
+          |          |  down+punch" - This would be coded as [ "P252" 00 ] .
+          |          |  Make sure the pause is in there or the movement may
+          |          |  not function properly (you probably just wouldn't
+          |          |  have to press the button twice like in the example).
+----------+----------+-------------------------------------------------------
+  0x002A  |  1 WORD  |  Extra Footer String Length - This declares how long
+          |          |  the following string is.
+----------+----------+-------------------------------------------------------
+  0x002C  |  L BYTEs |  Extra Footer String - I have no clue what this one
+          |          |  does. All I have figured out is that this is some
+          |          |  sort of string like the other "scripted" strings.
+          |          |  If I had to guess what this did, I would guess that
+          |          |  this has to do with how an animation ends. For
+          |          |  example, when the shadow tries to "grab" his
+          |          |  opponent via the "down,down+punch" movement, if the
+          |          |  opponent blocks or the shadow figure misses, the
+          |          |  shadow figure dissipates. I'm guessing that this
+          |          |  dissipate animation has to do with the footer
+          |          |  string. If you find out or REALLY know, please
+          |          |  email me.
+----------+----------+-------------------------------------------------------
+    +L    |          |  That's it! We just loop around these animation
+          |          |  strings until we hit the value [ 0FAh ] or the value
+          |          |  250 in decimal. This probably limits the number of
+          |          |  animations to 249, but that should be plenty.
+          |          |  After we hit 250, we start the fighter footer.
+----------+----------+-------------------------------------------------------
+
+
+    ----------------
+     Fighter Footer
+    ----------------
+
+----------+----------+-------------------------------------------------------
+  Offset  |   Size   |  Description
+----------+----------+-------------------------------------------------------
+  0x0000  |  1 BYTE  |  [ 0FAh ]
+          |          |  Fighter Footer Start - This is actually part of the
+          |          |  animation header format, but when you find this
+          |          |  value, it becomes the footer. 0FAh is 250 in
+          |          |  decimal. I call this the FGHED file because the last
+          |          |  five bytes of every AF file contains "FGHED" .
+----------+----------+-------------------------------------------------------
+  0x0001  |  9 BYTEs |  Unknown. Probably just filler.
+----------+----------+-------------------------------------------------------
+  0x000A  |  1 WORD  |  Last Footer Length - This is a wild guess. In my
+          |          |  AF Decompiler, I just loaded the rest of the file
+          |          |  and dumped the data out to the FGHED file. Also, in
+          |          |  every AF file, the value here was [ 13h ] or 19 in
+          |          |  decimal. This value corresponded to the number of
+          |          |  bytes left in the file after this point, so I'm just
+          |          |  guessing it's probably a length value.
+----------+----------+-------------------------------------------------------
+  0x000C  |  L BYTEs |  This is usually 19 bytes long. I have no clue what
+          |          |  this whole footer is for, other than to tell OMF2097
+          |          |  that this is the end of the AF file. The last five
+          |          |  bytes constitutes the string "FGHED" which is found
+          |          |  in every AF file distributed with OMF2097. If you
+          |          |  have any idea what the footer might do for the
+          |          |  fighter, please email me. For developers of new AF
+          |          |  files (and I hope we get lots of new AF files
+          |          |  created!), here is a Fighter Footer from start to
+          |          |  finish that'll work (assuming hexadecimal) :
+          |          |  [ FA 00 01 02 03 06 05 04 00 00 13 00 00 00 00 00
+          |          |    00 00 00 00 00 3E 42 00 41 40 46 47 48 45 44    ]
+          |          |                                   F  G  H  E  D
+          |          |  I'm just guessing that the "FGHED" is in there
+          |          |  because of some sort of pattern (if you didn't
+          |          |  notice), but I don't know why the pattern is there.
+          |          |  If you know, again, email me! Thanks!
+----------+----------+-------------------------------------------------------
+
+
+    ---------------
+     Sprite Format
+    ---------------
+
+        This format is probably one of the more wanted formats. This format
+        consists of a somewhat compressed format (not real compression).
+        Basically, you start inside a loop. You get an integer inside each
+        loop, one after another. If the (integer modulus 4) equals 2, or in
+        other terms, the remainder of (integer divided by 4) equals 2, then
+        you save this (number divided by 4) into a y-coordinate line start
+        number. i.e. the number 2 would be the 0th line (2 mod 4)=2 and
+        (2 div 4)=0. This 0th line is relative to the position X and Y
+        coordinates of the sprite itself, retrieved from before the actual
+        graphic data, inside this sprite format. Anyhow, this will be
+        described further in the table...
+
+----------+----------+-------------------------------------------------------
+  Offset  |   Size   |  Description
+----------+----------+-------------------------------------------------------
+  0x0000  |  1 WORD  |  Sprite Length - This tells how large the sprite is.
+          |          |  This does not include the sprite header, which is,
+          |          |  itself, 12 bytes. If you want to skip over the
+          |          |  sprite entirely, going onto the next sprite or other
+          |          |  block, just skip ahead by (12+length). There is one
+          |          |  exception to this rule: if the Picture Exists byte
+          |          |  is set to 1, then the picture is probably being
+          |          |  mirrored from some other location, and you need to
+          |          |  add only 12. Make sure to check this byte if you are
+          |          |  planing on editing an existing fighter. If you are
+          |          |  making your own fighter and want to figure out how
+          |          |  to mirror graphics from a different animation, then
+          |          |  make sure to set this Sprite Length to how long THAT
+          |          |  sprite length is. This way, OMF knows how much of
+          |          |  the sprite to display.
+----------+----------+-------------------------------------------------------
+  0x0002  |  1 WORD  |  X Position - This is relative to the internal value
+          |          |  that OMF keeps for the fighter. Ideally, this should
+          |          |  be close to zero. The AF files that come with OMF
+          |          |  usually set this to slightly negative to indicate
+          |          |  left of the internal X value. You should probably
+          |          |  try to center the fighter on this internal X value
+          |          |  just to keep consistent. I think this is measured
+          |          |  in pixels.
+----------+----------+-------------------------------------------------------
+  0x0004  |  1 WORD  |  Y Position - Similar to X Position. Negative values
+          |          |  mean up, and if you want to try to center the sprite
+          |          |  on the internal Y value for the fighter, you should
+          |          |  make this negative. Again, I think this is measured
+          |          |  in pixels. If you set this too high or too low, your
+          |          |  pictures may end up being clipped from the screen
+          |          |  entirely.
+----------+----------+-------------------------------------------------------
+  0x0006  |  1 WORD  |  Sprite Width?? - I think this may have to do with
+          |          |  how OMF saves the background when the sprite moves.
+          |          |  OMF grabs the width and height of what is expected
+          |          |  and saves this for fast redrawing of the background
+          |          |  when the fighter moves. I have no clue if this is
+          |          |  correct. This has no relation to the actual graphic
+          |          |  data, but if I'm correct, would be nice to let OMF
+          |          |  how large of a block of graphical data needs to be
+          |          |  redrawn.
+----------+----------+-------------------------------------------------------
+  0x0008  |  1 WORD  |  Sprite Height?? - Like Sprite Width, but in height.
+----------+----------+-------------------------------------------------------
+  0x000A  |  1 BYTE  |  Index?? - In my *old* AFMAKER, I found that if this
+          |          |  byte is the same in any sprite, then OMF only draws
+          |          |  one of them. However, I've looked inside other AF
+          |          |  files and found that this number is occasionally
+          |          |  duplicated. Other than this, I could guess that
+          |          |  this number is used with "overlays" as described
+          |          |  earlier and with the Picture Exists byte as a value
+          |          |  to assign a picture for mirroring when the Picture
+          |          |  Exists byte is equal to 1.
+----------+----------+-------------------------------------------------------
+  0x000B  |  1 BYTE  |  Picture Exists - If this is 0, then graphics data
+          |          |  follows. If this is 1, then graphic data is taken
+          |          |  from some other picture inside the AF file. I'm not
+          |          |  sure how you're supposed to define which picture the
+          |          |  data is taken from (Index??), but if it is 1, then
+          |          |  graphic data does NOT follow and is taken from
+          |          |  elsewhere.
+==========+==========+=======================================================
+| 0x000C  | SL BYTEs |  Graphic Data - The length, SL, is defined above by  |
+|         |          |  the Sprite Length value. Basically, this is where   |
+|         |          |  the internal loop is needed, at least until you run |
+|         |          |  out of bytes. There is also a special terminator    |
+|         |          |  which should be used at the last couple bytes to    |
+|         |          |  signal you to stop drawing graphics. This           |
+|         |          |  terminator takes precedence over the length, and is |
+|         |          |  probably what OMF uses to stop the graphic drawing. |
+|         |          |  Basically, you take one WORD integers at a time and |
+|         |          |  convert them as follows:                            |
+|         |          |                                                      |
+|         |          |  Length Of Data or Value = (integer div 4)           |
+|         |          |                                                      |
+|         |          |  If (integer mod 4) =                                |
+|         |          |     0 : X Start Placement, relative to the position  |
+|         |          |           defined above. Use Value. This value is    |
+|         |          |           reset to zero after each drawing block.    |
+|         |          |     2 : Y Start Placement, relative to the position  |
+|         |          |           defined above. Use Value.                  |
+|         |          |     3 : Graphic Terminator - Use Length Of Data and  |
+|         |          |           skip past "Length Of Data" bytes if you    |
+|         |          |           want to go on to the next frame or block.  |
+|         |          |           Of course, it may just be easier to simply |
+|         |          |           add the Sprite Length value from before.   |
+|         |          |           The common Graphic Terminator which should |
+|         |          |           be used for consistency is [ 07 00 ] .     |
+|         |          |           The (7 mod 4) = 3 and (7 div 4) = 1 and we |
+|         |          |           do see one byte [ 00 ] come after the 7.   |
+|         |          |     1 : Length Of Graphic Data And Start Draw - This |
+|         |          |           tells OMF to use Length Of Data and draw   |
+|         |          |           "Length Of Data" bytes at the X,Y Start    |
+|         |          |           Placements given above. The graphic data   |
+|         |          |           given here is actually RAW graphic data.   |
+|         |          |           Keep in mind that an OMF fighter must use  |
+|         |          |           a special palette (16 shades of 3 colors)  |
+|         |          |           if you want to fighter to be vulnerable.   |
+|         |          |           The RAW data is given byte by byte. After  |
+|         |          |           drawing this, you must reset the X Start   |
+|         |          |           placement to zero. The Y Start should not  |
+|         |          |           be reset, however.                         |
+|         |          |                                                      |
+|         |          |  Confusing? Try reading Appendix A where I give you  |
+|         |          |  some pseudo-code. I did it in BASIC so people in    |
+|         |          |  high-level languages could understand the code.     |
+|         |          |                                                      |
+==========+==========+=======================================================
+
+
+Part 4: Conclusion
+
+    Well, that's about everything on the AF file format. If I missed anything
+    that you think I knew, send me an email ASAP so I can get a new release
+    out before the old one gets spread too far. If I missed an entire table,
+    that would be a very bad thing and I would appreciate an email about
+    that. If you have any questions, comments, suggestions, or just want to
+    chat about anything or learn something about programming (or anything
+    else for that reason - Bio/Chem/Phys/Calculus/Stat/CompSci/etc.), feel
+    free to send me an email at Srstanek@aol.com . Thanks for reading! I hope
+    after releasing this, we get a whole bunch of new OMF fighters out while
+    we wait for the upcoming OMF2. If you create any fighters, be sure to
+    tell us on the OMF2 message board on www.omf.com .
+
+
+Appendix A: Sample QBASIC code for drawing a sprite graphic to the screen.
+
+    Note here that this code will almost certainly be slow due to QBASIC's
+    poor file I/O speed and poor graphic speed (and it is interpreted too!).
+    I'm only doing this in BASIC because I think it is easy to read by all
+    high-level language programmers. If you want my assembly version that I
+    used with my AF Compiler/Decompiler, email me and I might send it to
+    you. :)
+
+
+
+-+-+-+[ Start of File: OMFDRAW.BAS ]-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+
+DECLARE FUNCTION GetByte (FileNumber)
+DECLARE FUNCTION GetWord (FileNumber)
+DECLARE FUNCTION GetSignedWord (FileNumber)
+
+    ' Default to signed DWORD integers.
+DEFLNG A-Z
+
+    ' Get filename with full path from user.
+PRINT
+INPUT "Input filename [ i.e. FIGHTR10\PICS\25 ] : ", filename$
+
+    ' Switch to 320x200x256 graphics mode.
+SCREEN 13
+
+    ' Make arbitrary palette of 16 shades of 3 different colors
+FOR i = 0 TO 15
+    PALETTE i, i * 4                    ' Red Shaded
+NEXT i
+FOR i = 0 TO 15
+    PALETTE i + 16, i * 256 * 4         ' Green Shaded
+NEXT i
+FOR i = 0 TO 15                         ' Gray Shaded
+    PALETTE i + 32, (i) + (256 * i) + (65536 * i)
+NEXT i
+
+    ' Open file.
+OPEN filename$ FOR BINARY AS #1
+
+    ' Retrieve data, either WORD or BYTE, via functions defined elsewhere.
+SpriteLength = GetWord(1)
+XPosition = GetSignedWord(1)
+YPosition = GetSignedWord(1)
+SpriteWidth = GetWord(1)
+SpriteHeight = GetWord(1)
+SpriteIndex = GetByte(1)
+SpriteExists = GetByte(1)
+
+IF SpriteExists <> 0 THEN               ' Sprite doesn't exist
+
+    PRINT "Sprite is mirrorer somewhere else."
+    PRINT "Cannot display graphic."
+
+ELSE                                    ' Sprite does exist, draw it
+
+    ' Inner loop - load data word by word until the graphic line start
+    ' value is reached and then continue, or terminate by the terminate
+    ' value.
+
+OMFX = 80                               ' These are close to the top-left and
+OMFY = 50                               ' the center of the screen. These
+                                        ' values would be used by OMF
+                                        ' internally to keep track of the
+                                        ' fighter.
+
+LastX = 0                               ' These will store the last values of
+LastY = 0                               ' X and Y since they will need to be
+                                        ' saved within the loop.
+
+DO
+
+    IF SpriteLength = 0 THEN EXIT DO    ' If we've read in all the bytes,
+                                        ' then quit.
+
+    TempValue = GetWord(1)
+    SpriteLength = SpriteLength - 2
+
+    DataLength = TempValue \ 4          ' The "\" is used as integer division
+    TempCommand = TempValue MOD 4       ' Convert value to command
+
+    SELECT CASE TempCommand
+
+        CASE 0
+            LastX = DataLength          ' Value obtained earlier
+
+        CASE 2                          ' Set Y Placement
+            LastY = DataLength
+
+        CASE 3                          ' Terminate Command
+            EXIT DO                     ' Exit the inner loop
+
+        CASE 1                          ' Draw lines of graphics
+
+            CurY = OMFY + LastY
+            CurX = OMFX + LastX
+
+            FOR i = 1 TO DataLength     ' Repeat DataLength times
+
+                Clr = GetByte(1)        ' Retrieve next byte and convert to
+                                        ' color number
+                SpriteLength = SpriteLength - 1
+
+                PSET (CurX, CurY), Clr  ' Plot point to screen
+
+                CurX = CurX + 1         ' Advance X position by 1
+
+            NEXT i                      ' Continue for DataLength times
+
+            LastX = 0                   ' Reset LastX
+
+                                        ' The temporary values of CurX and
+                                        ' CurY are thrown away, and the old
+                                        ' LastX and LastY *must* be used
+                                        ' since OMF doesn't require you to
+                                        ' specify X and Y each time.
+
+    END SELECT
+
+LOOP
+
+END IF                                  ' Way back from if sprite exists
+
+    ' Close file.
+CLOSE #1
+
+    ' Wait for keypress.
+a$ = INPUT$(1)
+
+    ' Switch back to normal text mode 80x25 and exit.
+SCREEN 12                               ' BASIC has a problem going directly
+SCREEN 0                                ' from 13 to 0.
+SYSTEM
+
+DEFSNG A-Z
+FUNCTION GetByte (FileNumber)
+
+    GetByte = ASC(INPUT$(1, FileNumber))
+
+END FUNCTION
+
+FUNCTION GetSignedWord (FileNumber)
+
+    tmp = ASC(INPUT$(1, FileNumber))
+    tmp2 = ASC(INPUT$(1, FileNumber))
+    tmp2 = tmp2 * 256
+    tmp3 = tmp2 + tmp
+
+    IF tmp3 >= 32768 THEN tmp3 = -(65536 - tmp3)
+
+    GetSignedWord = tmp3
+
+END FUNCTION
+
+FUNCTION GetWord (FileNumber)
+
+    tmp = ASC(INPUT$(1, FileNumber))
+    tmp2 = ASC(INPUT$(1, FileNumber))
+    tmp2 = tmp2 * 256
+    GetWord = tmp + tmp2
+
+END FUNCTION
+
+
+-+-+-+[ End of File: OMFDRAW.BAS ]-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-

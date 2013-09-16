@@ -1,0 +1,8 @@
+(game
+  (name BaseMod)
+  (menu menu/main.txt)
+  (level-set
+    (name "BaseMod")
+    (levels base-mod/levels/1.txt)
+  )
+)

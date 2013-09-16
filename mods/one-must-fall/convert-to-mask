@@ -1,0 +1,3 @@
+#!/bin/sh
+
+mogrify -fill "#ff00ff" -opaque "#010507" $(find . -name *.png)
