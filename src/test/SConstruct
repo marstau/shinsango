@@ -1,0 +1,69 @@
+Import('use')
+
+if use['PAINTOWN_BUILD_TESTS']:
+    import atexit
+    tests = {}
+    def show_tests():
+        colorize = use['PAINTOWN_COLORIZE']
+        count = 0
+        for name in tests.keys():
+            result = tests[name]
+            if result != 0:
+                import shutil
+                count += 1
+                print "Test %s failed" % colorize(name, 'light-red')
+                shutil.move(name, '%s.failed' % name) 
+                # Move(name, '%s.failed' % name)
+        if len(tests.keys()) > 0 and count == 0:
+            print colorize("All tests passed", 'light-green')
+
+        from SCons.Script import GetBuildFailures
+        for failure in GetBuildFailures():
+            if 'test' in str(failure.node):
+                print "%s failed: %s" % (colorize(failure.node, 'light-red'), failure.errstr)
+    def run_it(target, source, env):
+        print "Running %s" % target[0].path
+        tests[target[0].path] = env.Execute(target[0].path)
+        #if tests[target[0].path] != 0:
+        #    Execute(Move(target[0].path, '%s.failed' % target[0].path))
+        #if tests[target[0].path] != 0:
+        #    Touch(target[0].path)
+        #    print "Deleting %s" % source[0].path
+        #    Delete(source[0].path)
+    use['PAINTOWN_TEST'] = Action(run_it, 'Test')
+
+    use = use.Clone()
+    use.Append(CPPPATH = ['#/src'])
+    # use.Append(LIBPATH = ['../../mugen', '../../paintown-engine'])
+
+    SConscript('../mugen/SConscript', exports = ['use'], variant_dir = 'core/mugen')
+    SConscript('../paintown-engine/SConscript', exports = ['use'], variant_dir = 'core/paintown')
+
+    all = []
+    all.extend(SConscript('token/SConstruct', exports = ['use']))
+    all.extend(SConscript('regex/SConstruct', exports = ['use']))
+    all.extend(SConscript('mugen/SConstruct', exports = ['use']))
+    all.extend(SConscript('menu/SConstruct', exports = ['use']))
+    all.extend(SConscript('thread/SConstruct', exports = ['use']))
+    all.extend(SConscript('paintown/SConstruct', exports = ['use']))
+    all.extend(SConscript('util/SConstruct', exports = ['use']))
+    all.extend(SConscript('network/SConstruct', exports = ['use']))
+    all.extend(SConscript('hqx/SConstruct', exports = ['use']))
+
+    audio = SConscript('audio/SConstruct')
+    # The audio test is not run by default. To actually run it call 'audio-test'
+    all.extend(audio)
+    
+    # The gui test is not run by default.
+    all.extend(SConscript('gui/SConstruct', exports= ['use']))
+
+    # print all
+    for program in all:
+        # print program
+        use.Depends(program, use['ARCHIVES'])
+
+    # Don't run with other tests because it has special requirements
+    Alias('audio-test', audio)
+
+    Alias('test-all', all)
+    atexit.register(show_tests)

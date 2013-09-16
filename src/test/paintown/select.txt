@@ -1,0 +1,93 @@
+(select-screen
+  (name "paintown-select")
+  ;; Uncomment the background token and put it in whatever png file you want
+  ;; to change the select screen background
+  ;; (background paintown-title.png)
+  ; Use a menu animation (This will override the background if it is set)
+  (animation
+    (depth background bottom)
+    (image 0 "menu/paintown.png")
+    (velocity -.001 0)
+    (frame
+      (image 0)
+      (time -1)))
+  
+  ; Grid type
+  ; - simple-list
+  ; - grid-list
+  (grid-list 
+    (grid-size 3 5)
+    (layout "infinite-vertical")
+    (cell-dimensions 70 70)
+    (cell-spacing 0 0)
+    (cell-margins 20 20)
+    (cursors 1)
+    (wrap true))
+  ;@(simple-list
+    (layout "vertical")
+    (cell-dimensions 70 70)
+    (cell-spacing 0 0)
+    (cell-margins 20 20)
+    (cursors 1)
+    (wrap true))
+  ; Cells
+  (cell (name back) (shape square) (color 0 0 0) (color-fill true))
+  (cell (name top) (shape square) (color 255 255 255) (color-fill false))
+  (cell (name select0) (shape square) (color 255 0 0) (color-fill false))
+  (cell (name select1) (shape square) (color 0 0 255) (color-fill false))
+  (cell (name select-alternative) (shape square) (color 0 255 0) (color-fill false))
+  
+  ; Has more arrows only two (low and high) with four directions
+  ; UP
+  (more "low" (location 480 8) (dimensions 70 8) (direction up) (depth foreground bottom) (gradient (low 128 128 128) (high 255 255 255) (distance 20)))
+  ; DOWN
+  (more "high" (location 480 455) (dimensions 70 8) (direction down) (depth foreground bottom) (gradient (low 128 128 128) (high 255 255 255) (distance 20)))
+  ; LEFT
+  ;(more "low" (location 287 20) (dimensions 8 70) (direction left) (depth foreground bottom) (gradient (low 0 0 0) (high 255 255 255) (distance 50)))
+  ; RIGHT
+  ;(more "high" (location 555 20) (dimensions 8 70) (direction right) (depth foreground bottom) (gradient (low 0 0 0) (high 255 255 255) (distance 50)))
+  
+  ; Directory in which to populate from
+  (auto-populate-directory "players")
+  ; Window coordinates where list will be
+  ; x y width height
+  (list-window 300 20 340 460)
+  ; Profile window is where the character avatar or animation can be drawn make one per cursor
+  (profile (window 0 50 280 480) (scale 2) (depth background middle))
+  ; Message Block
+  (messages
+    (name player1)
+    ; text Message
+    (text (message "Player1 Pick") (location 10 25) (color 255 255 255) (depth background top) (font-dimensions 35 35) (justification right))
+    (text (message "Player Select") (location 320 0) (color 0 255 255) (depth foreground top) (font-dimensions 15 15) (justification center))
+    (text (message "%s") (location 15 65) (color 0 0 0) (depth background top) (font-dimensions 35 35) (justification right) (cursor-association 0))
+    (text (message "%s") (location 10 60) (color 255 255 255) (depth foreground bottom) (font-dimensions 35 35) (justification right) (cursor-association 0))
+    (text (name number) (message "I am thinking of this number: %s") (location 320 460) (color 0 255 255) (depth foreground top) (font-dimensions 15 15) (justification center))
+    )
+  
+  (messages
+    (name player2)
+    ; text Message
+    (text (message "Player2 Pick") (location 10 25) (color 255 255 255) (depth background top) (font-dimensions 35 35) (justification right))
+    (text (message "Player Select") (location 320 0) (color 0 255 255) (depth foreground top) (font-dimensions 15 15) (justification center))
+    (text (message "%s") (location 15 65) (color 0 0 0) (depth background top) (font-dimensions 35 35) (justification right) (cursor-association 0))
+    (text (message "%s") (location 10 60) (color 255 255 255) (depth foreground bottom) (font-dimensions 35 35) (justification right) (cursor-association 0))
+    )
+  
+  (messages
+    (name cpu)
+    ; text Message
+    (text (message "Select CPU player") (location 10 25) (color 255 255 255) (depth background top) (font-dimensions 35 35) (justification right))
+    (text (message "Player Select") (location 320 0) (color 0 255 255) (depth foreground top) (font-dimensions 15 15) (justification center))
+    (text (message "%s") (location 15 65) (color 0 0 0) (depth background top) (font-dimensions 35 35) (justification right) (cursor-association 0))
+    (text (message "%s") (location 10 60) (color 255 255 255) (depth foreground bottom) (font-dimensions 35 35) (justification right) (cursor-association 0))
+    )
+  
+  ; Add player by relative path
+  ;(add "players/akuma/akuma.txt")
+  
+  ; Font
+  ; (font somefont.ttf 32 32)
+  ; Font dimensions
+  (font-dimensions 35 35)
+)

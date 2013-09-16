@@ -1,0 +1,476 @@
+include "common.h"
+include "compiler.h"
+include "util/token.h"
+include "serialize.h"
+include "util/graphics/color.h"
+include <map>
+namespace Mugen
+
+struct HitAttributes{
+    int slot;
+    bool standing;
+    bool crouching;
+    bool aerial;
+
+    std::vector<AttackType::Attribute> attributes;
+}
+
+struct ResourceEffect{
+    bool own;
+    int group;
+    int item;
+}
+
+struct HitFlags{
+    bool high;
+    bool low;
+    bool air;
+    bool fall;
+    bool down;
+    bool getHitState;
+    bool notGetHitState;
+}
+
+struct PauseTime{
+    int player1;
+    int player2;
+}
+
+struct Distance{
+    int x;
+    int y;
+}
+
+struct HitDefinition{
+    bool alive;
+
+    struct Attribute{
+        /* StateType */
+        std::string state;
+        /* AttackType */
+        std::string attackType;
+        /* PhysicalAttack */
+        std::string physics;
+    } attribute;
+   
+    HitFlags hitFlag;
+    HitFlags guardFlag;
+
+    AttackType::Animation animationType;
+    AttackType::Animation animationTypeAir;
+    AttackType::Animation animationTypeFall;
+
+    struct Priority{
+        int hit;
+        std::string type;
+    } priority;
+
+    struct Damage{
+        int damage;
+        int guardDamage;
+    } damage;
+    
+    PauseTime pause;
+    PauseTime guardPause;
+    
+    ResourceEffect spark;
+    ResourceEffect guardSpark;
+    
+    struct SparkPosition{
+        int x;
+        int y;
+    } sparkPosition;
+
+    ResourceEffect hitSound;
+
+    struct GetPower{
+        int hit;
+        int guarded;
+    } getPower;
+
+    struct GivePower{
+        int hit;
+        int guarded;
+    } givePower;
+
+    ResourceEffect guardHitSound;
+
+    AttackType::Ground groundType;
+    AttackType::Ground airType;
+    int groundSlideTime;
+    int guardSlideTime;
+    int groundHitTime;
+    int guardGroundHitTime;
+    int airHitTime;
+    int guardControlTime;
+    int guardDistance;
+    double yAcceleration;
+
+    struct GroundVelocity{
+        double x;
+        double y;
+    } groundVelocity;
+
+    double guardVelocity;
+
+    struct AirVelocity{
+        double x;
+        double y;
+    } airVelocity;
+
+    struct AirGuardVelocity{
+        double x;
+        double y;
+    } airGuardVelocity;
+
+    double groundCornerPushoff;
+    double airCornerPushoff;
+    double downCornerPushoff;
+    double guardCornerPushoff;
+    double airGuardCornerPushoff;
+    int airGuardControlTime;
+    int airJuggle;
+
+    int id;
+    /* FIXME: handle the chainid when a hitdef is activated */
+    int chainId;
+
+    Distance minimum;
+    Distance maximum;
+    Distance snap;
+    int player1SpritePriority;
+    int player2SpritePriority;
+    int player1Facing;
+    int player1GetPlayer2Facing;
+    int player2Facing;
+    int player1State;
+    int player2State;
+    int player2GetPlayer1State;
+    int forceStand;
+
+    struct Fall{
+        struct Shake{
+            int time;
+        } envShake;
+
+        int fall;
+        double xVelocity;
+        double yVelocity;
+        bool changeXVelocity;
+        bool recover;
+        int recoverTime;
+        int damage;
+        int airFall;
+        int forceNoFall;
+    } fall;
+}
+
+struct HitOverride{
+    int time;
+    HitAttributes attributes;
+    int state;
+    bool forceAir;
+}
+
+struct HitState{
+    int shakeTime;
+    int hitTime;
+    
+    /* FIXME: handle hits somehow. corresponds to hitcount
+     * hitcount: Returns the number of hits taken by the player in current combo. (int)
+     */
+    int hits;
+    int slideTime;
+    int returnControlTime;
+    int recoverTime;
+    double yAcceleration;
+    double yVelocity;
+    double xVelocity;
+    AttackType::Animation animationType;
+    AttackType::Ground airType;
+    AttackType::Ground groundType;
+    AttackType::Ground hitType;
+    bool guarded;
+    int damage;
+    int chainId;
+    int spritePriority;
+
+    struct Fall1{
+        struct Shake1{
+            int time;
+        } envShake;
+
+        bool fall;
+        bool recover;
+        int recoverTime;
+        double xVelocity;
+        double yVelocity;
+        bool changeXVelocity;
+        double damage;
+    } fall;
+
+    int moveContact;
+}
+
+/* subset of HitDefinition stuff, just for reversals */
+struct ReversalData{
+    PauseTime pause;
+    ResourceEffect spark;
+
+    struct HitSound{
+        bool own;
+        int group;
+        int item;
+    } hitSound;
+
+    int sparkX;
+    int sparkY;
+
+    int player1State;
+    int player2State;
+
+    int player1Pause;
+    int player2Pause;
+
+    bool standing;
+    bool crouching;
+    bool aerial;
+    std::vector<AttackType::Attribute> attributes;
+}
+
+struct StateData{
+    /* number of juggle points left */
+    int juggleRemaining;
+    /* number of juggle points the current move will take */
+    int currentJuggle;
+
+    int currentState;
+    int previousState;
+    int currentAnimation;
+ 
+    double velocity_x;
+    double velocity_y;
+    
+    bool has_control;
+ 
+    /* how much time the player has been in the current state */
+    int stateTime;
+    
+    /* dont delete these in the destructor, the state controller will do that */
+    std::map<int, RuntimeValue> variables;
+    std::map<int, RuntimeValue> floatVariables;
+    std::map<int, RuntimeValue> systemVariables;
+    Physics::Type currentPhysics;
+ 
+    /* S (stand), C (crouch), A (air), L (lying down) */
+    std::string stateType;
+    std::string moveType;
+    
+    HitDefinition hit;
+    
+    HitState hitState;
+ 
+    int combo;
+    int hitCount;
+    
+    /* true if the player is holding the back button */
+    bool blocking;
+    
+    /* true if the player is currently guarding an attack */
+    bool guarding;
+ 
+    struct WidthOverride{
+        bool enabled;
+        int edgeFront;
+        int edgeBack;
+        int playerFront;
+        int playerBack;
+    } widthOverride;
+       
+    struct HitByOverride{
+        bool standing;
+        bool crouching;
+        bool aerial;
+        int time;
+        std::vector<AttackType::Attribute> attributes;
+    } hitByOverride[2];
+   
+    /* reduces damage taken */
+    double defenseMultiplier;
+    /* increase attack damage */
+    double attackMultiplier;
+  
+    /* if frozen then the player won't move */
+    bool frozen;
+ 
+    ReversalData reversal;
+    bool reversalActive;
+
+    struct TransOverride{
+       bool enabled;
+       TransType type;
+       int alphaSource;
+       int alphaDestination;
+    } transOverride;
+
+    // PushPlayer only one tick
+    int pushPlayer;
+  
+    struct SpecialStuff{
+       bool invisible;
+       bool intro;
+    } special;
+
+    double health;
+ 
+    /* keeps track of binds to other characters. Used for BindToRoot and
+     * BindToTarget
+     */
+    struct Bind{
+        CharacterId bound;
+        int time;
+        int facing;
+        double offsetX;
+        double offsetY;
+    } bind;
+      
+    std::map<int, std::vector<CharacterId> > targets;
+    int spritePriority;
+
+    /* number of times this character has been hit in total */
+    uint32_t wasHitCounter;
+ 
+    struct CharacterData {
+        CharacterId who;
+        bool enabled;
+    } characterData;
+ 
+    double drawAngle;
+    struct DrawAngleEffect{
+        bool enabled;
+        double angle;
+        double scaleX;
+        double scaleY;
+    } drawAngleData;
+      
+    /* Current set of commands, updated in act() */
+    std::vector<std::string> active;
+    std::map<int, HitOverride> hitOverrides;
+
+    double virtualx;
+    double virtualy;
+    double virtualz;
+
+    Facing facing;
+
+    double power;
+
+    /* maps a name to the serialized version of the command state (which is a token) */
+    std::map<std::string, std::string> commandState;
+}
+
+struct AnimationState{
+    uint32_t position;
+    bool looped;
+    bool started;
+    /* incremented for each game tick as long as the animation is not
+     * in an infinite loop time frame (-1)
+     */
+    int ticks;
+
+    /* incremented when the animation specifies a looptime of -1 */
+    int virtual_ticks;
+}
+
+struct ScreenBound{
+    bool enabled;
+    bool offScreen;
+    bool panX;
+    bool panY;
+}
+
+  
+    struct StageStateData{
+        struct Pause{
+            int time;
+            int buffer;
+            int moveTime;
+            bool pauseBackground;
+            CharacterId who;
+        } pause;
+
+        /* Screen bound is per character so make a map from character to their
+         * ScreenBound data
+         */
+        std::map<CharacterId, ScreenBound> screenBound;
+
+        /* For zooming in on a character/position */
+        struct Zoom{
+            bool enabled;
+            double x;
+            double y;
+            int zoomTime;
+            int zoomOutTime;
+
+            /* keeps track of the current zoom time and whether its going in or out */
+            int zoom;
+            bool in;
+
+            int time;
+            int bindTime;
+
+            /* keeps track of the relative position between ... */
+            int deltaX;
+            int deltaY;
+
+            /* scaling factor. must be at least 1
+            */
+            double scaleX;
+            double scaleY;
+
+            double velocityX;
+            double velocityY;
+            double accelX;
+            double accelY;
+            int superMoveTime;
+            int pauseMoveTime;
+            bool removeOnGetHit;
+            uint32_t hitCount;
+            /* Character we are bound to, depending on the original postype */
+            CharacterId bound;
+
+            /* Character that started the zoom in case they get hit */
+            CharacterId owner;
+        } zoom;
+
+        struct EnvironmentColor{
+            Graphics::Color color;
+            int time;
+            bool under;
+        } environmentColor;
+
+        struct SuperPause{
+            int time;
+            int positionX;
+            int positionY;
+            int soundGroup;
+            int soundItem;
+        } superPause;
+
+        int quake_time;
+        int cycles;
+
+        // This is for when characters are inside the tension area
+        int inleft;
+        int inright;
+        int onLeftSide;
+        int onRightSide;
+        int inabove;
+
+        // Camera location on stage
+        double camerax;
+        double cameray;
+
+        // Our ticker/frames during duration of the entire stage lifetime
+        uint32_t ticker;
+    }

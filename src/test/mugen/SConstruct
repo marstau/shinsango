@@ -1,0 +1,153 @@
+Import('use')
+
+testEnv = use.Clone()
+testEnv.VariantDir('test', '../../', duplicate = False)
+testEnv.VariantDir('common', '../common/', duplicate = False)
+
+use = testEnv
+
+# use.Append(LIBS = ['mugen'])
+# SConscript('../../mugen/SConscript', exports = ['use'], variant_dir = 'mugen')
+
+most_game_source = Split("""
+test/globals.cpp
+test/factory/font_render.cpp
+""")
+
+load_source = Split("""
+load.cpp
+common/init.cpp
+""")
+
+stage_source = Split("""
+load-stage.cpp
+common/init.cpp
+test/globals.cpp
+test/factory/font_render.cpp
+""")
+
+select_source = most_game_source + Split("""
+load-select.cpp
+common/init.cpp
+""")
+
+ignore = """
+"""
+
+full_source = most_game_source + Split("""
+load-full.cpp
+common/init.cpp
+""")
+
+state_source = most_game_source + Split("""
+state.cpp
+common/init.cpp
+""")
+
+sffv2_source = Split("""
+sffv2.cpp
+sff.cpp
+test/globals.cpp
+""")
+
+parse_source = Split("""
+parse.cpp
+test/mugen/ast/ast.cpp
+test/mugen/exception.cpp
+""")
+
+match_source = Split("""
+run-match.cpp
+test/globals.cpp
+test/factory/font_render.cpp
+""")
+
+states_source = Split("""
+states.cpp
+test/globals.cpp
+test/factory/font_render.cpp
+""")
+
+
+character_select_source = Split("""
+common/init.cpp
+common/timer.cpp
+select-main.cpp
+test/mugen/character-select.cpp
+""")
+
+view_source = Split("""
+view.cpp
+test/globals.cpp
+test/factory/font_render.cpp
+""")
+
+versus_source = Split("""
+common/init.cpp
+common/timer.cpp
+versus.cpp
+""")
+
+widgets_source = Split("""
+common/init.cpp
+common/timer.cpp
+test/mugen/option-options.cpp
+test/mugen/widgets.cpp
+test/util/exceptions/exception.cpp
+""")
+
+command_source = Split("""
+command.cpp
+test/mugen/command.cpp
+test/util/debug.cpp
+""")
+
+serialize_data_source = Split("""
+serialize-data.cpp
+test/util/debug.cpp
+test/factory/font_render.cpp
+""")
+
+x = []
+def makeTest(name, files):
+    test = testEnv.Program(name, files)
+    x.extend(test)
+    testEnv.AddPostAction(test, testEnv['PAINTOWN_TEST'])
+
+# x.append(testEnv.Program('load', load_source + most_game_source))
+makeTest('load-full', full_source)
+makeTest('load-select', select_source)
+makeTest('state', state_source)
+makeTest('load', load_source + most_game_source)
+makeTest('serialize', ['serialize.cpp'])
+makeTest('load-stage', stage_source)
+makeTest('sffv2', sffv2_source)
+makeTest('load-sff', ['load-sff.cpp', 'common/init.cpp'] + most_game_source)
+makeTest('world', ['world.cpp'] + most_game_source)
+makeTest('replay', ['replay.cpp'] + most_game_source)
+makeTest('command', command_source)
+makeTest('serialize-data', serialize_data_source)
+x.extend(testEnv.Program('run-match', match_source))
+x.extend(testEnv.Program('states', states_source))
+x.extend(testEnv.Program('parse', parse_source))
+# x.append(testEnv.Program('load-stage', stage_source))
+x.extend(testEnv.Program('palette', ['palette.cpp']))
+x.extend(testEnv.Program('view', view_source))
+
+# Character Select test
+character_select = testEnv.Program('character-select', character_select_source + most_game_source)
+x.extend(character_select)
+
+# Versus Test
+versus = testEnv.Program('versus', versus_source + most_game_source)
+x.extend(versus)
+
+# Widget Test
+widgets = testEnv.Program('widgets', ['widgets.cpp'] + widgets_source + most_game_source)
+x.extend(widgets)
+
+# Chat Test
+chat = testEnv.Program('chat',['chat.cpp'] + widgets_source + most_game_source)
+x.extend(chat)
+
+Return('x')

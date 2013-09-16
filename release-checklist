@@ -1,0 +1,43 @@
+Things to check
+---------------
+
+Linux:
+  * compiles with scons
+  * compiles with cmake
+
+Windows:
+  * compiles with scons
+
+OSX:
+  * compiles with scons
+
+* Adventure mode works
+* Versus mode works
+* Options work
+* Network mode works
+
+Files to update version
+ src/globals.cpp
+ install.sh
+ misc/make-osx-bundle
+ misc/installer.nsi
+ misc/build-windows
+ README
+ website
+ Makefile
+ gui-installer
+ debian/changelog
+ debian/control
+ data/wii/meta.xml
+
+Making a release
+----------------
+tag trunk, svn cp trunk tags/x.y
+copy data into that tag, svn cp data tags/x.y/
+delete the externals property for that tag: svn propdel svn:externals tags/x.y/
+svn export the tag, tar and gzip it. result is .tar.gz
+svn co the tag in windows, build it. run the nsis builder. result is .exe
+svn co the tag in osx, run misc/make-osx-bundle. result is .dmg
+copy .tar.gz, .exe, and .dmg to some directory, run misc/send-to-sourceforge
+fill out sourceforge forms to make a release
+update various sites, allegro.cc and freshmeat

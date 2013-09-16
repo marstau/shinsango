@@ -1,0 +1,181 @@
+Import('use');
+
+def isOSX():
+    import re
+    import sys
+    return "darwin" in sys.platform
+
+def isWindows():
+    import re
+    import sys
+    return "win32" in sys.platform
+
+obj_files = []
+
+usePartialLinking = False
+
+def setupPartialLinking():
+    def linkPartial(target, source, env):
+        # FIXME: replace 'ld' with a more generic thing like $PARTIAL_LINK which should
+        # be set up by each platform
+        env.Execute(Action('@ld -r -o %s %s' % (target[0].path, ' '.join([x.path for x in source]))))
+
+    linkLine = 'Partial link $TARGET $SOURCES'
+    try:
+        linkLine = use['LINKCOMSTR']
+    except KeyError:
+        pass
+
+    import SCons
+    static_obj, shared_obj = SCons.Tool.createObjBuilders(use)
+    partialBuilder = Builder(action = Action(linkPartial, cmdstr = linkLine),
+                             suffix = '.o',
+                             src_suffix = '.o',
+                             src_builder = static_obj)
+    use.Append(BUILDERS = {'PartialObject' : partialBuilder})
+
+if usePartialLinking:
+    setupPartialLinking()
+
+partial = [0]
+def addFiles(files):
+    if usePartialLinking:
+        obj_files.append(use.PartialObject('partial%d.o' % partial[0], map(lambda x: x.replace('src/', ''), files)))
+        partial[0] = partial[0] + 1
+    else:
+        obj_files.append(map(lambda x: x.replace('src/', ''), files))
+
+def findDirectory(name):
+    import os.path
+    where = '.'
+    # just try 5 directories
+    for i in xrange(0, 5):
+        if os.path.exists("%s/%s" % (where, name)):
+            return "%s/%s" % (where, name)
+        where = os.path.join(where, '..')
+    raise Exception("Could not find the %s directory" % name)
+
+import sys
+sys.path.append(findDirectory("scons"))
+import helpers
+
+obj_files = []
+
+def findCmake():
+    return findDirectory('cmake')
+    
+filelist = helpers.read_cmake_list("%s/FileList.cmake" % findCmake())
+
+for i in filelist:
+    addFiles(filelist[i])
+
+# FIXME: somehow get this information from the scons env
+def useSDL():
+    return use['PAINTOWN_BACKEND'] == 'sdl'
+
+def useAllegro5():
+    return use['PAINTOWN_BACKEND'] == 'allegro5'
+
+def useAllegro4():
+    return use['PAINTOWN_BACKEND'] == 'allegro'
+
+def useAndroid():
+    import os
+    try:
+        return int(os.environ['android'])
+    except KeyError:
+        return False
+
+def useMinpspw():
+    import os
+    try:
+        return int(os.environ['minpspw'])
+    except KeyError:
+        return False
+
+def useWii():
+    import os
+    try:
+        return int(os.environ['wii'])
+    except KeyError:
+        return False
+
+def icon():
+    if isWindows() and not useMinpspw() and not useWii():
+        return ['util/windows/game.res']
+    else:
+        return []
+
+def doUtil(env, options):
+    utilEnv = env.Clone()
+    env = utilEnv
+    return env.SConscript('util/SConscript', exports = ['env', 'options'])
+
+def main():
+    return ['util/xmain.cpp']
+    
+def androidSDLMain():
+    if useAndroid():
+        # return ['util/android/jni/SDL_android_main.cpp']
+        return []
+    else:
+        return []
+
+def psp_prx(env):
+    if env['PAINTOWN_USE_PRX']:
+        # FIXME: Use the pspsdk path from the top level SConstruct
+        return ['/opt/pspsdk/psp/sdk/lib/prxexports.o']
+    else:
+        return []
+
+use.Depends(use.Peg('openbor/data.peg'), 'mugen/parser/peg.py')
+
+options = {'networking': use['PAINTOWN_NETWORKING'],
+           'sdl': useSDL(),
+           'allegro': useAllegro4(),
+           'allegro5': useAllegro5()
+          }
+
+use.Prepend(ARCHIVES = doUtil(use, options))
+
+# FIXME: fix minpspw build at some point
+
+#if not useSDL() and not useAllegro5():
+#    use.Prepend(ARCHIVES = [alGifLibrary(use)])
+#if useSDL() and not useMinpspw():
+#    use.Prepend(ARCHIVES = [sdlImageLibrary(use), sprigLibrary(use), sdlMixerLibrary(use), stretchLibrary(use)])
+#elif useMinpspw():
+#    use.Prepend(ARCHIVES = [sprigLibrary(use), stretchLibrary(use)])
+
+def addObjects(objects):
+    obj_files.extend(objects)
+
+# Make this a function so we don't clobber the 'use' variable
+def buildStuff(use):
+    SConscript('mugen/SConscript', exports = ['use'])
+    SConscript('paintown-engine/SConscript', exports = ['use'])
+
+paintownEnv = use.Clone()
+# stuff(paintownEnv)
+
+def test(env):
+    # Hack to replicate checking for python
+    use = env.Clone()
+    # Ugly way to pass the custom tests in
+    config = use.Configure(custom_tests = use['PAINTOWN_TESTS'])
+    # config.CheckRuby()
+    config.CheckPython()
+    use = config.Finish()
+    SConscript('test/SConstruct', exports = ['use'])
+
+test(use)
+
+buildStuff(paintownEnv)
+# FIXME: adding psp_prx here is ugly, find a better way
+paintownBinary = paintownEnv.Program('paintown', psp_prx(use) + obj_files + main() + icon() + androidSDLMain())
+paintownEnv.Depends(paintownBinary, paintownEnv['ARCHIVES'])
+
+x = []
+x.append(paintownBinary)
+
+Return('x')

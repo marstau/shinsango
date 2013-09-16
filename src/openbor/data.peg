@@ -1,0 +1,70 @@
+# openbor parser
+start-symbol: start
+options: debug0, no-memo
+module: Bor
+include:{{
+#include "util/token.h"
+#include <sstream>
+#include <iostream>
+}}
+
+code:{{
+std::vector<std::string*> strings;
+
+std::string * makeString(const std::string & input){
+    std::string * string = new std::string(input);
+    strings.push_back(string);
+    return string;
+}
+
+typedef std::ostringstream* Output;
+std::string * combineItems(const Value & items){
+    std::ostringstream out;
+    for (Value::iterator it = items.getValues().begin(); it != items.getValues().end(); it++){
+        out << *(std::string *)(*it).getValue() << " ";
+    }
+    std::string * object = makeString(out.str().substr(0, out.str().length() - 1));
+    return object;
+}
+
+std::string * toString(const Value & input){
+    std::ostringstream out;
+    for (Value::iterator it = input.getValues().begin(); it != input.getValues().end(); it++){
+        out << (char) (long) (*it).getValue();
+    }
+    std::string * object = makeString(out.str());
+    return object;
+}
+
+void cleanup(){
+    for (std::vector<std::string*>::iterator it = strings.begin(); it != strings.end(); it++){
+        std::string * string = *it;
+        delete string;
+    }
+    strings.clear();
+}
+
+}}
+
+rules:
+    start = current:{{ value = new std::ostringstream(); *((Output) value.getValue()) << "(open-bor\n"; }} line(current)* sw <eof> {{ *((Output) current.getValue()) << ")"; value = new std::string(((Output) current.getValue())->str()); delete (Output) current.getValue(); cleanup(); }}
+    line(current) = comment
+                  | empty-space
+                  | data {{ Output stream = (Output) current.getValue(); *stream << "(" << *(std::string*) ($1.getValue()) << ")\n"; }}
+    comment = sw comment_stuff line_end
+    comment_stuff = "#" (!line_end .)*
+    empty-space = sw line_end
+    data = sw items:(item sw {{value = $1;}})+ comment_stuff? line_end {{ value = combineItems(items); }}
+    line_end = line_ender+
+    inline line_ender = "\n"
+                      | "\r"
+    item = valid_letter+ {{ value = toString($1); }}
+    valid_letter = !invalid_letter .
+    inline invalid_letter = "\n"
+                          | "\r"
+                          | " "
+                          | "\t"
+                          | "#"
+    sw = space*
+    inline space = " "
+                 | "\t"

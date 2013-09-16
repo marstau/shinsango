@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Paintown!</title>
+  <script>
+      paintownModule = null;
+      function moduleDidLoad() {
+          document.getElementById('notes').style.display='none';
+          document.getElementById('run').style.display = 'inline';
+          document.getElementById('loader').style.display = 'none';
+
+          /* this gets the reference to the NACL module so we can talk to it
+           * through javascript
+           */
+          paintownModule = document.getElementById('paintown');
+          // document.getElementById('paintown').style.display='inline';
+      }
+
+      function moduleLoadProgress(event){
+          var loadPercent = 0.0;
+          var loadPercentString = "";
+          if (event.lengthComputable && event.total > 0) {
+              loadPercent = Math.round(event.loaded / event.total * 100.0 * 100) / 100;
+              loadPercentString = 'Loaded ' + loadPercent + '%';
+          } else {
+              // The total length is not yet known.
+              loadPercent = -1.0;
+              loadPercentString = 'Computing...';
+          }
+
+          document.getElementById('loading').innerHTML = loadPercentString;
+
+          /* TODO: do something with the progress */
+          /*
+          appendToEventLog('progress: ' + loadPercentString +
+          ' (' + event.loaded + ' of ' + event.total + ' bytes)');
+          */
+      }
+
+      function moduleLoadError() {
+          /* TODO: do something */
+          // appendToEventLog('error: ' + loadProgressModule.lastError);
+      }
+
+      // Handler that gets called if the NaCl module load is aborted.
+      function moduleLoadAbort() {
+          /* TODO: do something */
+          // appendToEventLog('abort');
+      }
+
+      /* Paintown will send us a message each time it tries to open a file.
+       * We will take that message and attach it to the textarea that is floating
+       * on the left hand side. Also a timestamp in MM:SS will be added.
+       */
+      function loadingMessages(event){
+          var messages = document.getElementById('messages');
+          var date = new Date();
+          messages.value += "\n";
+          messages.value += "[" + date.getMinutes() + ":" + date.getSeconds() + "] ";
+          messages.value += event.data;
+          messages.scrollTop = messages.scrollHeight;
+      }
+
+      function dorun(){ //run Nacl 
+          if (paintownModule == null){
+              alert('NACL module not loaded!');
+          } else {
+              paintownModule.addEventListener('message', loadingMessages, false);
+              paintownModule.postMessage('run');
+              document.getElementById('run').style.display='none'; //Hide Button - Don't need users to click twice
+          }
+	  //document.getElementById('loader').style.display='inline';
+      }
+
+      function reporterrors(e) { //Display errors from NaCL
+            document.getElementById('troubleshoot').innerHTML+="<br /><br /><span class='error'>ERROR: " + document.getElementById('paintown').lastError + "</span>";
+      }                                 
+
+      keydisplaystatus = 'show';
+      //Toggle Keys
+      function hideshowkeys(){
+          if (keydisplaystatus == 'show') {
+              keydisplaystatus = 'hide';
+              document.getElementById('keys').style.display='none';
+              document.getElementById('hideshowkeys').innerHTML='&lt; Show<br />&nbsp;&nbsp;&nbsp;Keys';
+              } else {
+              keydisplaystatus = 'show';
+              document.getElementById('keys').style.display='block';
+              document.getElementById('hideshowkeys').innerHTML='&gt; Hide<br />&nbsp;&nbsp;&nbsp;Keys';
+          }
+      }
+
+  </script>
+
+  <style>
+      body{
+          background: #2F4E6F;
+          font-family: arial, helvetica, sans-serif;
+      }
+
+      span{
+          color: #fff;
+      }
+      div#header{
+          text-align: center;
+      }
+
+      div#loader{
+          text-align: center;
+      }
+
+      div.main{
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: auto;
+          margin-bottom: auto;
+          border: 1px solid #000;
+          width: 640px;
+          height: 480px;
+          background: #6D99C5;
+      }
+
+      div.information{
+          margin-right: auto;
+          margin-left: auto;
+          font-size: 14px;
+          text-align:center;
+      }
+
+      div.messages{
+          float: left;
+      }
+
+      textarea.messages{
+          background-color: #6D99C5;
+          color: #000;
+          font-size: 10px;
+          height: 20em;
+          width: 100%;
+      }
+
+      div.instructions{
+          float: right;
+          font-size: 14px;
+      }
+
+      div#notes {
+          padding: 3px;
+      }
+
+      div#footer{
+          text-align: center;
+      }
+
+      span#hideshowkeys{
+          cursor:pointer;
+          text-align: right;
+          font-size: 10px;
+      }
+
+      div#troubleshoot{
+      text-align: center;
+      font-size: 12px;
+      }
+
+      .error{
+          text-align: center;
+          font-size: 14px;
+          background-color: #dd0000;
+          color: white;
+      }
+
+      .good{
+          color: green;
+          font-weight: bold;
+      }
+
+     A:link{
+         color : #77aadd;
+     }
+
+     A:visited{
+         color : #77aadd;
+     }
+
+     div#loader{
+         text-align: center;
+     }
+  </style>
+</head>
+<body>
+   <div id='header'>
+    <img src='paintown.png' alt='Paintown' />
+   </div>
+<div id='content'>
+    <div id='instructions' class='instructions'>
+        <span id='hideshowkeys' onclick='hideshowkeys();'>&gt; Hide<br />&nbsp;&nbsp;Keys</span><br />
+        <div id='keys'>
+        <br /><br />
+        Keys in game: <br/><br />
+        <b>A</b> Attack 1<br />
+        <b>S</b> Attack 2<br />
+        <b>D</b> Attack 3<br />
+        <b>Z</b> Attack 4<br />
+        <b>X</b> Attack 5<br />
+        <b>C</b> Attack 6<br />
+        <b>Space</b> Jump<br />
+        <b>Up</b> Up<br />
+        <b>Down</b> Down<br />
+        <b>Left</b> Left<br />
+        <b>Right</b> Right<br /><br />
+        <b>Esc</b> Menu<br />
+        <b>Enter</b> Select
+    </div>
+    </div>
+
+    <div class="messages">
+        <textarea readonly class="messages" id="messages">
+Loaded files
+        </textarea>
+    </div>
+
+    <div class='main' id='listener'>
+        <div id='loader'>
+             Loading, Please wait...<br />
+             <img src="loader.gif" />
+        </div>
+
+        <div id='notes'>
+            Wait for the binary to completely download. Once it has downloaded a button labeled <b>Start Paintown</b> will appear. Click that and wait for the game to start. It may seem that the game is hanging at times but just be patient, loading resources over the network can be quite slow. Loading times will be improved in the future.<br />
+        </div>
+        <button id='run' onclick="dorun()" style="display:none;">Start Paintown</button>
+        <script type="text/javascript">
+            var listener = document.getElementById('listener');
+            listener.addEventListener('load', moduleDidLoad, true);
+            listener.addEventListener('progress', moduleLoadProgress, true);
+            listener.addEventListener('error', moduleLoadError, true);
+            listener.addEventListener('abort', moduleLoadAbort, true);
+            listener.addEventListener('error', reporterrors, true);
+        </script>
+        <embed name="nacl_module"
+               id="paintown"
+               width=640 height=480
+               src="paintown.nmf"
+               type="application/x-nacl" />
+   </div>
+    <div class="loading">
+        <span id="loading" />
+    </div>
+
+</div>  <!-- End Content -->
+
+<div id='troubleshoot'></div>
+<br />
+
+<script>
+    /* TODO: maybe use this script to check for nacl
+     * http://code.google.com/p/nativeclient-sdk/source/browse/trunk/src/examples/load_progress/check_browser.js
+     */
+    function checkPlugins(){
+        var L = navigator.plugins.length;
+        var has_nacl = false;
+        var all = "";
+        for(var i=0; i<L; i++) {
+            all = all + " " + navigator.plugins[i].name;
+            if (navigator.plugins[i].name == "Native Client") {
+                return true;
+            }
+        }
+        return false;
+    }
+
+      //Web browser version & NaCl checker
+      var fullVersion  = ''+parseFloat(navigator.appVersion); 
+      var majorVersion = parseInt(navigator.appVersion,10);
+      if ((verOffset=navigator.userAgent.indexOf("Chrome"))!=-1) {
+          fullVersion = navigator.userAgent.substring(verOffset+7);
+          majorVersion = parseInt(''+fullVersion, 10);
+          if (majorVersion >= 14) { //Chrome version OK
+              if (checkPlugins()) { //NaCL is enabled
+                  document.getElementById("troubleshoot").innerHTML="<span class='good'><b>&#x2713;</b> Chrome Native Client is Enabled.</span><br /> You should be able to run Paintown in your browser.<br />If you are getting the message &quot;The Native Plugin is not allowed&quot; above,<br />go to <b>chrome://flags</b> in your address bar and click on <em>Enable</em> under &quot;Native Client&quot; and restart Google Chrome.";
+              } else { // NaCl Not enabled
+                  document.getElementById('content').innerHTML='';
+                  document.getElementById("troubleshoot").innerHTML="<div class='error'>You do not have Chrome NaCL Enabled.<br />Please go to <b>chrome://plugins</b> in your address bar and Click <em>Enable</em> under &quot;Native Client&quot;.<br />Then <a href='javascript:location.reload(true)'>Refresh this page</a></div>";
+              } 
+          } else { //Old Chrome
+              document.getElementById('content').innerHTML='';
+              document.getElementById("troubleshoot").innerHTML="<div class='error'>You have an older version of Chrome installed (Version "+majorVersion+"). Please upgrade to at least version 14 to play.</div>";
+          }
+      } else { //it's not chrome - hide stuff and tell user
+          document.getElementById('content').innerHTML='';
+          document.getElementById('troubleshoot').innerHTML="<div class='error'><p><b>Your web browser is not supported.</b></p></div>";
+
+      }
+</script>
+
+<div class='information'>
+       <span>This is a demo of Paintown running inside <a href="http://code.google.com/p/nativeclient/">Google's Native Client</a>.</span>
+       <br />
+       <span>You need <b>Google Chrome 14</b> or higher to run the demo. You can get it from <a href="http://www.google.com/chrome">the chrome page</a>.</span>
+</div>
+<br />
+<div id='footer'>
+    <a href='http://paintown.org' target='_blank'>Visit the Paintown website</a> or <a href='http://webchat.freenode.net/?channels=paintown' target='_blank'>Join the IRC Chat room</a>
+</div>
+</body>
+</html>

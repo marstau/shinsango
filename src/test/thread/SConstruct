@@ -1,0 +1,15 @@
+Import('use')
+
+source = Split("""
+semaphores.cpp
+../../util/thread.cpp
+../../util/token_exception.cpp
+../../util/load_exception.cpp
+../../util/exceptions/exception.cpp
+""")
+
+x = []
+#test = use.Program('semaphore', source)
+#x.append(test)
+#use.AddPostAction(test, use['PAINTOWN_TEST'])
+Return('x')

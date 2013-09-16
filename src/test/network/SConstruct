@@ -1,0 +1,20 @@
+Import('use')
+
+testEnv = use.Clone()
+testEnv.VariantDir('test', '../../')
+testEnv.VariantDir('common', '../common')
+
+testEnv.Append(CPPDEFINES = ['HAVE_NETWORKING'])
+
+source = Split("""test.cpp""")
+
+env = testEnv
+# testEnv.Append(LIBS = [testEnv.SConscript('test/util/network/hawknl/SConscript', exports = ['env'])])
+
+x = []
+test = testEnv.Program('network', source)
+irc = testEnv.Program('irc', Split("""test/globals.cpp common/init.cpp common/timer.cpp irc.cpp"""))
+x.extend(test)
+x.extend(irc)
+use.AddPostAction(test, use['PAINTOWN_TEST'])
+Return('x')

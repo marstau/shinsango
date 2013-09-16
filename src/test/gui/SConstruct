@@ -1,0 +1,33 @@
+Import('use')
+
+testEnv = use.Clone()
+testEnv.VariantDir('test', '../../')
+testEnv.VariantDir('common', '../common')
+
+source = Split("""
+common/init.cpp
+common/timer.cpp
+test/globals.cpp
+test/factory/font_render.cpp
+""")
+
+test_source = Split("""
+test.cpp
+""")
+
+space_source = Split("""space.cpp""")
+
+cutscene_source = Split("""cutscene.cpp""")
+
+x = []
+# General widget/gui element tests
+gui_test = testEnv.Program('gui', source + test_source)
+x.extend(gui_test)
+# spaces test
+# space = testEnv.Program('space', source + space_source)
+space = testEnv.Program('space', space_source)
+x.extend(space)
+# Cutscene test
+cutscene = testEnv.Program('cutscene', source + cutscene_source)
+x.extend(cutscene)
+Return('x')

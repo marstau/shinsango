@@ -1,0 +1,15 @@
+Import('use')
+
+import helpers
+import os.path
+modules = helpers.read_cmake_list(os.path.join(Dir('#src/mugen').abspath, 'CMakeLists.txt'))
+
+source = []
+for module in modules:
+    source.append(modules[module])
+
+SConscript('parser/SConstruct', exports = ['use']);
+
+library = use.StaticLibrary('mugen', source)
+use.Append(ARCHIVES = library)
+Return('library')

@@ -1,0 +1,16 @@
+Get gccxml
+
+ $ cvs -d :pserver:anoncvs@www.gccxml.org:/cvsroot/GCC_XML login
+ $ cvs -d :pserver:anoncvs@www.gccxml.org:/cvsroot/GCC_XML co gccxml
+
+Build it with cmake
+
+ $ cd gccxml
+ $ mkdir b
+ $ cd b
+ $ cmake .. -DCMAKE_INSTALL_PREFIX:PATH=`pwd`/../install
+ $ make
+ $ make install
+ $ ls ../install/bin/gccxml
+
+Put gccxml in your path (symlink or change $PATH)

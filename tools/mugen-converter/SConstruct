@@ -1,0 +1,144 @@
+import os
+
+def getDebug():
+    try:
+        return int(os.environ[ 'DEBUG' ])
+    except KeyError:
+        return 0
+
+def pcreLibrary(env):
+    pcreEnv = env.Clone()
+    env = pcreEnv
+    return env.SConscript('../../src/util/pcre/SConstruct', exports = ['env'])
+
+env = Environment(ENV = os.environ)
+env.VariantDir('build/converter', 'src')
+env.VariantDir('build/paintown', '../../src')
+env.Append(CPPPATH = ['../../src/mugen', '../../src'])
+
+if getDebug():
+    env.Prepend(CPPFLAGS = ['-g3','-ggdb', '-Wfatal-errors'])
+
+def peg_to_cpp(target, source, env):
+    import sys
+    sys.path.append("../../src/mugen/parser")
+    sys.path.append(".")
+    import peg, re, cpp_generator
+    name = source[0].name
+    parser = peg.make_peg_parser(re.sub('\..*', '', name))
+    fout = open(target[0].path, 'w')
+    fout.write(cpp_generator.generate(parser(source[0].path)))
+    fout.write('\n')
+    fout.close()
+
+peg_builder = Builder(action = Action(peg_to_cpp, 'Building a peg'),
+        suffix = '.cpp',
+        src_suffix = '.peg')
+env.Append(BUILDERS = {'Peg' : peg_builder})
+
+source = Split("""
+build/converter/controllers.cpp
+build/converter/example.cpp
+build/converter/generator.cpp
+build/converter/main.cpp
+build/converter/tools.cpp
+build/converter/triggers.cpp
+build/paintown/mugen/ast/ast.cpp
+build/paintown/mugen/exception.cpp
+build/paintown/util/regex.cpp
+build/paintown/util/token.cpp
+build/paintown/util/token_exception.cpp
+build/paintown/exceptions/exception.cpp
+""")
+source.append(env.Peg('build/paintown/mugen/parser/cmd.peg'))
+source.append(env.Peg('build/paintown/mugen/parser/air.peg'))
+source.append(env.Peg('build/paintown/mugen/parser/def.peg'))
+
+# PCRE
+env.Prepend(LIBS = pcreLibrary(env))
+
+env.Program('converter', source)
+
+# Check for pthreads
+def haveThreads(env):
+    
+    new_env = env
+    new_env.Append(LIBS = ['pthread'])
+    
+    print 'Configuration: Checking for pthreads in the environment.'
+    
+    config = new_env.Configure()
+    
+    ok = config.TryLink("""
+        #include <pthread.h>
+        int main(int argc, char ** argv){
+            pthread_t thr;
+            pthread_create(&thr, NULL, NULL, NULL);
+            return 0;
+        }
+    """, ".c")
+    
+    config.Finish()
+    if ok:
+        print 'Configuration: pthreads found.'
+        env = new_env
+        return 1
+    else:
+        print 'Configuration: pthreads not found'
+        return 0
+
+# Test application for python
+def havePython(env):
+    import distutils.sysconfig
+    include_path = distutils.sysconfig.get_config_var('INCLUDEPY')
+    link_stuff = distutils.sysconfig.get_config_var('LINKFORSHARED')
+    libs = distutils.sysconfig.get_config_var('LIBRARY')
+    lib_path = distutils.sysconfig.get_config_var('LIBP')
+    
+    new_env = env
+    
+    if include_path != None:
+        new_env.Append(CPPPATH = [include_path])
+    if link_stuff != None:
+        new_env.Append(LINKFLAGS = link_stuff.split(' '))
+    if lib_path != None:
+        new_env.Append(LIBPATH = [lib_path])
+    new_libs = []
+    if libs != None:
+        new_libs = libs
+    
+    new_env.Replace(LIBS = new_libs)
+    
+    print 'Configuration: Checking if python is available in the environment.'
+    config = new_env.Configure()
+    ret = config.TryLink("""
+        #include <Python.h>
+        int main(int argc, char *argv[]) {
+            Py_Initialize();
+            return 0;
+        }
+    """, ".c");
+    
+    config.Finish()
+    if ret:
+        print 'Configuration: Python found.'
+        env = new_env
+        return 1
+    else:
+        print 'Configuration: Python cannot be found in the environment.'
+        return 0
+
+testEnv = Environment(ENV = os.environ)
+testEnv.VariantDir('build/paintown', '../../src')
+testEnv.Append(CPPPATH = ['../../src'])
+    
+if havePython(testEnv) and haveThreads(testEnv):
+    if getDebug():
+        testEnv.Prepend(CPPFLAGS = ['-g3','-ggdb', '-Wfatal-errors'])
+    source = Split("""
+build/converter/test/main.cpp
+build/converter/test/character.cpp
+build/paintown/util/system.cpp
+build/paintown/util/timedifference.cpp
+""")
+    testEnv.Program('test', source)

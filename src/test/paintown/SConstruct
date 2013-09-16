@@ -1,0 +1,77 @@
+Import('use')
+
+testEnv = use.Clone()
+testEnv.VariantDir('test', '../../')
+testEnv.VariantDir('common', '../common')
+
+more_source = []
+def addObjects(files):
+    more_source.extend(files)
+
+use = testEnv
+# SConscript('../../paintown-engine/SConscript', exports = ['use'], variant_dir = 'paintown')
+
+# We only need mugen for the collector which is sort of dumb, try to get rid of this
+# SConscript('../../mugen/SConscript', exports = ['use'], variant_dir = 'mugen')
+# use.Append(LIBS = ['paintown-engine', 'mugen'])
+
+load_source = Split("""
+common/init.cpp
+load.cpp
+test/globals.cpp
+test/factory/font_render.cpp
+test/factory/collector.cpp
+test/openbor/mod.cpp
+test/openbor/pack-reader.cpp
+test/openbor/util.cpp
+""")
+
+load_source.append(testEnv.Peg('test/openbor/data.peg'))
+
+source = Split("""
+common/init.cpp
+common/timer.cpp
+test/globals.cpp
+test/factory/font_render.cpp
+""")
+
+character_select_source = Split("""
+select-main.cpp
+test/openbor/mod.cpp
+test/openbor/pack-reader.cpp
+test/openbor/util.cpp
+""")
+
+game_source = Split("""
+common/init.cpp
+game.cpp
+test/globals.cpp
+test/factory/font_render.cpp
+test/factory/collector.cpp
+test/openbor/mod.cpp
+test/openbor/pack-reader.cpp
+test/openbor/util.cpp
+""")
+
+game_source.append(testEnv.Peg('test/openbor/data.peg'))
+
+x = []
+def makeTest(name, files):
+    test = testEnv.Program(name, files)
+    x.extend(test)
+    testEnv.AddPostAction(test, testEnv['PAINTOWN_TEST'])
+
+makeTest('load', load_source)
+makeTest('game', game_source)
+
+# Character select test
+character_select = testEnv.Program('character-select', source + character_select_source + testEnv.Peg('test/openbor/data.peg'))
+x.extend(character_select)
+
+# x.append(testEnv.Program('load', load_source + most_game_source))
+#makeTest('load-full', full_source)
+#makeTest('load', load_source + most_game_source)
+#makeTest('serialize', ['serialize.cpp'] + ast_source)
+#x.append(testEnv.Program('load-stage', stage_source))
+#x.append(testEnv.Program('palette', ['palette.cpp', 'test/debug.cpp']))
+Return('x')
