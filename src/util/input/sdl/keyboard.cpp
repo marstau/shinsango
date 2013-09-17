@@ -5,7 +5,7 @@
 
 #if SDL_VERSION_ATLEAST(1, 3, 0)
     Uint8 * getKeyState(int * keys){
-	return SDL_GetKeyboardState(keys);
+	return (Uint8*)SDL_GetKeyboardState(keys);
     }
 #else
     Uint8 * getKeyState(int * keys){

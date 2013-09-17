@@ -677,16 +677,16 @@ Message::EventInterface::EventInterface(){
 Message::EventInterface::~EventInterface(){
 }
 
-void Message::EventInterface::EventInterface::localNotify(const std::string &){
+void Message::EventInterface::localNotify(const std::string &){
 }
 
-void Message::EventInterface::EventInterface::localCommand(const std::vector<std::string> &){
+void Message::EventInterface::localCommand(const std::vector<std::string> &){
 }
 
-void Message::EventInterface::EventInterface::remoteNotify(const std::string &){
+void Message::EventInterface::remoteNotify(const std::string &){
 }
 
-void Message::EventInterface::EventInterface::remoteCommand(const Command &){
+void Message::EventInterface::remoteCommand(const Command &){
 }
 
 

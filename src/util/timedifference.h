@@ -2,7 +2,6 @@
 #define _time_difference_h
 
 #include <time.h>
-#include <sys/time.h>
 #include <string>
 
 class TimeDifference{

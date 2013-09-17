@@ -24,7 +24,7 @@
 #include "sflcons.h"                    /*  Console display functions        */
 #include "sflprint.h"                   /*  snprintf functions               */
 #include "sfldir.h"                     /*  Prototypes for functions         */
-
+#include "dirent.h"
 /*  Static variables used globally in this source file only                  */
 
 static char

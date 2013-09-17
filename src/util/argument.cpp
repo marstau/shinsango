@@ -1,5 +1,6 @@
 #include "argument.h"
 #include <string.h>
+#include "platform.h"
 
 using std::vector;
 using std::string;

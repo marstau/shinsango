@@ -27,40 +27,14 @@
 #define HL_WINDOWS_APP
 #endif
 
-#ifdef HL_WINDOWS_APP
-  #ifdef _MSC_VER
-    #pragma warning (disable:4514) /* disable "unreferenced inline function has
-                                    been removed" warning */
-  #endif /* _MSC_VER */
-  /* The default build for Windows is as a DLL. */
-  /* If you want a static library, define WIN_STATIC_LIB. */
-  #ifdef WIN_STATIC_LIB
-    #define HL_EXP
-  #else
-    #if defined (__LCC__)
-     #define HL_EXP extern
-    #else
-     #define HL_EXP __declspec(dllexport)
-    #endif /* __LCC__ */
-  #endif /* WIN_STATIC_LIB */
-  #define HL_APIENTRY __stdcall
-  #define HL_CALLBACK __cdecl
-  #ifdef __GNUC__
-    #define HL_INLINE extern __inline__
-  #else
-    #define HL_INLINE __inline
-  #endif /* __GNUC__ */
-#else /* !HL_WINDOWS_APP */
-  #define HL_EXP extern
-  #define HL_APIENTRY
-  #define HL_CALLBACK
-  #ifdef __GNUC__
-    #define HL_INLINE extern __inline__
-  #else
-    #define HL_INLINE inline /* assuming C99 compliant compiler */
-  #endif /* __GNUC__ */
-#endif /* !HL_WINDOWS_APP */
-
+#define HL_EXP extern
+#define HL_APIENTRY
+#define HL_CALLBACK
+#ifdef __GNUC__
+#define HL_INLINE extern __inline__
+#else
+#define HL_INLINE inline /* assuming C99 compliant compiler */
+#endif /* __GNUC__ */
 
 #endif /* HAWKLIB_H */
 

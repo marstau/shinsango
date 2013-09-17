@@ -22,6 +22,7 @@
 #include <string>
 #include <fstream>
 #include <ostream>
+#include <iterator>
 #include "token.h"
 
 #include "zip/unzip.h"

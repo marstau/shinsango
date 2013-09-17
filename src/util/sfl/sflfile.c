@@ -26,7 +26,7 @@
 #include "sflenv.h"                     /*  Environment access functions     */
 #include "sflprint.h"                   /*  snprintf functions               */
 #include "sflfile.h"                    /*  Prototypes for functions         */
-
+#include "dirent.h"
 
 /*  Ensure our buffers will be big enough for dir + name + delimiters        */
 #if ((LINE_MAX - FILE_NAME_MAX) < (FILE_DIR_MAX + 10))

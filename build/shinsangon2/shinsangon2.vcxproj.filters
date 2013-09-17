@@ -16,14 +16,8 @@
     <Filter Include="paintown">
       <UniqueIdentifier>{3f6524e4-9c59-4a64-bdfd-f0ce1f7775b1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="paintown\asteroids">
-      <UniqueIdentifier>{b7ebef0f-f5cf-47b3-87e9-370cce01142f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="paintown\factory">
       <UniqueIdentifier>{d36f1913-82b1-4af4-bd5e-859622006816}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="paintown\missile-defend">
-      <UniqueIdentifier>{4b9cf665-8e69-4948-8c97-0757c7d4610b}</UniqueIdentifier>
     </Filter>
     <Filter Include="paintown\mugen">
       <UniqueIdentifier>{08466f03-7d74-495e-8f80-0e3693ebcd45}</UniqueIdentifier>
@@ -187,12 +181,6 @@
     <None Include="..\..\src\util\7z\SConscript">
       <Filter>paintown\util\7z</Filter>
     </None>
-    <None Include="..\..\src\mugen\SConscript">
-      <Filter>paintown\mugen</Filter>
-    </None>
-    <None Include="..\..\src\mugen\CMakeLists.txt">
-      <Filter>paintown\mugen</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -210,23 +198,11 @@
     <ClInclude Include="..\..\src\globals.h">
       <Filter>paintown</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\asteroids\argument.h">
-      <Filter>paintown\asteroids</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\asteroids\game.h">
-      <Filter>paintown\asteroids</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src\factory\collector.h">
       <Filter>paintown\factory</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\factory\font_render.h">
       <Filter>paintown\factory</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\missile-defend\argument.h">
-      <Filter>paintown\missile-defend</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\missile-defend\game.h">
-      <Filter>paintown\missile-defend</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\util\console.h">
       <Filter>paintown\util</Filter>
@@ -841,9 +817,6 @@
       <Filter>paintown\paintown-engine\game</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\paintown-engine\game\select_player.h">
-      <Filter>paintown\paintown-engine\game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\paintown-engine\game\versus_world.h">
       <Filter>paintown\paintown-engine\game</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\paintown-engine\game\world.h">
@@ -1619,23 +1592,11 @@
     <ClCompile Include="..\..\src\main-menu.cpp">
       <Filter>paintown</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\asteroids\argument.cpp">
-      <Filter>paintown\asteroids</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\asteroids\game.cpp">
-      <Filter>paintown\asteroids</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\factory\collector.cpp">
       <Filter>paintown\factory</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\factory\font_render.cpp">
       <Filter>paintown\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\missile-defend\argument.cpp">
-      <Filter>paintown\missile-defend</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\missile-defend\game.cpp">
-      <Filter>paintown\missile-defend</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\util\token.cpp">
       <Filter>paintown\util</Filter>
@@ -2289,9 +2250,6 @@
       <Filter>paintown\paintown-engine\game</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\paintown-engine\game\select_player.cpp">
-      <Filter>paintown\paintown-engine\game</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\paintown-engine\game\versus_world.cpp">
       <Filter>paintown\paintown-engine\game</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\paintown-engine\game\world.cpp">

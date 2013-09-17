@@ -197,7 +197,7 @@ bool createThread(Id * thread, void * attributes, ThreadFunction function, void 
 #ifdef WII
     return wiiCreateThread(thread, attributes, function, arg);
 #else
-    *thread = SDL_CreateThread(function, arg);
+    *thread = SDL_CreateThread(function, "", arg);
     return *thread != NULL;
 #endif
 }

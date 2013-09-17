@@ -40,6 +40,8 @@
 
 #include <assert.h>
 
+#define __restrict__
+
 /***************************************************************************/
 /* Scale2x C implementation */
 

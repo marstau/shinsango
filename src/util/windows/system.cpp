@@ -11,7 +11,7 @@
 namespace System{
 
 bool isDirectory(const std::string & path){
-    unsigned int f = GetFileAttributes(path.c_str());
+    unsigned int f = GetFileAttributesA(path.c_str());
     if (f == INVALID_FILE_ATTRIBUTES){
         return false;
     }

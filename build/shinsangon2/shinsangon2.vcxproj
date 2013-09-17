@@ -76,8 +76,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="..\..\src\mugen\CMakeLists.txt" />
-    <None Include="..\..\src\mugen\SConscript" />
     <None Include="..\..\src\util\7z\CMakeLists.txt" />
     <None Include="..\..\src\util\7z\SConscript" />
     <None Include="ReadMe.txt" />
@@ -213,13 +211,9 @@
     <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowsvideo.h" />
     <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowswindow.h" />
     <ClInclude Include="..\..\external\SDL\src\video\windows\wmmsg.h" />
-    <ClInclude Include="..\..\src\asteroids\argument.h" />
-    <ClInclude Include="..\..\src\asteroids\game.h" />
     <ClInclude Include="..\..\src\factory\collector.h" />
     <ClInclude Include="..\..\src\factory\font_render.h" />
     <ClInclude Include="..\..\src\globals.h" />
-    <ClInclude Include="..\..\src\missile-defend\argument.h" />
-    <ClInclude Include="..\..\src\missile-defend\game.h" />
     <ClInclude Include="..\..\src\mugen\animation.h" />
     <ClInclude Include="..\..\src\mugen\argument.h" />
     <ClInclude Include="..\..\src\mugen\ast\all.h" />
@@ -311,7 +305,6 @@
     <ClInclude Include="..\..\src\paintown-engine\game\nameplacer.h" />
     <ClInclude Include="..\..\src\paintown-engine\game\options.h" />
     <ClInclude Include="..\..\src\paintown-engine\game\select_player.h" />
-    <ClInclude Include="..\..\src\paintown-engine\game\versus_world.h" />
     <ClInclude Include="..\..\src\paintown-engine\game\world.h" />
     <ClInclude Include="..\..\src\paintown-engine\level\block.h" />
     <ClInclude Include="..\..\src\paintown-engine\level\blockobject.h" />
@@ -658,14 +651,10 @@
     <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowsshape.c" />
     <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowsvideo.c" />
     <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowswindow.c" />
-    <ClCompile Include="..\..\src\asteroids\argument.cpp" />
-    <ClCompile Include="..\..\src\asteroids\game.cpp" />
     <ClCompile Include="..\..\src\factory\collector.cpp" />
     <ClCompile Include="..\..\src\factory\font_render.cpp" />
     <ClCompile Include="..\..\src\globals.cpp" />
     <ClCompile Include="..\..\src\main-menu.cpp" />
-    <ClCompile Include="..\..\src\missile-defend\argument.cpp" />
-    <ClCompile Include="..\..\src\missile-defend\game.cpp" />
     <ClCompile Include="..\..\src\mugen\animation.cpp" />
     <ClCompile Include="..\..\src\mugen\argument.cpp" />
     <ClCompile Include="..\..\src\mugen\ast\ast.cpp" />
@@ -722,7 +711,6 @@
     <ClCompile Include="..\..\src\paintown-engine\game\nameplacer.cpp" />
     <ClCompile Include="..\..\src\paintown-engine\game\options.cpp" />
     <ClCompile Include="..\..\src\paintown-engine\game\select_player.cpp" />
-    <ClCompile Include="..\..\src\paintown-engine\game\versus_world.cpp" />
     <ClCompile Include="..\..\src\paintown-engine\game\world.cpp" />
     <ClCompile Include="..\..\src\paintown-engine\level\block.cpp" />
     <ClCompile Include="..\..\src\paintown-engine\level\blockobject.cpp" />

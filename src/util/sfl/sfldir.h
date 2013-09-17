@@ -76,12 +76,6 @@ typedef unsigned short      nlink_t;
 #   define stat _stat
 #endif
 
-/*  BeOS does not define S_IXUSR so we build this mask ourselves             */
-
-#if (!defined (S_IXUSR))
-#    define S_IXUSR  00100  /*  Owner may execute                            */
-#endif
-
 /*  We define DEFAULT_DIR as the default current directory, so that we       */
 /*  can call open_dir() with a null or empty directory argument.  On most    */
 /*  systems this is ".".                                                     */

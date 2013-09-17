@@ -52,7 +52,7 @@ deferResize(false){
 
 #ifdef USE_SDL
 static void handleKeyDown(Keyboard & keyboard, const SDL_Event & event){
-    keyboard.press(event.key.keysym.sym, event.key.keysym.unicode);
+    keyboard.press(event.key.keysym.sym, event.key.keysym.scancode);
 }
 
 static void handleKeyUp(Keyboard & keyboard, const SDL_Event & event){
@@ -173,21 +173,6 @@ void EventManager::runSDL(Keyboard & keyboard, map<int, ReferenceCount<Joystick>
                 break;
             }
             case SDL_VIDEORESIZE : {
-                int width = event.resize.w;
-                int height = event.resize.h;
-                /* to keep the perspective correct
-                 * 640/480 = 1.33333
-                 */
-                /*
-                double ratio = (double) 640 / (double) 480;
-                if (width > height){
-                    height = (int)((double) width / ratio);
-                } else {
-                    width = (int)((double) height * ratio);
-                }
-                */
-                dispatch(ResizeScreen, width, height);
-                break;
             }
             default : {
                 break;

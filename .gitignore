@@ -13,3 +13,5 @@
 /data/.svn
 
 /mods/.svn
+
+/build/*.opensdf
