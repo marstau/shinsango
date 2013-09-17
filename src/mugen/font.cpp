@@ -51,7 +51,7 @@ static MugenItemContent *getOpts(const std::string &opt){
 
 namespace Mugen{
 
-Font::Font(const Filesystem::AbsolutePath & file):
+MFont::MFont(const Filesystem::AbsolutePath & file):
 type(Fixed),
 width(0),
 height(0),
@@ -63,7 +63,7 @@ offsety(0),
 pcx(NULL),
 pcxsize(0){
     if (Mugen::Util::fixCase(file.getExtension()) != "fnt"){
-        throw LoadException(__FILE__, __LINE__, "Font files must end with an .fnt extension");
+        throw LoadException(__FILE__, __LINE__, "MFont files must end with an .fnt extension");
     }
     std::string temp = file.path();
     temp = Mugen::Util::invertSlashes(temp);
@@ -74,7 +74,7 @@ pcxsize(0){
 }
 
 #if 0
-Font::Font( const char * file ):
+MFont::MFont( const char * file ):
 type(Fixed),
 width(0),
 height(0),
@@ -100,7 +100,7 @@ currentBank(0){
 #endif
 
 /* is this constructor ever used? should it make deep copies of bmp and pcx? */
-Font::Font( const Font &copy ){
+MFont::MFont( const MFont &copy ){
     this->type = copy.type;
     this->width = copy.width;
     this->height = copy.height;
@@ -113,13 +113,13 @@ Font::Font( const Font &copy ){
     this->banks = copy.banks;
 }
 
-Font::~Font(){
+MFont::~MFont(){
     if (pcx){
         delete[] pcx;
     }
 }
     
-Font & Font::operator=( const Font &copy ){
+MFont & MFont::operator=( const MFont &copy ){
     this->type = copy.type;
     this->width = copy.width;
     this->height = copy.height;
@@ -133,21 +133,21 @@ Font & Font::operator=( const Font &copy ){
     return *this;
 }
 
-// Implement Font stuff
-void Font::setSize( const int x, const int y ){
+// Implement MFont stuff
+void MFont::setSize( const int x, const int y ){
     // We don't change sizes
     if  ( (x < 0 || y < 0) && type!=Fixed ){
         return;
     }
 }
-int Font::getSizeX() const{
+int MFont::getSizeX() const{
     return width;
 }
-int Font::getSizeY() const{
+int MFont::getSizeY() const{
     return height;
 }
 
-int Font::textLength( const char * text ) const{
+int MFont::textLength( const char * text ) const{
     std::string str(text);
     int size =0;
     for (unsigned int i = 0; i < str.size(); ++i){
@@ -162,22 +162,22 @@ int Font::textLength( const char * text ) const{
     return size;
 }
 
-int Font::getHeight( const string & str ) const {
+int MFont::getHeight( const string & str ) const {
     // What? I guess this is for freetype?
     return getHeight();
 }
 
-int Font::getHeight() const {
+int MFont::getHeight() const {
     return height;
 }
     
 #if 0
-void Font::printf( int x, int y, int xSize, int ySize, Graphics::Color color, const Graphics::Bitmap & work, const string & str, int marker, ... ) const {
+void MFont::printf( int x, int y, int xSize, int ySize, Graphics::Color color, const Graphics::Bitmap & work, const string & str, int marker, ... ) const {
     /* call the other printf somehow.. */
 }
 #endif
 
-void Font::printf(int x, int y, int bank, const Graphics::Bitmap & work, const string & str, int marker, ... ){
+void MFont::printf(int x, int y, int bank, const Graphics::Bitmap & work, const string & str, int marker, ... ){
     // Va list
     char buf[512];
     va_list ap;
@@ -212,7 +212,7 @@ void Font::printf(int x, int y, int bank, const Graphics::Bitmap & work, const s
     }
 }
 
-void Font::render(int x, int y, int position, int bank, const Graphics::Bitmap & work, const string & str){
+void MFont::render(int x, int y, int position, int bank, const Graphics::Bitmap & work, const string & str){
     const int height = getHeight();
     const int length = textLength(str.c_str());
     switch (position){
@@ -230,11 +230,11 @@ void Font::render(int x, int y, int position, int bank, const Graphics::Bitmap &
 }
 
 /* get a pointer to a specific bank. bank numbers start from 0 */
-unsigned char * Font::findBankPalette(int bank) const {
+unsigned char * MFont::findBankPalette(int bank) const {
     return pcx + pcxsize - ((bank+1) * colors * 3);
 }
 
-Graphics::Bitmap * Font::makeBank(int bank) const {
+Graphics::Bitmap * MFont::makeBank(int bank) const {
     unsigned char newpal[768];
     // Reset palette
     memcpy(pcx + (pcxsize - 768), palette, 768);
@@ -267,7 +267,7 @@ Graphics::Bitmap * Font::makeBank(int bank) const {
     return bmp;
 }
 
-PaintownUtil::ReferenceCount<Graphics::Bitmap> Font::changeBank(int bank){
+PaintownUtil::ReferenceCount<Graphics::Bitmap> MFont::changeBank(int bank){
     if (bank < 0 || bank > (colors -1)){
         return PaintownUtil::ReferenceCount<Graphics::Bitmap>(NULL);
     }
@@ -299,7 +299,7 @@ static void getline(PaintownUtil::ReferenceCount<Storage::File> file, string & o
     out = more.str();
 }
 
-void Font::load(const Filesystem::AbsolutePath & path){
+void MFont::load(const Filesystem::AbsolutePath & path){
     PaintownUtil::ReferenceCount<Storage::File> ifile = Storage::instance().open(path);
     if (ifile == NULL){
         std::ostringstream out;

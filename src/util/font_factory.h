@@ -8,7 +8,6 @@
 #include "thread.h"
 
 struct DATAFILE;
-class Font;
 class Collector;
 
 class FontFactory{
@@ -18,9 +17,7 @@ public:
      */
     static void clear();
 
-private:
     friend class Collector;
-    friend class Font;
     static Font * getFont(const Filesystem::RelativePath & path, const int x, const int y );
     static Font * getFont(const Filesystem::AbsolutePath & path, const int x, const int y );
 

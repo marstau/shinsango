@@ -5,15 +5,7 @@
 #include "util/file-system.h"
 #include "util/font.h"
 
-class Font;
-
 namespace Menu{
-
-/*
- * class FontInfo
- * class RelativeFontInfo
- * class AbsoluteFontInfo
- */
 
 class AbsoluteFontInfo;
 class RelativeFontInfo;
@@ -23,14 +15,6 @@ class FontInfo {
 	FontInfo();
 	virtual ~FontInfo();
 	
-        /*
-	inline void set(const Filesystem::RelativePath & font, int width, int height){
-	    this->font = font;
-	    this->width = width;
-	    this->height = height;
-	}
-        */
-	
 	virtual const Font & get() const = 0;
 	virtual const Font & get(const Font & next) const = 0;
         virtual const FontInfo & get(const FontInfo & next) const = 0;
@@ -38,30 +22,9 @@ class FontInfo {
         virtual bool operator==(const FontInfo & who) const = 0;
         virtual bool operator==(const AbsoluteFontInfo & who) const = 0;
         virtual bool operator==(const RelativeFontInfo & who) const = 0;
-	
-        /*
-	inline void setFont(const Filesystem::RelativePath & font){
-	    this->font = font;
-	}
-        */
 
         virtual std::string getName() const = 0;
-
-	// virtual const Filesystem::RelativePath getFont(const FontInfo & next) const;
-	
-        /*
-	inline void setWidth(int width){
-	    this->width = width;
-	}
-        */
-
 	virtual const int getWidth(const FontInfo & next) const = 0;
-	
-        /*
-	inline void setHeight(int height){
-	    this->height = height;
-	}
-        */
 
 	virtual const int getHeight(const FontInfo & next) const = 0;
 	
@@ -134,37 +97,6 @@ public:
     virtual bool operator==(const AbsoluteFontInfo & who) const;
     virtual bool operator==(const RelativeFontInfo & who) const;
 };
-
-/*
-class RelativeFontInfo: public FontInfo {
-public:
-    RelativeFontInfo();
-    RelativeFontInfo(const Filesystem::RelativePath & font, int width, int height);
-
-    virtual const bool empty() const;
-
-private:
-    Filesystem::RelativePath font;
-    int width;
-    int height;
-};
-
-class AbsoluteFontInfo: public FontInfo {
-public:
-    AbsoluteFontInfo(const Filesystem::AbsolutePath & font, int width, int height);
-
-    using FontInfo::get;
-    virtual const Font & get() const;
-    virtual const Font & get(const Font & next) const;
-    virtual std::string getName() const;
-
-protected:
-    Filesystem::AbsolutePath font;
-    int width;
-    int height;
-};
-*/
-
 }
 
 #endif

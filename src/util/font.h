@@ -47,6 +47,10 @@ public:
 
 	/* store all the freetype fonts forever */
 	// static std::vector< ftalleg::freetype * > cacheFreeType; 
+	virtual void printf( int x, int y, int bank, const Graphics::Bitmap & work, const std::string & str, int marker, ... );
+    // virtual void printf( int x, int y, int xSize, int ySize, Graphics::Color color, const Graphics::Bitmap & work, const std::string & str, int marker, ... ) const ;
+    
+    virtual void render( int x, int y, int position, int bank, const Graphics::Bitmap & work, const std::string & str );
 protected:
 
         void printfWrapLine(int x, int & y, Graphics::Color color, const Graphics::Bitmap & work, int maxWidth, const char * line) const;
