@@ -77,11 +77,11 @@ public:
     height(height){
     }
 
-    virtual const Font & get() const {
-        return Font::getFont(path, width, height);
+    virtual const ::Font & get() const {
+        return ::Font::getFont(path, width, height);
     }
     
-    virtual const Font & get(const Font & next) const {
+    virtual const ::Font & get(const ::Font & next) const {
         return get();
     }
 

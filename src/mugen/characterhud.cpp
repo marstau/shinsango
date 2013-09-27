@@ -216,7 +216,7 @@ void FightElement::setSprite(PaintownUtil::ReferenceCount<Mugen::Sprite> spr){
 	sprite = spr;
     }
 }
-void FightElement::setFont(Font *fnt, int bank, int position){
+void FightElement::setFont(CFont *fnt, int bank, int position){
     if (type == IS_ACTION){
 	// Animation trumps font
 	return;
@@ -491,7 +491,7 @@ void Name::render(const Element::Layer & layer, const Graphics::Bitmap & bmp){
     font.render(layer, position.x, position.y, bmp);
 }
 
-static void getElementProperties(const Ast::AttributeSimple & simple, const std::string & component, const std::string & elementName, FightElement & element, Mugen::SpriteMap & sprites, std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations, std::vector<Mugen::Font *> & fonts){
+static void getElementProperties(const Ast::AttributeSimple & simple, const std::string & component, const std::string & elementName, FightElement & element, Mugen::SpriteMap & sprites, std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations, std::vector<Mugen::CFont *> & fonts){
     std::string compCopy = component;
     if (!compCopy.empty()){
         compCopy+=".";
@@ -1411,7 +1411,7 @@ GameInfo::GameInfo(const Filesystem::AbsolutePath & fightFile){
                     } else if (PaintownUtil::matchRegex(simple.idString(), PaintownUtil::Regex("^font"))){
                         string path;
                         simple.view() >> path;
-                        self.fonts.push_back(new Font(Util::findFile(Filesystem::RelativePath(path))));
+                        self.fonts.push_back(new CFont(Util::findFile(Filesystem::RelativePath(path))));
                         Global::debug(1) << "Got Font File: '" << path << "'" << endl;
                     } else if (simple == "snd"){
                         string temp;
@@ -1431,7 +1431,7 @@ GameInfo::GameInfo(const Filesystem::AbsolutePath & fightFile){
     } else if (head == "Lifebar"){
         class BarWalk: public Ast::Walker{
             public:
-                BarWalk(GameInfo & self, Mugen::SpriteMap & sprites, std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations, std::vector<Font *> & fonts):
+                BarWalk(GameInfo & self, Mugen::SpriteMap & sprites, std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations, std::vector<CFont *> & fonts):
                     self(self),
                     sprites(sprites),
                     animations(animations),
@@ -1441,7 +1441,7 @@ GameInfo::GameInfo(const Filesystem::AbsolutePath & fightFile){
                 GameInfo & self;
                 Mugen::SpriteMap & sprites;
                 std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations;
-                std::vector<Font *> & fonts;
+                std::vector<CFont *> & fonts;
 
                 virtual void onAttributeSimple(const Ast::AttributeSimple & simple){
                     if (PaintownUtil::matchRegex(simple.toString(), PaintownUtil::Regex("p1"))){
@@ -1481,7 +1481,7 @@ GameInfo::GameInfo(const Filesystem::AbsolutePath & fightFile){
     } else if (head == "Powerbar"){
             class BarWalk: public Ast::Walker{
                 public:
-                    BarWalk(GameInfo & self, Mugen::SpriteMap & sprites, std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations, std::vector<Font *> & fonts, Mugen::SoundMap & sounds):
+                    BarWalk(GameInfo & self, Mugen::SpriteMap & sprites, std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations, std::vector<CFont *> & fonts, Mugen::SoundMap & sounds):
                         self(self),
                         sprites(sprites),
                         animations(animations),
@@ -1492,7 +1492,7 @@ GameInfo::GameInfo(const Filesystem::AbsolutePath & fightFile){
                     GameInfo & self;
                     Mugen::SpriteMap & sprites;
                     std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations;
-                    std::vector<Font *> & fonts;
+                    std::vector<CFont *> & fonts;
                     Mugen::SoundMap & sounds;
 
                     virtual void onAttributeSimple(const Ast::AttributeSimple & simple){
@@ -1557,7 +1557,7 @@ GameInfo::GameInfo(const Filesystem::AbsolutePath & fightFile){
         } else if (head == "Face"){
             class FaceWalk: public Ast::Walker{
                 public:
-                    FaceWalk(GameInfo & self, Mugen::SpriteMap & sprites, std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations, std::vector<Font *> & fonts):
+                    FaceWalk(GameInfo & self, Mugen::SpriteMap & sprites, std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations, std::vector<CFont *> & fonts):
                         self(self),
                         sprites(sprites),
                         animations(animations),
@@ -1566,7 +1566,7 @@ GameInfo::GameInfo(const Filesystem::AbsolutePath & fightFile){
                     GameInfo & self;
                     Mugen::SpriteMap & sprites;
                     std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations;
-                    std::vector<Font *> & fonts;
+                    std::vector<CFont *> & fonts;
                     virtual void onAttributeSimple(const Ast::AttributeSimple & simple){
                         if (PaintownUtil::matchRegex(simple.toString(), PaintownUtil::Regex("p1"))){
                             getFace(simple,"p1",self.player1Face);
@@ -1593,7 +1593,7 @@ GameInfo::GameInfo(const Filesystem::AbsolutePath & fightFile){
         } else if (head == "Name"){
             class NameWalk: public Ast::Walker{
                 public:
-                    NameWalk(GameInfo & self, Mugen::SpriteMap & sprites, std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations, std::vector<Font *> & fonts):
+                    NameWalk(GameInfo & self, Mugen::SpriteMap & sprites, std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations, std::vector<CFont *> & fonts):
                         self(self),
                         sprites(sprites),
                         animations(animations),
@@ -1602,7 +1602,7 @@ GameInfo::GameInfo(const Filesystem::AbsolutePath & fightFile){
                     GameInfo & self;
                     Mugen::SpriteMap & sprites;
                     std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations;
-                    std::vector<Font *> & fonts;
+                    std::vector<CFont *> & fonts;
                     virtual void onAttributeSimple(const Ast::AttributeSimple & simple){
                         if (PaintownUtil::matchRegex(simple.toString(), PaintownUtil::Regex("p1"))){
                             getName(simple,"p1", self.player1Name);
@@ -1629,7 +1629,7 @@ GameInfo::GameInfo(const Filesystem::AbsolutePath & fightFile){
         } else if (head == "Time"){
             class TimeWalk: public Ast::Walker{
                 public:
-                    TimeWalk(GameInfo & self, Mugen::SpriteMap & sprites, std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations, std::vector<Font *> & fonts):
+                    TimeWalk(GameInfo & self, Mugen::SpriteMap & sprites, std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations, std::vector<CFont *> & fonts):
                         self(self),
                         sprites(sprites),
                         animations(animations),
@@ -1639,7 +1639,7 @@ GameInfo::GameInfo(const Filesystem::AbsolutePath & fightFile){
                     GameInfo & self;
                     Mugen::SpriteMap & sprites;
                     std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations;
-                    std::vector<Font *> & fonts;
+                    std::vector<CFont *> & fonts;
 
                     virtual void onAttributeSimple(const Ast::AttributeSimple & simple){
                         if (simple == "pos"){
@@ -1667,7 +1667,7 @@ GameInfo::GameInfo(const Filesystem::AbsolutePath & fightFile){
         } else if (head == "Combo"){
             class ComboWalk: public Ast::Walker{
                 public:
-                    ComboWalk(GameInfo & self, Mugen::SpriteMap & sprites, std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations, std::vector<Font *> & fonts):
+                    ComboWalk(GameInfo & self, Mugen::SpriteMap & sprites, std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations, std::vector<CFont *> & fonts):
                         self(self),
                         sprites(sprites),
                         animations(animations),
@@ -1676,7 +1676,7 @@ GameInfo::GameInfo(const Filesystem::AbsolutePath & fightFile){
                     GameInfo & self;
                     Mugen::SpriteMap & sprites;
                     std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations;
-                    std::vector<Font *> & fonts;
+                    std::vector<CFont *> & fonts;
                     virtual void onAttributeSimple(const Ast::AttributeSimple & simple){
                         if (simple == "pos"){
                             int x=0, y=0;
@@ -1714,7 +1714,7 @@ GameInfo::GameInfo(const Filesystem::AbsolutePath & fightFile){
             int soundTime = 0;
             class RoundWalk: public Ast::Walker{
                 public:
-                    RoundWalk(GameInfo & self, Mugen::SpriteMap & sprites, std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations, std::vector<Font *> & fonts, int & soundTime):
+                    RoundWalk(GameInfo & self, Mugen::SpriteMap & sprites, std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations, std::vector<CFont *> & fonts, int & soundTime):
                         self(self),
                         sprites(sprites),
                         animations(animations),
@@ -1724,7 +1724,7 @@ GameInfo::GameInfo(const Filesystem::AbsolutePath & fightFile){
                     GameInfo & self;
                     Mugen::SpriteMap & sprites;
                     std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations;
-                    std::vector<Font *> & fonts;
+                    std::vector<CFont *> & fonts;
                     int & soundTime;
                     virtual void onAttributeSimple(const Ast::AttributeSimple & simple){
                         if (simple == "match.wins"){
@@ -1900,7 +1900,7 @@ GameInfo::GameInfo(const Filesystem::AbsolutePath & fightFile){
         } else if (head == "WinIcon"){
             class WinIconWalk: public Ast::Walker{
                 public:
-                    WinIconWalk(GameInfo & self, Mugen::SpriteMap & sprites, std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations, std::vector<Font *> & fonts):
+                    WinIconWalk(GameInfo & self, Mugen::SpriteMap & sprites, std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations, std::vector<CFont *> & fonts):
                         self(self),
                         sprites(sprites),
                         animations(animations),
@@ -1909,7 +1909,7 @@ GameInfo::GameInfo(const Filesystem::AbsolutePath & fightFile){
                     GameInfo & self;
                     Mugen::SpriteMap & sprites;
                     std::map<int, PaintownUtil::ReferenceCount<Animation> > & animations;
-                    std::vector<Font *> & fonts;
+                    std::vector<CFont *> & fonts;
                     virtual void onAttributeSimple(const Ast::AttributeSimple & simple){
                         if (simple == "p1.pos"){
                             int x=0, y=0;
@@ -2011,7 +2011,7 @@ GameInfo::~GameInfo(){
     animations.clear();
 
     // Get rid of fonts
-    for (std::vector< Font *>::iterator f = fonts.begin(); f != fonts.end(); ++f){
+    for (std::vector< CFont *>::iterator f = fonts.begin(); f != fonts.end(); ++f){
 	if (*f){
             delete (*f);
         }

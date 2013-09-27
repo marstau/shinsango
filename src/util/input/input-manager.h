@@ -54,7 +54,7 @@ public:
 
     static void deferResizeEvents(bool defer);
     
-    static const std::map<int, Util::ReferenceCount<Joystick> > & getJoysticks();
+    static const std::map<int, ::Util::ReferenceCount<Joystick> > & getJoysticks();
 
     /*
     template <class X>
@@ -207,7 +207,7 @@ protected:
             const std::vector<typename Keyboard::KeyData> & buffer = keyboard.getBufferedKeys();
             for (std::vector<Keyboard::KeyData>::const_iterator it = buffer.begin(); it != buffer.end(); it++){
                 const Keyboard::KeyData & data = *it;
-                Util::ReferenceCount<KeyState<X> > state = input.getState(data.key);
+                ::Util::ReferenceCount<KeyState<X> > state = input.getState(data.key);
                 if (state != NULL){
                     events.push_back(typename InputMap<X>::InputEvent(state->out, data.unicode, data.enabled));
                 }
@@ -217,12 +217,12 @@ protected:
         for (std::vector<int>::const_iterator it = source.getJoystick().begin(); it != source.getJoystick().end(); it++){
             int config = *it;
             if (config >= 0 && config < (int) joysticks.size()){
-                Util::ReferenceCount<Joystick> joystick = joysticks[config];
+                ::Util::ReferenceCount<Joystick> joystick = joysticks[config];
                 if (joystick != NULL){
                     const std::vector<typename Joystick::Event> & joystickEvents = joystick->getEvents();
                     for (std::vector<Joystick::Event>::const_iterator it = joystickEvents.begin(); it != joystickEvents.end(); it++){
                         Joystick::Event event = *it;
-                        Util::ReferenceCount<JoystickState<X> > state = input.getJoystickState(event.key);
+                        ::Util::ReferenceCount<JoystickState<X> > state = input.getJoystickState(event.key);
                         if (state != NULL){
                             events.push_back(typename InputMap<X>::InputEvent(state->out, -1, event.enabled));
                         }
@@ -306,7 +306,7 @@ protected:
 private:
     static InputManager * manager;
     void * capture;
-    std::map<int, Util::ReferenceCount<Joystick> > joysticks;
+    std::map<int, ::Util::ReferenceCount<Joystick> > joysticks;
     Keyboard keyboard;
     Util::EventManager eventManager;
     // std::vector<int> bufferedKeys;

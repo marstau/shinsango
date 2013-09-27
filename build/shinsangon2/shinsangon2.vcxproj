@@ -55,8 +55,8 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>zlib.lib;freetype250.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)../external/libraries/win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -426,16 +426,6 @@
     <ClInclude Include="..\..\src\paintown-engine\script\script.h" />
     <ClInclude Include="..\..\src\paintown-engine\trigger\trigger.h" />
     <ClInclude Include="..\..\src\platform.h" />
-    <ClInclude Include="..\..\src\platformer\argument.h" />
-    <ClInclude Include="..\..\src\platformer\game\animation.h" />
-    <ClInclude Include="..\..\src\platformer\game\background.h" />
-    <ClInclude Include="..\..\src\platformer\game\camera.h" />
-    <ClInclude Include="..\..\src\platformer\game\game.h" />
-    <ClInclude Include="..\..\src\platformer\game\options.h" />
-    <ClInclude Include="..\..\src\platformer\game\tile.h" />
-    <ClInclude Include="..\..\src\platformer\game\world.h" />
-    <ClInclude Include="..\..\src\platformer\object\object.h" />
-    <ClInclude Include="..\..\src\platformer\script\script.h" />
     <ClInclude Include="..\..\src\util\7z\7z.h" />
     <ClInclude Include="..\..\src\util\7z\7zAlloc.h" />
     <ClInclude Include="..\..\src\util\7z\7zBuf.h" />
@@ -828,16 +818,6 @@
     <ClCompile Include="..\..\src\paintown-engine\object\versus_player.cpp" />
     <ClCompile Include="..\..\src\paintown-engine\script\script.cpp" />
     <ClCompile Include="..\..\src\paintown-engine\trigger\trigger.cpp" />
-    <ClCompile Include="..\..\src\platformer\argument.cpp" />
-    <ClCompile Include="..\..\src\platformer\game\animation.cpp" />
-    <ClCompile Include="..\..\src\platformer\game\background.cpp" />
-    <ClCompile Include="..\..\src\platformer\game\camera.cpp" />
-    <ClCompile Include="..\..\src\platformer\game\game.cpp" />
-    <ClCompile Include="..\..\src\platformer\game\options.cpp" />
-    <ClCompile Include="..\..\src\platformer\game\tile.cpp" />
-    <ClCompile Include="..\..\src\platformer\game\world.cpp" />
-    <ClCompile Include="..\..\src\platformer\object\object.cpp" />
-    <ClCompile Include="..\..\src\platformer\script\script.cpp" />
     <ClCompile Include="..\..\src\util\7z\7zAlloc.c" />
     <ClCompile Include="..\..\src\util\7z\7zBuf.c" />
     <ClCompile Include="..\..\src\util\7z\7zBuf2.c" />

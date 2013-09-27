@@ -25,7 +25,7 @@ class Player: public PlayerCommon {
 public:
 
     Player(const char * filename);
-    Player(const Filesystem::AbsolutePath & str, Util::ReferenceCount<InputSource> source);
+    Player(const Filesystem::AbsolutePath & str, ::Util::ReferenceCount<InputSource> source);
     Player(const Player & pl);
     Player(const Character & chr);
 

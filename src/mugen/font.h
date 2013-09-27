@@ -29,16 +29,16 @@ struct FontLocation{
     int width;
 };
 
-class Font{
+class CFont{
 public:
-    Font( const Filesystem::AbsolutePath & file );
+    CFont( const Filesystem::AbsolutePath & file );
     // Font( const char * file );
 private:
-    Font( const Font &copy );
+    CFont( const CFont &copy );
 public:
-    virtual ~Font();
+    virtual ~CFont();
     
-    Font & operator=( const Font &copy );
+    CFont & operator=( const CFont &copy );
     
     // Implement Font stuff
     virtual void setSize( const int x, const int y );

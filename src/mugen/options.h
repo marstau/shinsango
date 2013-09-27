@@ -67,7 +67,7 @@ public:
     //! Act
     virtual void act();
     
-    //! Render (Ignores font from paintown) pass Mugen::Font for list and active wrapped in ListFont
+    //! Render (Ignores font from paintown) pass Mugen::CFont for list and active wrapped in ListFont
     virtual void render(const Graphics::Bitmap &, const ::Font &) const;
 
     //! Add item
@@ -300,8 +300,8 @@ public:
     virtual void next()=0;
     virtual void prev()=0;
     virtual void enter();
-    virtual void render(Font &, int x1, int x2, int y, const Graphics::Bitmap &);
-    virtual int getWidth(Font &);
+    virtual void render(CFont &, int x1, int x2, int y, const Graphics::Bitmap &);
+    virtual int getWidth(CFont &);
     virtual inline const Mugen::Point & getPosition() const {
         return this->position;
     }
@@ -459,7 +459,7 @@ private:
     Mugen::SoundSystem<Sounds> sounds;
     
     //! 1st or 2nd font from system.def
-    PaintownUtil::ReferenceCount<Font> font;
+    PaintownUtil::ReferenceCount<CFont> font;
     
     //! Fade tool
     Gui::FadeTool fader;

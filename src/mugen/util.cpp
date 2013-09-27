@@ -1441,12 +1441,12 @@ const Mugen::FontSystem & Mugen::FontSystem::operator=(const Mugen::FontSystem &
 }
 
 Mugen::FontSystem::Font::Font():
-font(PaintownUtil::ReferenceCount<Mugen::Font>(NULL)),
+font(PaintownUtil::ReferenceCount<Mugen::CFont>(NULL)),
 bank(-1),
 position(0){
 }
 
-Mugen::FontSystem::Font::Font(PaintownUtil::ReferenceCount<Mugen::Font> font, int bank, int position):
+Mugen::FontSystem::Font::Font(PaintownUtil::ReferenceCount<Mugen::CFont> font, int bank, int position):
 font(font),
 bank(bank),
 position(position){
@@ -1499,7 +1499,7 @@ int Mugen::FontSystem::Font::getWidth(const std::string & text) const{
 void Mugen::FontSystem::add(const std::string & filename){
     try{
         Filesystem::AbsolutePath path = Mugen::Util::findFont(Filesystem::RelativePath(filename));
-        fonts.push_back(PaintownUtil::ReferenceCount<Mugen::Font>(new Mugen::Font(path)));
+        fonts.push_back(PaintownUtil::ReferenceCount<Mugen::CFont>(new Mugen::CFont(path)));
         Global::debug(1) << "Got Font File: '" << filename << "'" << endl;
     } catch (const Filesystem::NotFound & fail){
         Global::debug(0) << "Could not find font '" << filename << "' " << fail.getTrace() << endl;
@@ -1508,9 +1508,9 @@ void Mugen::FontSystem::add(const std::string & filename){
     }
 }
 
-PaintownUtil::ReferenceCount<Mugen::Font> Mugen::FontSystem::get(int index){
+PaintownUtil::ReferenceCount<Mugen::CFont> Mugen::FontSystem::get(int index){
     if (index == -1){
-        return PaintownUtil::ReferenceCount<Mugen::Font>(NULL);
+        return PaintownUtil::ReferenceCount<Mugen::CFont>(NULL);
     }
     if (index - 1 >= 0 && index - 1 < (signed) fonts.size()){
         return fonts[index - 1];
@@ -1523,7 +1523,7 @@ PaintownUtil::ReferenceCount<Mugen::Font> Mugen::FontSystem::get(int index){
 
 const Mugen::FontSystem::Font Mugen::FontSystem::getFont(int index, int bank, int position){
     try{
-        PaintownUtil::ReferenceCount<Mugen::Font> font = get(index);
+        PaintownUtil::ReferenceCount<Mugen::CFont> font = get(index);
         return FontSystem::Font(font, bank, position);
     } catch (const MugenException & ex){
     }

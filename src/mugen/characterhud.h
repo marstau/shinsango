@@ -22,7 +22,7 @@ class Token;
 
 namespace Mugen{
 
-class Font;
+class CFont;
 class Sound;
 class Sprite;
 class Animation;
@@ -78,7 +78,7 @@ class FightElement: public Element {
         }
 
 	virtual void setSprite(PaintownUtil::ReferenceCount<Mugen::Sprite> sprite);
-	virtual void setFont(Font *, int bank, int position);
+	virtual void setFont(CFont *, int bank, int position);
         virtual inline void setPosition(int position){
             this->position = position;
         }
@@ -129,7 +129,7 @@ class FightElement: public Element {
         PaintownUtil::ReferenceCount<Animation> action;
         Mugen::Point spriteData;
 	PaintownUtil::ReferenceCount<Mugen::Sprite> sprite;
-	Font *font;
+	CFont *font;
         PaintownUtil::ReferenceCount<Mugen::Sound> sound;
 	Mugen::Point offset;
 	int displaytime;
@@ -852,7 +852,7 @@ class GameInfo{
 	
 	Mugen::SpriteMap sprites;
 	std::map<int, PaintownUtil::ReferenceCount<Animation> > animations;
-	std::vector<Font *> fonts;
+	std::vector<CFont *> fonts;
 	Mugen::SoundMap sounds;
 };
 

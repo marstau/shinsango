@@ -25,9 +25,6 @@
     <Filter Include="paintown\paintown-engine">
       <UniqueIdentifier>{8e6e1c72-eaf9-4f8a-aefd-d842b5bdebdf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="paintown\platformer">
-      <UniqueIdentifier>{c16ea1cb-1567-4199-9ef2-f61b669c531e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="paintown\util">
       <UniqueIdentifier>{116aaf58-4647-4516-8b0c-82530ebb375e}</UniqueIdentifier>
     </Filter>
@@ -263,36 +260,6 @@
     </ClInclude>
     <ClInclude Include="..\..\src\util\token.h">
       <Filter>paintown\util</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\platformer\argument.h">
-      <Filter>paintown\platformer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\platformer\game\animation.h">
-      <Filter>paintown\platformer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\platformer\game\background.h">
-      <Filter>paintown\platformer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\platformer\game\camera.h">
-      <Filter>paintown\platformer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\platformer\game\game.h">
-      <Filter>paintown\platformer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\platformer\game\options.h">
-      <Filter>paintown\platformer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\platformer\game\tile.h">
-      <Filter>paintown\platformer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\platformer\game\world.h">
-      <Filter>paintown\platformer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\platformer\script\script.h">
-      <Filter>paintown\platformer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\platformer\object\object.h">
-      <Filter>paintown\platformer</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\util\7z\7z.h">
       <Filter>paintown\util\7z</Filter>
@@ -1861,36 +1828,6 @@
     </ClCompile>
     <ClCompile Include="..\..\src\util\init.cpp">
       <Filter>paintown\util</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\platformer\argument.cpp">
-      <Filter>paintown\platformer</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\platformer\game\animation.cpp">
-      <Filter>paintown\platformer</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\platformer\game\background.cpp">
-      <Filter>paintown\platformer</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\platformer\game\camera.cpp">
-      <Filter>paintown\platformer</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\platformer\game\game.cpp">
-      <Filter>paintown\platformer</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\platformer\game\options.cpp">
-      <Filter>paintown\platformer</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\platformer\game\tile.cpp">
-      <Filter>paintown\platformer</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\platformer\game\world.cpp">
-      <Filter>paintown\platformer</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\platformer\script\script.cpp">
-      <Filter>paintown\platformer</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\platformer\object\object.cpp">
-      <Filter>paintown\platformer</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\util\7z\7zAlloc.c">
       <Filter>paintown\util\7z</Filter>

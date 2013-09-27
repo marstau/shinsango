@@ -323,7 +323,7 @@ Option::~Option(){
 void Option::enter(){
 }
 
-void Option::render(Mugen::Font & font, int x1, int x2, int y, const Graphics::Bitmap & bmp){
+void Option::render(Mugen::CFont & font, int x1, int x2, int y, const Graphics::Bitmap & bmp){
     font.render(x1, y, 1, 0, bmp, optionName);
     font.render(x2, y, -1, 0, bmp, currentValue);
     if (selected){
@@ -341,7 +341,7 @@ void Option::render(Mugen::Font & font, int x1, int x2, int y, const Graphics::B
     }
 }
 
-int Option::getWidth(Mugen::Font & font){
+int Option::getWidth(Mugen::CFont & font){
     return font.textLength(optionName.c_str()) + font.textLength(currentValue.c_str());
 }
 
@@ -730,7 +730,7 @@ recalculateHeight(160){
     diff.endTime();
     Global::debug(1) << "Parsed mugen file " + systemFile.path() + " in" + diff.printTime("") << endl;
 
-    std::vector< PaintownUtil::ReferenceCount<Font> > fonts;
+    std::vector< PaintownUtil::ReferenceCount<CFont> > fonts;
     
     for (Ast::AstParse::section_iterator section_it = parsed->getSections()->begin(); section_it != parsed->getSections()->end(); section_it++){
         Ast::Section * section = *section_it;
@@ -738,14 +738,14 @@ recalculateHeight(160){
         if (head == "Files"){
             class FileWalker: public Ast::Walker {
             public:
-                FileWalker(OptionMenu & self, std::vector< PaintownUtil::ReferenceCount<Font> > & fonts, const Filesystem::AbsolutePath & baseDir):
+                FileWalker(OptionMenu & self, std::vector< PaintownUtil::ReferenceCount<CFont> > & fonts, const Filesystem::AbsolutePath & baseDir):
                 self(self),
                 fonts(fonts),
                 baseDir(baseDir){
                 }
                 
                 OptionMenu & self;
-                std::vector< PaintownUtil::ReferenceCount<Font> > & fonts;
+                std::vector< PaintownUtil::ReferenceCount<CFont> > & fonts;
                 const Filesystem::AbsolutePath & baseDir;
 
                 virtual void onAttributeSimple(const Ast::AttributeSimple & simple){
@@ -756,7 +756,7 @@ recalculateHeight(160){
                     } else if (PaintownUtil::matchRegex(simple.idString(), PaintownUtil::Regex("^font"))){
                         std::string temp;
                         simple.view() >> temp;
-                        fonts.push_back(PaintownUtil::ReferenceCount<Font>(new Font(Util::findFile(Filesystem::RelativePath(temp)))));
+                        fonts.push_back(PaintownUtil::ReferenceCount<CFont>(new CFont(Util::findFile(Filesystem::RelativePath(temp)))));
                         Global::debug(1) << "Got Font File: '" << temp << "'" << endl;
                     }
                 }
@@ -810,8 +810,8 @@ recalculateHeight(160){
     
     
     // Our Font
-    for (std::vector<PaintownUtil::ReferenceCount<Font> >::iterator i = fonts.begin(); i != fonts.end(); ++i){
-        PaintownUtil::ReferenceCount<Font> ourFont = *i;
+    for (std::vector<PaintownUtil::ReferenceCount<CFont> >::iterator i = fonts.begin(); i != fonts.end(); ++i){
+        PaintownUtil::ReferenceCount<CFont> ourFont = *i;
         // NOTE This should keep it in a reasonable range, although I don't think it's correct
         /*if (ourFont != NULL && (ourFont->getHeight() >= 8 && ourFont->getHeight() < 15)){
             if (ourFont->textLength(" ") <= 15){

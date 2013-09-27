@@ -96,15 +96,15 @@ public:
 
     void copyMap(const InputMap & copy){
         key_states.clear();
-        for (typename std::map<Keyboard::KeyType, Util::ReferenceCount<KeyState<X> > >::const_iterator it = copy.key_states.begin(); it != copy.key_states.end(); it++){
+        for (typename std::map<Keyboard::KeyType, ::Util::ReferenceCount<KeyState<X> > >::const_iterator it = copy.key_states.begin(); it != copy.key_states.end(); it++){
             if (it->second != NULL){
-                key_states[(*it).first] = Util::ReferenceCount<KeyState<X> >(new KeyState<X>(*(*it).second));
+                key_states[(*it).first] = ::Util::ReferenceCount<KeyState<X> >(new KeyState<X>(*(*it).second));
             }
         }
         joy_states.clear();
-        for (typename std::map<typename Joystick::Key, Util::ReferenceCount<JoystickState<X> > >::const_iterator it = copy.joy_states.begin(); it != copy.joy_states.end(); it++){
+        for (typename std::map<typename Joystick::Key, ::Util::ReferenceCount<JoystickState<X> > >::const_iterator it = copy.joy_states.begin(); it != copy.joy_states.end(); it++){
             if (it->second != NULL){
-                joy_states[(*it).first] = Util::ReferenceCount<JoystickState<X> >(new JoystickState<X>(*(*it).second));
+                joy_states[(*it).first] = ::Util::ReferenceCount<JoystickState<X> >(new JoystickState<X>(*(*it).second));
             }
         }
         last_read = copy.last_read;
@@ -121,7 +121,7 @@ public:
      * out: user defined value to set if this key is pressed
      */
     void set(Keyboard::KeyType key, int delay, bool block, X out){
-        key_states[key] = Util::ReferenceCount<KeyState<X> >(new KeyState<X>(delay, block, out, last_read));
+        key_states[key] = ::Util::ReferenceCount<KeyState<X> >(new KeyState<X>(delay, block, out, last_read));
     }
 
     void set(Keyboard::KeyType key, X out){
@@ -140,7 +140,7 @@ public:
     /* mostly the same stuff but for joysticks.
      */
     void set(typename Joystick::Key key, int delay, bool block, X out){
-        joy_states[key] = Util::ReferenceCount<JoystickState<X> >(new JoystickState<X>(delay, block, out, last_read));
+        joy_states[key] = ::Util::ReferenceCount<JoystickState<X> >(new JoystickState<X>(delay, block, out, last_read));
     }
 
     void set(typename Joystick::Key key, X out){
@@ -173,7 +173,7 @@ public:
     bool pressed(const std::vector<int> & keys, X out){
         for (std::vector<int>::const_iterator it = keys.begin(); it != keys.end(); it++){
             Keyboard::KeyType key = *it;
-            Util::ReferenceCount<KeyState<X> > state = key_states[key];
+            ::Util::ReferenceCount<KeyState<X> > state = key_states[key];
             if (state != NULL){
                 if (state->out == out){
                     return true;
@@ -183,18 +183,18 @@ public:
         return false;
     }
 
-    virtual Util::ReferenceCount<KeyState<X> > getState(int key){
+    virtual ::Util::ReferenceCount<KeyState<X> > getState(int key){
         return key_states[key];
     }
 
-    virtual Util::ReferenceCount<JoystickState<X> > getJoystickState(Joystick::Key key){
+    virtual ::Util::ReferenceCount<JoystickState<X> > getJoystickState(Joystick::Key key){
         return joy_states[key];
     }
     
     void read(const std::vector<int> & keys, Output * output){
         for (std::vector<int>::const_iterator it = keys.begin(); it != keys.end(); it++){
             Keyboard::KeyType key = *it;
-            Util::ReferenceCount<KeyState<X> > state = getState(key);
+            ::Util::ReferenceCount<KeyState<X> > state = getState(key);
             if (state != NULL){
                 bool use = false;
                 // Global::debug(0) << "read " << key << " last read is " << state->last_read << " my last read is " << last_read << std::endl;
@@ -218,7 +218,7 @@ public:
         }
     }
     
-    const std::map<Keyboard::KeyType, Util::ReferenceCount<KeyState<X> > > & getKeyStates() const {
+    const std::map<Keyboard::KeyType, ::Util::ReferenceCount<KeyState<X> > > & getKeyStates() const {
         return key_states;
     }
 
@@ -229,7 +229,7 @@ public:
 
     void read(const JoystickInput & joystick, Output * output){
 #define do_joy(field, key) if (joystick.field){\
-    Util::ReferenceCount<JoystickState<X> > state = joy_states[Joystick::key];\
+    ::Util::ReferenceCount<JoystickState<X> > state = joy_states[Joystick::key];\
     doJoyState(state, output);\
 }
 
@@ -262,7 +262,7 @@ public:
     
     bool pressed(const JoystickInput & joystick, X out){
 #define do_joy(field, key) if (joystick.field){\
-    Util::ReferenceCount<JoystickState<X> > state = joy_states[Joystick::key];\
+    ::Util::ReferenceCount<JoystickState<X> > state = joy_states[Joystick::key];\
     if (state != 0 && state->out == out){\
         return true;\
     }\
@@ -310,8 +310,8 @@ protected:
     }
 
 private:
-    std::map<Keyboard::KeyType, Util::ReferenceCount<KeyState<X> > > key_states;
-    std::map<typename Joystick::Key, Util::ReferenceCount<JoystickState<X> > > joy_states;
+    std::map<Keyboard::KeyType, ::Util::ReferenceCount<KeyState<X> > > key_states;
+    std::map<typename Joystick::Key, ::Util::ReferenceCount<JoystickState<X> > > joy_states;
     unsigned int last_read;
 };
 

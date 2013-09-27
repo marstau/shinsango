@@ -700,7 +700,7 @@ protected:
     std::map<Type, IndexValue> soundLookup;
 };
 
-class Font;
+class CFont;
 
 /*! Font system */
 class FontSystem{
@@ -715,7 +715,7 @@ public:
     class Font{
     public:
         Font();
-        Font(PaintownUtil::ReferenceCount<Mugen::Font> font, int bank, int position);
+        Font(PaintownUtil::ReferenceCount<Mugen::CFont> font, int bank, int position);
         Font(const Font &);
         virtual ~Font();
         
@@ -728,19 +728,19 @@ public:
         virtual int getHeight() const;
         virtual int getWidth(const std::string &) const;
     protected:
-        PaintownUtil::ReferenceCount<Mugen::Font> font;
+        PaintownUtil::ReferenceCount<Mugen::CFont> font;
         int bank;
         int position;
     };
     
     virtual void add(const std::string &);
-    virtual PaintownUtil::ReferenceCount<Mugen::Font> get(int index);
+    virtual PaintownUtil::ReferenceCount<Mugen::CFont> get(int index);
     virtual const Font getFont(int index, int bank, int position);
     virtual inline bool empty() const {
         return this->fonts.empty();
     }
 protected:
-    std::vector< PaintownUtil::ReferenceCount<Mugen::Font> > fonts;
+    std::vector< PaintownUtil::ReferenceCount<Mugen::CFont> > fonts;
 };
 
 /*! Network message utilities */

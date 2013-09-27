@@ -14,11 +14,11 @@ using namespace std;
 
 namespace Paintown{
 
-VersusPlayer::VersusPlayer(const Filesystem::AbsolutePath & str) throw( LoadException ):
-Player(str, Util::ReferenceCount<InputSource>(NULL)){
+VersusPlayer::VersusPlayer(const Filesystem::AbsolutePath & str) :
+Player(str, ::Util::ReferenceCount<InputSource>(NULL)){
 }
 	
-VersusPlayer::VersusPlayer(const Player & player) throw( LoadException ):
+VersusPlayer::VersusPlayer(const Player & player) :
 Player(player){
 }
 
