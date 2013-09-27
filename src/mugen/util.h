@@ -700,6 +700,8 @@ protected:
     std::map<Type, IndexValue> soundLookup;
 };
 
+class Font;
+
 /*! Font system */
 class FontSystem{
 public:

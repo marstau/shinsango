@@ -88,27 +88,6 @@ void Font::printfWrapLine2(int x, int & y, int color, const Bitmap & work, int m
 }
 #endif
 
-void Font::printf(int x, int y, int bank, const Graphics::Bitmap & work, const string & str, int marker, ... ){
-    // Va list
-}
-
-void Font::render(int x, int y, int position, int bank, const Graphics::Bitmap & work, const string & str){
-    const int height = getHeight();
-    const int length = textLength(str.c_str());
-    switch (position){
-	case -1:
-	    printf(x - length, y - height, bank, work, str, 0);
-	    break;
-	case 1:
-	    printf(x, y - height, bank, work, str, 0);
-	    break;
-	case 0:
-	default:
-	    printf(x - (length/2), y - height, bank, work, str, 0);
-	    break;
-    }
-}
-
 void Font::printfWrap(int x, int y, Graphics::Color color, const Graphics::Bitmap & work, int maxWidth, const std::string & str, int marker, ... ) const {
     char buf[4096];
     va_list ap;

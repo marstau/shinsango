@@ -16,7 +16,7 @@ z( z ){
 	this->addObject(player1);
 	this->addObject(player2);
 
-        Filesystem::AbsolutePath bang_path(Filesystem::instance().find(Filesystem::RelativePath("misc/flash/flash.txt")));
+        Filesystem::AbsolutePath bang_path(Filesystem::find(Filesystem::RelativePath("misc/flash/flash.txt")));
         Paintown::Object * effect = new Paintown::Effect(bang_path.path().c_str());
 	if ( bang != NULL ){
 		delete bang;

@@ -97,74 +97,32 @@
     <Filter Include="paintown\mugen\ast">
       <UniqueIdentifier>{0c0ebcb9-dc8e-43de-a300-57ce2ebbed62}</UniqueIdentifier>
     </Filter>
-    <Filter Include="SDL">
-      <UniqueIdentifier>{ad4ce38e-053e-44c6-8cbb-ee835f942433}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDL\include">
-      <UniqueIdentifier>{d9abccd1-74ba-40c8-b2a3-b08f33958ed1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDL\src">
-      <UniqueIdentifier>{c9f5f833-43a2-4362-bf6e-45d9b13b3d30}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDL\src\core">
-      <UniqueIdentifier>{ee3bda3a-027f-4306-91e4-8720e621d0f0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDL\src\cpuinfo">
-      <UniqueIdentifier>{3a70c3a2-cd38-4438-92f8-26c8e1dcb218}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDL\src\events">
-      <UniqueIdentifier>{165aa879-9764-4cc2-a61c-81b7ab70fef0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDL\src\file">
-      <UniqueIdentifier>{e5ac0495-7009-4679-81f9-99ba6e37f9f1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDL\src\filesystem">
-      <UniqueIdentifier>{720f5bb7-d742-4aae-a89e-c832ad54384a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDL\src\haptic">
-      <UniqueIdentifier>{c04e5606-da57-4eff-b833-621b9133150b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDL\src\joystick">
-      <UniqueIdentifier>{54f18ddc-b87a-4b76-bb93-ec1e732aa02d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDL\src\libm">
-      <UniqueIdentifier>{88adf00e-3a7d-4150-b5ab-703a439e78db}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDL\src\loadso">
-      <UniqueIdentifier>{3b9900b6-5547-4e7a-b4a9-343932fb0733}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDL\src\main">
-      <UniqueIdentifier>{2a727d96-c67d-4575-8c84-878f728eadbe}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDL\src\power">
-      <UniqueIdentifier>{2468e90d-f20b-45c1-ab08-7c405f7e93c2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDL\src\render">
-      <UniqueIdentifier>{75e16ea3-98d3-448f-a23e-8e8bda30800b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDL\src\stdlib">
-      <UniqueIdentifier>{90357212-eb2a-471b-b4ae-752e5c013043}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDL\src\thread">
-      <UniqueIdentifier>{aa42f445-2c3b-448e-9889-44ba4da690a6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDL\src\timer">
-      <UniqueIdentifier>{ed839cdb-71cd-4575-96ab-eea590528fbb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDL\src\video">
-      <UniqueIdentifier>{58a83d97-2f77-44d8-85cb-b2d5fc05c95d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDL\src\audio">
-      <UniqueIdentifier>{ea8ac6dc-6ca3-4dcf-b0cc-ecd393ca1231}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDL\src\audio\winmm">
-      <UniqueIdentifier>{6fdbda23-d251-4f99-a5ba-88328e6eb331}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDL\src\atomic">
-      <UniqueIdentifier>{167286d4-c9ed-49cf-9809-6af7067a9f12}</UniqueIdentifier>
-    </Filter>
     <Filter Include="paintown\util\pcre">
       <UniqueIdentifier>{705b6f35-8103-4a31-a6f3-23ab669673a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external">
+      <UniqueIdentifier>{03e241c3-3b92-42aa-a220-681d2f91ecab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\freetype">
+      <UniqueIdentifier>{57af6bf3-eb12-409f-bf05-c54095f7cad7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\zlib">
+      <UniqueIdentifier>{096d8bbb-21b9-4130-96c8-d8a6621ebf73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\SDL">
+      <UniqueIdentifier>{a8f76da5-d8d9-47f4-89e9-ff9208a3ab6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\SDL\include">
+      <UniqueIdentifier>{a6e5f1d0-9c23-476a-84cd-6ef2ea2fac7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\SDL\src">
+      <UniqueIdentifier>{de0dc068-2e1e-4be6-97b4-a79130476e79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\freetype\include">
+      <UniqueIdentifier>{a2c0c964-b784-4b84-9291-e0db0081c090}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\freetype\src">
+      <UniqueIdentifier>{cadc9ab6-9c4f-4b1a-88af-1f262fce6ee9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1188,395 +1146,614 @@
     <ClInclude Include="..\..\src\mugen\world.h">
       <Filter>paintown\mugen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\begin_code.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\close_code.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_assert.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_atomic.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_audio.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_bits.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_blendmode.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_clipboard.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_config.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_cpuinfo.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_endian.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_error.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_events.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_gamecontroller.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_gesture.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_haptic.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_hints.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_joystick.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_keyboard.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_keycode.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_loadso.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_log.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_main.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_messagebox.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_mouse.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_mutex.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_name.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_opengl.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_opengles2.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_opengles.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_pixels.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_platform.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_power.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_quit.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_rect.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_render.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_revision.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_rwops.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_scancode.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_shape.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_stdinc.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_surface.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_system.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_syswm.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_test.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_test_assert.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_test_common.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_test_compare.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_test_crc32.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_test_font.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_test_fuzzer.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_test_harness.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_test_images.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_test_log.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_test_md5.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_test_random.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_thread.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_timer.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_touch.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_types.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_version.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\include\SDL_video.h">
-      <Filter>SDL\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\SDL_assert_c.h">
-      <Filter>SDL\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\SDL_error_c.h">
-      <Filter>SDL\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\core\windows\SDL_windows.h">
-      <Filter>SDL\src\core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\audio\SDL_audiodev_c.h">
-      <Filter>SDL\src\audio</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\audio\SDL_audiomem.h">
-      <Filter>SDL\src\audio</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\audio\SDL_sysaudio.h">
-      <Filter>SDL\src\audio</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\audio\SDL_wave.h">
-      <Filter>SDL\src\audio</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\audio\SDL_audio_c.h">
-      <Filter>SDL\src\audio</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\audio\winmm\SDL_winmm.h">
-      <Filter>SDL\src\audio\winmm</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\events\blank_cursor.h">
-      <Filter>SDL\src\events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\events\default_cursor.h">
-      <Filter>SDL\src\events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\events\scancodes_darwin.h">
-      <Filter>SDL\src\events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\events\scancodes_linux.h">
-      <Filter>SDL\src\events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\events\scancodes_windows.h">
-      <Filter>SDL\src\events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\events\scancodes_xfree86.h">
-      <Filter>SDL\src\events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\events\SDL_clipboardevents_c.h">
-      <Filter>SDL\src\events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\events\SDL_dropevents_c.h">
-      <Filter>SDL\src\events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\events\SDL_events_c.h">
-      <Filter>SDL\src\events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\events\SDL_gesture_c.h">
-      <Filter>SDL\src\events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\events\SDL_keyboard_c.h">
-      <Filter>SDL\src\events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\events\SDL_mouse_c.h">
-      <Filter>SDL\src\events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\events\SDL_sysevents.h">
-      <Filter>SDL\src\events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\events\SDL_touch_c.h">
-      <Filter>SDL\src\events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\events\SDL_windowevents_c.h">
-      <Filter>SDL\src\events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\haptic\SDL_syshaptic.h">
-      <Filter>SDL\src\haptic</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\haptic\SDL_haptic_c.h">
-      <Filter>SDL\src\haptic</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\joystick\SDL_sysjoystick.h">
-      <Filter>SDL\src\joystick</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\joystick\SDL_gamecontrollerdb.h">
-      <Filter>SDL\src\joystick</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\joystick\SDL_joystick_c.h">
-      <Filter>SDL\src\joystick</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\joystick\windows\SDL_dxjoystick_c.h">
-      <Filter>SDL\src\joystick</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\libm\math_libm.h">
-      <Filter>SDL\src\libm</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\libm\math_private.h">
-      <Filter>SDL\src\libm</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\SDL_sysvideo.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\SDL_blit.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\SDL_blit_auto.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\SDL_blit_copy.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\SDL_blit_slow.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\SDL_egl.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\SDL_pixels_c.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\SDL_rect_c.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\SDL_RLEaccel_c.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\SDL_shape_internals.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_msctf.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_vkeys.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowsclipboard.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowsevents.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowsframebuffer.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowskeyboard.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowsmessagebox.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowsmodes.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowsmouse.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowsopengl.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowsshape.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowsvideo.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\windows\SDL_windowswindow.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\video\windows\wmmsg.h">
-      <Filter>SDL\src\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\timer\SDL_timer_c.h">
-      <Filter>SDL\src\timer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\thread\SDL_thread_c.h">
-      <Filter>SDL\src\thread</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\thread\SDL_systhread.h">
-      <Filter>SDL\src\thread</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\thread\windows\SDL_systhread_c.h">
-      <Filter>SDL\src\thread</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\render\SDL_yuv_sw_c.h">
-      <Filter>SDL\src\render</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\render\mmx.h">
-      <Filter>SDL\src\render</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\render\SDL_sysrender.h">
-      <Filter>SDL\src\render</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\render\opengl\SDL_glfuncs.h">
-      <Filter>SDL\src\render</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\external\SDL\src\render\opengl\SDL_shaders_gl.h">
-      <Filter>SDL\src\render</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src\util\ftalleg.h">
       <Filter>paintown\util</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\platform.h">
       <Filter>paintown</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\zlib\crc32.h">
+      <Filter>external\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\zlib\deflate.h">
+      <Filter>external\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\zlib\inffast.h">
+      <Filter>external\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\zlib\inffixed.h">
+      <Filter>external\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\zlib\inflate.h">
+      <Filter>external\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\zlib\inftrees.h">
+      <Filter>external\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\zlib\trees.h">
+      <Filter>external\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\zlib\zconf.h">
+      <Filter>external\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\zlib\zconf.in.h">
+      <Filter>external\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\zlib\zlib.h">
+      <Filter>external\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\begin_code.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\close_code.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\miniz.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_assert.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_atomic.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_audio.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_bits.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_blendmode.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_clipboard.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_compat.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_config.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_config_android.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_config_iphoneos.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_config_macosx.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_config_minimal.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_config_pandora.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_config_psp.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_config_win8_metro.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_config_windows.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_config_wiz.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_copying.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_cpuinfo.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_endian.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_error.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_events.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_filesystem.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_gamecontroller.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_gesture.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_haptic.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_hints.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_joystick.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_keyboard.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_keycode.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_loadso.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_log.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_main.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_messagebox.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_mouse.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_mutex.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_name.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_opengl.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_opengles2.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_opengles.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_pixels.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_platform.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_power.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_quit.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_rect.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_render.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_revision.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_rwops.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_scancode.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_shape.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_stdinc.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_surface.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_system.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_syswm.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_test.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_test_assert.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_test_common.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_test_compare.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_test_crc32.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_test_font.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_test_fuzzer.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_test_harness.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_test_images.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_test_log.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_test_md5.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_test_random.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_thread.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_timer.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_touch.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_types.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_version.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\include\SDL_video.h">
+      <Filter>external\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\SDL_assert_c.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\SDL_error_c.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\audio\SDL_wave.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\audio\SDL_audio_c.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\audio\SDL_audiodev_c.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\audio\SDL_audiomem.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\audio\SDL_sysaudio.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\audio\winmm\SDL_winmm.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\core\windows\SDL_windows.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\haptic\SDL_haptic_c.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\haptic\SDL_syshaptic.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\joystick\SDL_sysjoystick.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\joystick\SDL_gamecontrollerdb.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\joystick\SDL_joystick_c.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\render\SDL_yuv_sw_c.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\render\mmx.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\render\SDL_sysrender.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\render\software\SDL_blendfillrect.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\render\software\SDL_blendline.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\render\software\SDL_blendpoint.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\render\software\SDL_draw.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\render\software\SDL_drawline.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\render\software\SDL_drawpoint.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\render\software\SDL_render_sw_c.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\render\software\SDL_rotate.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\thread\SDL_systhread.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\thread\SDL_thread_c.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\thread\windows\SDL_systhread_c.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\timer\SDL_timer_c.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\SDL_blit.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\SDL_blit_auto.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\SDL_blit_copy.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\SDL_blit_slow.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\SDL_egl.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\SDL_pixels_c.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\SDL_rect_c.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\SDL_RLEaccel_c.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\SDL_shape_internals.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\SDL_sysvideo.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\windows\SDL_msctf.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\windows\SDL_vkeys.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\windows\SDL_windowsclipboard.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\windows\SDL_windowsevents.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\windows\SDL_windowsframebuffer.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\windows\SDL_windowskeyboard.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\windows\SDL_windowsmessagebox.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\windows\SDL_windowsmodes.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\windows\SDL_windowsmouse.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\windows\SDL_windowsopengl.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\windows\SDL_windowsshape.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\windows\SDL_windowsvideo.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\windows\SDL_windowswindow.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\video\windows\wmmsg.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\events\blank_cursor.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\events\default_cursor.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\events\scancodes_darwin.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\events\scancodes_linux.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\events\scancodes_windows.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\events\scancodes_xfree86.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\events\SDL_clipboardevents_c.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\events\SDL_dropevents_c.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\events\SDL_events_c.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\events\SDL_gesture_c.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\events\SDL_keyboard_c.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\events\SDL_mouse_c.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\events\SDL_sysevents.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\events\SDL_touch_c.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\events\SDL_windowevents_c.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\ft2build.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ttunpat.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\freetype.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftadvanc.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftautoh.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftbbox.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftbdf.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftbitmap.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftbzip2.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftcache.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftcffdrv.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftchapters.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftcid.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\fterrdef.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\fterrors.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftgasp.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftglyph.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftgxval.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftgzip.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftimage.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftincrem.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftlcdfil.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftlist.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftlzw.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftmac.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftmm.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftmodapi.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftmoderr.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftotval.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftoutln.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftpfr.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftrender.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftsizes.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftsnames.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftstroke.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftsynth.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftsystem.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\fttrigon.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\fttypes.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftwinfnt.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ftxf86.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\t1tables.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ttnameid.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\tttables.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\tttags.h">
+      <Filter>external\freetype\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\render\opengl\SDL_glfuncs.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\render\opengl\SDL_shaders_gl.h">
+      <Filter>external\SDL\src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -2522,316 +2699,316 @@
     <ClCompile Include="..\..\src\mugen\constraint.cpp">
       <Filter>paintown\mugen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\SDL.c">
-      <Filter>SDL\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\SDL_assert.c">
-      <Filter>SDL\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\SDL_compat.c">
-      <Filter>SDL\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\SDL_error.c">
-      <Filter>SDL\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\SDL_hints.c">
-      <Filter>SDL\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\SDL_log.c">
-      <Filter>SDL\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\core\windows\SDL_windows.c">
-      <Filter>SDL\src\core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\audio\SDL_audiocvt.c">
-      <Filter>SDL\src\audio</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\audio\SDL_audiodev.c">
-      <Filter>SDL\src\audio</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\audio\SDL_audiotypecvt.c">
-      <Filter>SDL\src\audio</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\audio\SDL_mixer.c">
-      <Filter>SDL\src\audio</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\audio\SDL_wave.c">
-      <Filter>SDL\src\audio</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\audio\SDL_audio.c">
-      <Filter>SDL\src\audio</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\audio\winmm\SDL_winmm.c">
-      <Filter>SDL\src\audio\winmm</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\atomic\SDL_spinlock.c">
-      <Filter>SDL\src\atomic</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\atomic\SDL_atomic.c">
-      <Filter>SDL\src\atomic</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\cpuinfo\SDL_cpuinfo.c">
-      <Filter>SDL\src\cpuinfo</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\events\SDL_clipboardevents.c">
-      <Filter>SDL\src\events</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\events\SDL_dropevents.c">
-      <Filter>SDL\src\events</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\events\SDL_events.c">
-      <Filter>SDL\src\events</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\events\SDL_gesture.c">
-      <Filter>SDL\src\events</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\events\SDL_keyboard.c">
-      <Filter>SDL\src\events</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\events\SDL_mouse.c">
-      <Filter>SDL\src\events</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\events\SDL_quit.c">
-      <Filter>SDL\src\events</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\events\SDL_touch.c">
-      <Filter>SDL\src\events</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\events\SDL_windowevents.c">
-      <Filter>SDL\src\events</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\file\SDL_rwops.c">
-      <Filter>SDL\src\file</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\filesystem\windows\SDL_sysfilesystem.c">
-      <Filter>SDL\src\filesystem</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\haptic\windows\SDL_syshaptic.c">
-      <Filter>SDL\src\haptic</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\haptic\SDL_haptic.c">
-      <Filter>SDL\src\haptic</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\joystick\SDL_gamecontroller.c">
-      <Filter>SDL\src\joystick</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\joystick\SDL_joystick.c">
-      <Filter>SDL\src\joystick</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\joystick\windows\SDL_dxjoystick.c">
-      <Filter>SDL\src\joystick</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\joystick\windows\SDL_mmjoystick.c">
-      <Filter>SDL\src\joystick</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\libm\e_atan2.c">
-      <Filter>SDL\src\libm</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\libm\e_log.c">
-      <Filter>SDL\src\libm</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\libm\e_pow.c">
-      <Filter>SDL\src\libm</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\libm\e_rem_pio2.c">
-      <Filter>SDL\src\libm</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\libm\e_sqrt.c">
-      <Filter>SDL\src\libm</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\libm\k_cos.c">
-      <Filter>SDL\src\libm</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\libm\k_rem_pio2.c">
-      <Filter>SDL\src\libm</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\libm\k_sin.c">
-      <Filter>SDL\src\libm</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\libm\s_atan.c">
-      <Filter>SDL\src\libm</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\libm\s_copysign.c">
-      <Filter>SDL\src\libm</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\libm\s_cos.c">
-      <Filter>SDL\src\libm</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\libm\s_fabs.c">
-      <Filter>SDL\src\libm</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\libm\s_floor.c">
-      <Filter>SDL\src\libm</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\libm\s_scalbn.c">
-      <Filter>SDL\src\libm</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\libm\s_sin.c">
-      <Filter>SDL\src\libm</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\loadso\dummy\SDL_sysloadso.c">
-      <Filter>SDL\src\loadso</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\main\windows\SDL_windows_main.c">
-      <Filter>SDL\src\main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\SDL_video.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\SDL_blit.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\SDL_blit_0.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\SDL_blit_1.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\SDL_blit_A.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\SDL_blit_auto.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\SDL_blit_copy.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\SDL_blit_N.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\SDL_blit_slow.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\SDL_bmp.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\SDL_clipboard.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\SDL_egl.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\SDL_fillrect.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\SDL_pixels.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\SDL_rect.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\SDL_RLEaccel.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\SDL_shape.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\SDL_stretch.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\SDL_surface.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowsclipboard.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowsevents.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowsframebuffer.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowskeyboard.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowsmessagebox.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowsmodes.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowsmouse.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowsopengl.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowsshape.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowsvideo.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\video\windows\SDL_windowswindow.c">
-      <Filter>SDL\src\video</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\timer\SDL_timer.c">
-      <Filter>SDL\src\timer</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\timer\windows\SDL_systimer.c">
-      <Filter>SDL\src\timer</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\thread\SDL_thread.c">
-      <Filter>SDL\src\thread</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\thread\windows\SDL_sysmutex.c">
-      <Filter>SDL\src\thread</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\thread\windows\SDL_syssem.c">
-      <Filter>SDL\src\thread</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\thread\windows\SDL_systhread.c">
-      <Filter>SDL\src\thread</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\thread\windows\SDL_systls.c">
-      <Filter>SDL\src\thread</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\stdlib\SDL_string.c">
-      <Filter>SDL\src\stdlib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\stdlib\SDL_getenv.c">
-      <Filter>SDL\src\stdlib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\stdlib\SDL_iconv.c">
-      <Filter>SDL\src\stdlib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\stdlib\SDL_malloc.c">
-      <Filter>SDL\src\stdlib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\stdlib\SDL_qsort.c">
-      <Filter>SDL\src\stdlib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\stdlib\SDL_stdlib.c">
-      <Filter>SDL\src\stdlib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\power\SDL_power.c">
-      <Filter>SDL\src\power</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\power\windows\SDL_syspower.c">
-      <Filter>SDL\src\power</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\render\SDL_render.c">
-      <Filter>SDL\src\render</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\render\SDL_yuv_mmx.c">
-      <Filter>SDL\src\render</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\render\SDL_yuv_sw.c">
-      <Filter>SDL\src\render</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\render\opengl\SDL_render_gl.c">
-      <Filter>SDL\src\render</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\external\SDL\src\render\opengl\SDL_shaders_gl.c">
-      <Filter>SDL\src\render</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\util\ftalleg.cpp">
       <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\zlib\zutil.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\zlib\adler32.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\zlib\compress.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\zlib\crc32.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\zlib\deflate.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\zlib\example.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\zlib\gzio.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\zlib\infback.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\zlib\inffast.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\zlib\inflate.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\zlib\inftrees.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\zlib\minigzip.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\zlib\trees.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\zlib\uncompr.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\SDL_log.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\SDL.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\SDL_assert.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\SDL_compat.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\SDL_error.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\SDL_hints.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\atomic\SDL_atomic.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\atomic\SDL_spinlock.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\audio\SDL_audio.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\audio\SDL_audiocvt.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\audio\SDL_audiodev.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\audio\SDL_audiotypecvt.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\audio\SDL_mixer.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\audio\SDL_wave.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\audio\winmm\SDL_winmm.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\core\windows\SDL_windows.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\cpuinfo\SDL_cpuinfo.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\file\SDL_rwops.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\filesystem\windows\SDL_sysfilesystem.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\haptic\SDL_haptic.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\haptic\windows\SDL_syshaptic.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\joystick\SDL_gamecontroller.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\joystick\SDL_joystick.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\joystick\dummy\SDL_sysjoystick.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\loadso\windows\SDL_sysloadso.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\main\windows\SDL_windows_main.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\power\SDL_power.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\power\windows\SDL_syspower.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\render\SDL_render.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\render\SDL_yuv_mmx.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\render\SDL_yuv_sw.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\render\software\SDL_blendfillrect.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\render\software\SDL_blendline.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\render\software\SDL_blendpoint.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\render\software\SDL_drawline.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\render\software\SDL_drawpoint.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\render\software\SDL_render_sw.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\render\software\SDL_rotate.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\thread\SDL_thread.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\thread\windows\SDL_sysmutex.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\thread\windows\SDL_syssem.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\thread\windows\SDL_systhread.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\thread\windows\SDL_systls.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\timer\SDL_timer.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\timer\windows\SDL_systimer.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\SDL_video.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\SDL_blit.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\SDL_blit_0.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\SDL_blit_1.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\SDL_blit_A.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\SDL_blit_auto.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\SDL_blit_copy.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\SDL_blit_N.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\SDL_blit_slow.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\SDL_bmp.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\SDL_clipboard.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\SDL_egl.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\SDL_fillrect.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\SDL_pixels.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\SDL_rect.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\SDL_RLEaccel.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\SDL_shape.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\SDL_stretch.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\SDL_surface.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\windows\SDL_windowsclipboard.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\windows\SDL_windowsevents.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\windows\SDL_windowsframebuffer.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\windows\SDL_windowskeyboard.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\windows\SDL_windowsmessagebox.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\windows\SDL_windowsmodes.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\windows\SDL_windowsmouse.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\windows\SDL_windowsopengl.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\windows\SDL_windowsshape.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\windows\SDL_windowsvideo.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\video\windows\SDL_windowswindow.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\events\SDL_clipboardevents.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\events\SDL_dropevents.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\events\SDL_events.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\events\SDL_gesture.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\events\SDL_keyboard.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\events\SDL_mouse.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\events\SDL_quit.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\events\SDL_touch.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\events\SDL_windowevents.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\render\opengl\SDL_render_gl.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\render\opengl\SDL_shaders_gl.c">
+      <Filter>external\SDL\src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="shinsangon2.rc">
       <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="..\..\..\SDL\src\main\windows\version.rc">
+      <Filter>external\SDL\src</Filter>
     </ResourceCompile>
   </ItemGroup>
 </Project>
