@@ -39,7 +39,6 @@ private:
 
     // DATAFILE * my_data;
     std::map<std::string, Font *> font_mapper;
-    NullFont nullFont;
     Util::Thread::LockObject lock;
 };
 

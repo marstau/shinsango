@@ -643,19 +643,6 @@ void hack(){
 
 SDLJoystick::SDLJoystick(int id):
 joystick(NULL){
-    if (SDL_NumJoysticks() > id){
-        joystick = SDL_JoystickOpen(id);
-        if (joystick == NULL){
-            Global::debug(0) << "Could not open joystick at index " << id << std::endl;
-        } else {
-            Global::debug(1) << "Opened joystick '" << SDL_JoystickName(id) << "'" << std::endl;
-        }
-        // printf("Opened joystick '%s'\n", SDL_JoystickName(4));
-        buttonMapping = makeButtonMapping(SDL_JoystickName(id));
-
-        readCustomButtons();
-        readCustomAxes();
-    }
 }
     
 Joystick::Key SDLJoystick::getKey(int button){
@@ -738,18 +725,10 @@ void SDLJoystick::axisMotion(int axis, int motion){
 }
 
 string SDLJoystick::getName() const {
-    if (joystick){
-        return SDL_JoystickName(getDeviceId());
-    }
-
     return "";
 }
 
 int SDLJoystick::getDeviceId() const {
-    if (joystick){
-        return SDL_JoystickIndex(joystick);
-    }
-
     return -1;
 }
     

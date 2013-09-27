@@ -651,7 +651,6 @@ bool playLevel( World & world, const vector< Paintown::Object * > & players){
             return out;
         }
 
-        using Util::Logic::run;
         void run(GameState & state){
             world.act();
             console.act();

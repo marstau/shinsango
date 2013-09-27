@@ -91,8 +91,7 @@ Font * FontFactory::getRealFont(const Filesystem::RelativePath & path, const int
 
         return f;
     } catch (const Filesystem::NotFound & e){
-        Global::debug(0) << "Warning: could not find font " << path.path() << ": " << e.getTrace() << endl;
-        return &nullFont;
+		return NULL;
     }
     // return font_mapper[ str ];
 }
@@ -109,10 +108,6 @@ void FontFactory::_clear(){
 }
 
 FontFactory::FontFactory(){
-    // my_data = load_datafile(Filesystem::find(Filesystem::RelativePath("fonts.dat")).path().c_str());
-#ifdef USE_ALLEGRO
-    font_mapper[ "bios" ] = new AllegroFont(::font);
-#endif
 }
 
 FontFactory::~FontFactory(){
@@ -120,10 +115,4 @@ FontFactory::~FontFactory(){
         Font * s = (*it).second;
         delete s;
     }
-
-        /*
-	if ( my_data != NULL ){
-		unload_datafile( my_data );
-	}
-        */
 }

@@ -1,7 +1,3 @@
-#ifdef USE_ALLEGRO
-/* for textout_* and whatnot */
-#include <allegro.h>
-#endif
 #include "graphics/bitmap.h"
 #include "font.h"
 #include "funcs.h"
@@ -46,48 +42,6 @@ void Font::printfWrapLine(int x, int & y, Graphics::Color color, const Graphics:
     y += getHeight() / 2;
 }
 
-#if 0
-void Font::printfWrapLine2(int x, int & y, int color, const Bitmap & work, int maxWidth, const char * line) const {
-    int height = getHeight();
-    while (*line != '\0'){
-        char tmp2[1024];
-        int left = strlen(line);
-        int min = 0;
-        int max = left;
-        int current = (min + max) / 2;
-        strncpy(tmp2, line, current);
-        tmp2[current] = '\0';
-        bool done = false;
-        while (!done){
-            int length = textLength(tmp2);
-            if (length >= maxWidth){
-                max = current;
-                current = (min + max) / 2;
-                strncpy(tmp2, line, current);
-                tmp2[current] = '\0';
-            } else if (length < maxWidth && current < max){
-                min = current;
-                current = (min + max) / 2;
-                if (current == max - 1){
-                    current = max;
-                    done = true;
-                }
-                strncpy(tmp2, line, current);
-                tmp2[current] = '\0';
-            } else {
-                done = true;
-            }
-        }
-        printf(x, y, color, work, string(tmp2), 0);
-        y += height;
-
-        line += current;
-    }
-
-    y += height / 2;
-}
-#endif
-
 void Font::printfWrap(int x, int y, Graphics::Color color, const Graphics::Bitmap & work, int maxWidth, const std::string & str, int marker, ... ) const {
     char buf[4096];
     va_list ap;
@@ -117,64 +71,6 @@ void Font::printfWrap(int x, int y, Graphics::Color color, const Graphics::Bitma
 
 Font::~Font(){
 }
-
-#ifdef USE_ALLEGRO
-AllegroFont::AllegroFont( const FONT * const font ):
-font(font){
-}
-	
-AllegroFont::AllegroFont( const AllegroFont & copy ):
-font( copy.getInternalFont() ){
-}
-
-AllegroFont::~AllegroFont(){
-}
-	
-int AllegroFont::textLength( const char * text ) const{
-    return text_length( getInternalFont(), text );
-}
-
-int AllegroFont::getHeight( const string & str ) const {
-    return getHeight();
-}
-
-int AllegroFont::getHeight() const {
-    return text_height( getInternalFont() );
-}
-
-void AllegroFont::setSize( const int x, const int y ){
-}
-
-int AllegroFont::getSizeX() const {
-    return 0;
-}
-
-int AllegroFont::getSizeY() const {
-    return 0;
-}
-
-void AllegroFont::printf( int x, int y, int xSize, int ySize, Graphics::Color color, const Graphics::Bitmap & work, const string & str, int marker, ... ) const {
-    char buf[512];
-    va_list ap;
-
-    va_start(ap, marker);
-    Util::limitPrintf(buf, sizeof(buf), str.c_str(), ap);
-    va_end(ap);
-
-    textout_ex(work.getData()->getBitmap(), getInternalFont(), buf, x, y, color.color, -1);
-}
-	
-void AllegroFont::printf( int x, int y, Graphics::Color color, const Graphics::Bitmap & work, const string & str, int marker, ... ) const {
-    char buf[512];
-    va_list ap;
-
-    va_start(ap, marker);
-    uvszprintf(buf, sizeof(buf), str.c_str(), ap);
-    va_end(ap);
-
-    textout_ex(work.getData()->getBitmap(), getInternalFont(), buf, x, y, color.color, -1);
-}
-#endif
 
 const Font & Font::getDefaultFont(){
     return getDefaultFont(16, 16);
@@ -280,39 +176,4 @@ FreeTypeFont::~FreeTypeFont(){
     if (own){
         delete this->font;
     }
-}
-
-NullFont::NullFont(){
-}
-
-NullFont::~NullFont(){
-}
-
-void NullFont::setSize( const int x, const int y ){
-}
-
-int NullFont::getSizeX() const {
-    return 0;
-}
-
-int NullFont::getSizeY() const {
-    return 0;
-}
-
-int NullFont::textLength( const char * text ) const {
-    return 0;
-}
-
-int NullFont::getHeight( const std::string & str ) const {
-    return 0;
-}
-
-int NullFont::getHeight() const {
-    return 0;
-}
-
-void NullFont::printf( int x, int y, int xSize, int ySize, Graphics::Color color, const Graphics::Bitmap & work, const std::string & str, int marker, ... ) const {
-}
-
-void NullFont::printf( int x, int y, Graphics::Color color, const Graphics::Bitmap & work, const std::string & str, int marker, ... ) const {
 }

@@ -145,7 +145,7 @@ public:
 
         if (key1->satisfy(input, tick) &&
             key2->satisfy(input, tick) &&
-            fabs(key1->getSatisfiedTick() - key2->getSatisfiedTick()) < threshold){
+            fabs(1.0f * key1->getSatisfiedTick() - key2->getSatisfiedTick()) < threshold){
             return true;
         }
 
