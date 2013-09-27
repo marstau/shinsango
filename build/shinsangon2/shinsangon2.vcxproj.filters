@@ -1404,19 +1404,7 @@
     <ClInclude Include="..\..\..\SDL\src\core\windows\SDL_windows.h">
       <Filter>external\SDL\src</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\SDL\src\haptic\SDL_haptic_c.h">
-      <Filter>external\SDL\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\SDL\src\haptic\SDL_syshaptic.h">
-      <Filter>external\SDL\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\SDL\src\joystick\SDL_sysjoystick.h">
-      <Filter>external\SDL\src</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\SDL\src\joystick\SDL_gamecontrollerdb.h">
-      <Filter>external\SDL\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\SDL\src\joystick\SDL_joystick_c.h">
       <Filter>external\SDL\src</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\SDL\src\render\SDL_yuv_sw_c.h">
@@ -1766,9 +1754,6 @@
     <ClCompile Include="..\..\src\util\loading.cpp">
       <Filter>paintown\util</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\util\compress.cpp">
-      <Filter>paintown\util</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\util\file-system.cpp">
       <Filter>paintown\util</Filter>
     </ClCompile>
@@ -1779,9 +1764,6 @@
       <Filter>paintown\util</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\util\directory.cpp">
-      <Filter>paintown\util</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\util\argument.cpp">
       <Filter>paintown\util</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\util\console.cpp">
@@ -1812,9 +1794,6 @@
       <Filter>paintown\util</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\util\timedifference.cpp">
-      <Filter>paintown\util</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\util\timer.cpp">
       <Filter>paintown\util</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\util\version.cpp">
@@ -2003,19 +1982,10 @@
     <ClCompile Include="..\..\src\util\input\input-source.cpp">
       <Filter>paintown\util\input</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\util\input\joystick.cpp">
-      <Filter>paintown\util\input</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\util\input\keyboard.cpp">
-      <Filter>paintown\util\input</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\util\input\linux_joystick.cpp">
       <Filter>paintown\util\input</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\util\input\text-input.cpp">
-      <Filter>paintown\util\input</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\util\input\sdl\joystick.cpp">
       <Filter>paintown\util\input</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\util\input\sdl\keyboard.cpp">
@@ -2033,9 +2003,6 @@
     <ClCompile Include="..\..\src\util\menu\font-info.cpp">
       <Filter>paintown\util\menu</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\util\menu\menu.cpp">
-      <Filter>paintown\util\menu</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\util\menu\menu_action.cpp">
       <Filter>paintown\util\menu</Filter>
     </ClCompile>
@@ -2045,17 +2012,11 @@
     <ClCompile Include="..\..\src\util\menu\optionfactory.cpp">
       <Filter>paintown\util\menu</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\util\menu\options.cpp">
-      <Filter>paintown\util\menu</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\util\nacl\module.cpp">
       <Filter>paintown\util\nacl</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\util\nacl\network-system.cpp">
       <Filter>paintown\util\nacl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\util\network\network.cpp">
-      <Filter>paintown\util\network</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\util\network\chat.cpp">
       <Filter>paintown\util\network</Filter>
@@ -2098,9 +2059,6 @@
     </ClCompile>
     <ClCompile Include="..\..\src\util\network\hawknl\src\sock.cpp">
       <Filter>paintown\util\network\hawknl</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\util\pcre\dftables.c">
-      <Filter>paintown\util\pcre</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\util\pcre\pcre_chartables.c">
       <Filter>paintown\util\pcre</Filter>
@@ -2160,9 +2118,6 @@
       <Filter>paintown\util\pcre</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\util\pcre\pcre_xclass.c">
-      <Filter>paintown\util\pcre</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\util\pcre\pcregrep.c">
       <Filter>paintown\util\pcre</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\util\pcre\pcreposix.c">
@@ -2318,12 +2273,6 @@
     <ClCompile Include="..\..\src\util\sound\sound.cpp">
       <Filter>paintown\util\sound</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\util\windows\funcs.cpp">
-      <Filter>paintown\util\windows</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\util\windows\system.cpp">
-      <Filter>paintown\util\windows</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\util\zip\ioapi.c">
       <Filter>paintown\util\zip</Filter>
     </ClCompile>
@@ -2345,15 +2294,6 @@
     <ClCompile Include="..\..\src\paintown-engine\game\adventure_world.cpp">
       <Filter>paintown\paintown-engine\game</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\paintown-engine\game\argument.cpp">
-      <Filter>paintown\paintown-engine\game</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\paintown-engine\game\character-select.cpp">
-      <Filter>paintown\paintown-engine\game</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\paintown-engine\game\game.cpp">
-      <Filter>paintown\paintown-engine\game</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\paintown-engine\game\mod.cpp">
       <Filter>paintown\paintown-engine\game</Filter>
     </ClCompile>
@@ -2366,19 +2306,10 @@
     <ClCompile Include="..\..\src\paintown-engine\game\select_player.cpp">
       <Filter>paintown\paintown-engine\game</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\paintown-engine\game\world.cpp">
-      <Filter>paintown\paintown-engine\game</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\paintown-engine\game\options.cpp">
-      <Filter>paintown\paintown-engine\game</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\paintown-engine\level\block.cpp">
       <Filter>paintown\paintown-engine\level</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\paintown-engine\level\blockobject.cpp">
-      <Filter>paintown\paintown-engine\level</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\paintown-engine\level\cacher.cpp">
       <Filter>paintown\paintown-engine\level</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\paintown-engine\level\random-scene.cpp">
@@ -2389,9 +2320,6 @@
     </ClCompile>
     <ClCompile Include="..\..\src\paintown-engine\level\utils.cpp">
       <Filter>paintown\paintown-engine\level</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\paintown-engine\network\cacher.cpp">
-      <Filter>paintown\paintown-engine\network</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\paintown-engine\network\chat_client.cpp">
       <Filter>paintown\paintown-engine\network</Filter>
@@ -2414,12 +2342,6 @@
     <ClCompile Include="..\..\src\paintown-engine\network\server.cpp">
       <Filter>paintown\paintown-engine\network</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\paintown-engine\network\network.cpp">
-      <Filter>paintown\paintown-engine\network</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\paintown-engine\trigger\trigger.cpp">
-      <Filter>paintown\paintown-engine\trigger</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\paintown-engine\script\script.cpp">
       <Filter>paintown\paintown-engine\script</Filter>
     </ClCompile>
@@ -2427,9 +2349,6 @@
       <Filter>paintown\paintown-engine\object</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\paintown-engine\object\alliance.cpp">
-      <Filter>paintown\paintown-engine\object</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\paintown-engine\object\animation.cpp">
       <Filter>paintown\paintown-engine\object</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\paintown-engine\object\animation_event.cpp">
@@ -2489,9 +2408,6 @@
     <ClCompile Include="..\..\src\paintown-engine\object\player-common.cpp">
       <Filter>paintown\paintown-engine\object</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\paintown-engine\object\projectile.cpp">
-      <Filter>paintown\paintown-engine\object</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\paintown-engine\object\stimulation.cpp">
       <Filter>paintown\paintown-engine\object</Filter>
     </ClCompile>
@@ -2519,9 +2435,6 @@
     <ClCompile Include="..\..\src\mugen\helper.cpp">
       <Filter>paintown\mugen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\mugen\item.cpp">
-      <Filter>paintown\mugen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\mugen\menu.cpp">
       <Filter>paintown\mugen</Filter>
     </ClCompile>
@@ -2540,9 +2453,6 @@
     <ClCompile Include="..\..\src\mugen\background.cpp">
       <Filter>paintown\mugen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\mugen\exception.cpp">
-      <Filter>paintown\mugen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\mugen\item-content.cpp">
       <Filter>paintown\mugen</Filter>
     </ClCompile>
@@ -2555,25 +2465,10 @@
     <ClCompile Include="..\..\src\mugen\sff.cpp">
       <Filter>paintown\mugen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\mugen\sound.cpp">
-      <Filter>paintown\mugen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\mugen\util.cpp">
-      <Filter>paintown\mugen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\mugen\effect.cpp">
-      <Filter>paintown\mugen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\mugen\random.cpp">
       <Filter>paintown\mugen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\mugen\state.cpp">
-      <Filter>paintown\mugen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\mugen\animation.cpp">
-      <Filter>paintown\mugen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\mugen\font.cpp">
       <Filter>paintown\mugen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\mugen\parse-cache.cpp">
@@ -2597,13 +2492,7 @@
     <ClCompile Include="..\..\src\mugen\run-match.cpp">
       <Filter>paintown\mugen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\mugen\argument.cpp">
-      <Filter>paintown\mugen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\mugen\behavior.cpp">
-      <Filter>paintown\mugen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\mugen\character.cpp">
       <Filter>paintown\mugen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\mugen\character-select.cpp">
@@ -2654,9 +2543,6 @@
     <ClCompile Include="..\..\..\wp8_external\zlib\deflate.c">
       <Filter>external\zlib</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\wp8_external\zlib\example.c">
-      <Filter>external\zlib</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\wp8_external\zlib\gzio.c">
       <Filter>external\zlib</Filter>
     </ClCompile>
@@ -2670,9 +2556,6 @@
       <Filter>external\zlib</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\wp8_external\zlib\inftrees.c">
-      <Filter>external\zlib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\wp8_external\zlib\minigzip.c">
       <Filter>external\zlib</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\wp8_external\zlib\trees.c">
@@ -2738,25 +2621,10 @@
     <ClCompile Include="..\..\..\SDL\src\filesystem\windows\SDL_sysfilesystem.c">
       <Filter>external\SDL\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\SDL\src\haptic\SDL_haptic.c">
-      <Filter>external\SDL\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\SDL\src\haptic\windows\SDL_syshaptic.c">
-      <Filter>external\SDL\src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\SDL\src\joystick\SDL_gamecontroller.c">
       <Filter>external\SDL\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\SDL\src\joystick\SDL_joystick.c">
-      <Filter>external\SDL\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\SDL\src\joystick\dummy\SDL_sysjoystick.c">
-      <Filter>external\SDL\src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\SDL\src\loadso\windows\SDL_sysloadso.c">
-      <Filter>external\SDL\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\SDL\src\main\windows\SDL_windows_main.c">
       <Filter>external\SDL\src</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\SDL\src\power\SDL_power.c">
@@ -2938,6 +2806,117 @@
     </ClCompile>
     <ClCompile Include="..\..\..\SDL\src\render\opengl\SDL_shaders_gl.c">
       <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\stdlib\SDL_getenv.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\stdlib\SDL_iconv.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\stdlib\SDL_malloc.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\stdlib\SDL_qsort.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\stdlib\SDL_stdlib.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\stdlib\SDL_string.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\mugen_font.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\mugen_animation.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\mugen_item.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\mugen_sound.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\mugen_util.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\mugen_effect.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\mugen_exception.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\mugen_character.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\mugen_argument.cpp">
+      <Filter>paintown\mugen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\util_argument.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\windows\system_win32.cpp">
+      <Filter>paintown\util\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\windows\funcs_win32.cpp">
+      <Filter>paintown\util\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\network\util_network.cpp">
+      <Filter>paintown\util\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\network\paintown_network.cpp">
+      <Filter>paintown\paintown-engine\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\network\network_cacher.cpp">
+      <Filter>paintown\paintown-engine\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\level\level_cacher.cpp">
+      <Filter>paintown\paintown-engine\level</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\paintown_projectile.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\menu\util_menu.cpp">
+      <Filter>paintown\util\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\menu\util_options.cpp">
+      <Filter>paintown\util\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\util_timer.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\game\paintown_game.cpp">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\game\paintown_argument.cpp">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\game\paintown_world.cpp">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\game\paintown_options.cpp">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\util_compress.cpp">
+      <Filter>paintown\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\object\paintown_animation.cpp">
+      <Filter>paintown\paintown-engine\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\input\util_joystick.cpp">
+      <Filter>paintown\util\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\input\sdl\joystick.cpp">
+      <Filter>paintown\util\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\input\util_keyboard.cpp">
+      <Filter>paintown\util\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\game\paintown_character-select.cpp">
+      <Filter>paintown\paintown-engine\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\paintown-engine\trigger\paintown_trigger.cpp">
+      <Filter>paintown\paintown-engine\trigger</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -5,7 +5,7 @@
 #include <fstream>
 
 #ifdef USE_SDL
-#include <SDL/SDL.h>
+#include <SDL.h>
 #endif
 
 #ifndef WINDOWS

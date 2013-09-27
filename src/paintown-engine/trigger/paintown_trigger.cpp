@@ -36,7 +36,7 @@ protected:
     const Token * message;
 };
 
-Trigger * Trigger::parse(const Token * token) throw (TokenException) {
+Trigger * Trigger::parse(const Token * token) {
     const Token * token_type = token->findToken("trigger/type");
     if (token_type == NULL){
         throw TokenException(__FILE__, __LINE__, "Expected to find trigger/type");

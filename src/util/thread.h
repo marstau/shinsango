@@ -218,7 +218,7 @@ public:
             future.acquire();
             if (!done){
                 future.release();
-                Util::rest(1);
+                ::Util::rest(1);
             } else {
                 ok = true;
             }
