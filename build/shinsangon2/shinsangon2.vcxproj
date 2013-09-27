@@ -416,7 +416,6 @@
     <ClInclude Include="..\..\src\paintown-engine\object\player.h" />
     <ClInclude Include="..\..\src\paintown-engine\object\projectile.h" />
     <ClInclude Include="..\..\src\paintown-engine\object\stimulation.h" />
-    <ClInclude Include="..\..\src\paintown-engine\object\trigger.h" />
     <ClInclude Include="..\..\src\paintown-engine\object\versus_enemy.h" />
     <ClInclude Include="..\..\src\paintown-engine\object\versus_player.h" />
     <ClInclude Include="..\..\src\paintown-engine\script\script.h" />
@@ -808,11 +807,10 @@
     <ClCompile Include="..\..\src\paintown-engine\object\player.cpp" />
     <ClCompile Include="..\..\src\paintown-engine\object\paintown_projectile.cpp" />
     <ClCompile Include="..\..\src\paintown-engine\object\stimulation.cpp" />
-    <ClCompile Include="..\..\src\paintown-engine\object\trigger.cpp" />
     <ClCompile Include="..\..\src\paintown-engine\object\versus_enemy.cpp" />
     <ClCompile Include="..\..\src\paintown-engine\object\versus_player.cpp" />
     <ClCompile Include="..\..\src\paintown-engine\script\script.cpp" />
-    <ClCompile Include="..\..\src\paintown-engine\trigger\paintown_trigger.cpp" />
+    <ClCompile Include="..\..\src\paintown-engine\trigger\trigger.cpp" />
     <ClCompile Include="..\..\src\util\7z\7zAlloc.c" />
     <ClCompile Include="..\..\src\util\7z\7zBuf.c" />
     <ClCompile Include="..\..\src\util\7z\7zBuf2.c" />
@@ -850,7 +848,6 @@
     <ClCompile Include="..\..\src\util\7z\XzEnc.c" />
     <ClCompile Include="..\..\src\util\7z\XzIn.c" />
     <ClCompile Include="..\..\src\util\util_argument.cpp" />
-    <ClCompile Include="..\..\src\util\util_compress.cpp" />
     <ClCompile Include="..\..\src\util\configuration.cpp" />
     <ClCompile Include="..\..\src\util\console.cpp" />
     <ClCompile Include="..\..\src\util\debug.cpp" />

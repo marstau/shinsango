@@ -879,9 +879,6 @@
     <ClInclude Include="..\..\src\paintown-engine\object\stimulation.h">
       <Filter>paintown\paintown-engine\object</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\paintown-engine\object\trigger.h">
-      <Filter>paintown\paintown-engine\object</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src\paintown-engine\object\versus_enemy.h">
       <Filter>paintown\paintown-engine\object</Filter>
     </ClInclude>
@@ -2411,9 +2408,6 @@
     <ClCompile Include="..\..\src\paintown-engine\object\stimulation.cpp">
       <Filter>paintown\paintown-engine\object</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\paintown-engine\object\trigger.cpp">
-      <Filter>paintown\paintown-engine\object</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\paintown-engine\object\versus_enemy.cpp">
       <Filter>paintown\paintown-engine\object</Filter>
     </ClCompile>
@@ -2897,9 +2891,6 @@
     <ClCompile Include="..\..\src\paintown-engine\game\paintown_options.cpp">
       <Filter>paintown\paintown-engine\game</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\util\util_compress.cpp">
-      <Filter>paintown\util</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\paintown-engine\object\paintown_animation.cpp">
       <Filter>paintown\paintown-engine\object</Filter>
     </ClCompile>
@@ -2915,7 +2906,7 @@
     <ClCompile Include="..\..\src\paintown-engine\game\paintown_character-select.cpp">
       <Filter>paintown\paintown-engine\game</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\paintown-engine\trigger\paintown_trigger.cpp">
+    <ClCompile Include="..\..\src\paintown-engine\trigger\trigger.cpp">
       <Filter>paintown\paintown-engine\trigger</Filter>
     </ClCompile>
   </ItemGroup>
