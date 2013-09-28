@@ -15,3 +15,8 @@
 /mods/.svn
 
 /build/*.opensdf
+/*.pdb
+/*.ilk
+/shinsangon2.lib
+/shinsangon2.exp
+/shinsangon2.exe

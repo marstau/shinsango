@@ -40,6 +40,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)..\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -736,6 +737,7 @@
     <ClCompile Include="..\..\..\SDL\src\libm\s_scalbn.c" />
     <ClCompile Include="..\..\..\SDL\src\libm\s_sin.c" />
     <ClCompile Include="..\..\..\SDL\src\loadso\windows\SDL_sysloadso.c" />
+    <ClCompile Include="..\..\..\SDL\src\main\windows\SDL_windows_main.c" />
     <ClCompile Include="..\..\..\SDL\src\render\opengl\SDL_render_gl.c" />
     <ClCompile Include="..\..\..\SDL\src\render\opengl\SDL_shaders_gl.c" />
     <ClCompile Include="..\..\..\SDL\src\render\SDL_render.c" />
@@ -1256,7 +1258,6 @@
     <ClCompile Include="..\..\src\util\zip\ioapi.c" />
     <ClCompile Include="..\..\src\util\zip\unzip.c" />
     <ClCompile Include="..\..\src\util\zip\zip.c" />
-    <ClCompile Include="shinsangon2.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

@@ -1949,9 +1949,6 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="shinsangon2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\globals.cpp">
       <Filter>paintown</Filter>
     </ClCompile>
@@ -3691,6 +3688,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\pfr\pfr.c">
       <Filter>external\freetype\src\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\main\windows\SDL_windows_main.c">
+      <Filter>external\SDL\src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
