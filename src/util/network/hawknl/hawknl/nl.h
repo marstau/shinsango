@@ -101,11 +101,7 @@ typedef unsigned int NLenum;
 typedef void NLvoid;
 typedef NLlong NLsocket;
 /* NOTE: NLchar is only to be used for external strings that might be unicode */
-#if defined _UNICODE
-typedef wchar_t NLchar;
-#else
 typedef char NLchar;
-#endif
     
 typedef struct _NLaddress
 {
@@ -427,55 +423,8 @@ HL_EXP NLdouble  HL_APIENTRY nlSwapd(NLdouble d);
 #define readByte(x, y, z)       (z = *(NLbyte *)&x[y++])
 #define readBlock(x, y, z, a)   {memcpy((char *)z, (char *)&x[y], a);y += a;}
 
-#ifdef _UNICODE
-#include <stdlib.h>
-
-#define writeString(x, y, z)    writeStringWC(x, &y, z)
-#define readString(x, y, z)     readStringWC(x, &y, z)
-
-HL_INLINE void writeStringWC(NLbyte *x, NLint *y, NLchar *z)
-{
-    int len = (int)wcstombs(&x[*y], z, (size_t)NL_MAX_STRING_LENGTH);
-    
-    if(len == NL_MAX_STRING_LENGTH)
-    {
-        /* must null terminate string */
-        x[*y + NL_MAX_STRING_LENGTH - 1] = '\0';
-        *y += NL_MAX_STRING_LENGTH;
-    }
-    else if(len > 0)
-    {
-        *y += (len + 1);
-    }
-    else
-    {
-        /* there was an error in wcstombs, so just add a 0 length string to the buffer */
-        x[*y] = '\0';
-        *y++;
-    }
-}
-
-HL_INLINE void readStringWC(NLbyte *x, NLint *y, NLchar *z)
-{
-    int len = (int)mbstowcs(z, &x[*y], (size_t)NL_MAX_STRING_LENGTH);
-    
-    if(len == NL_MAX_STRING_LENGTH)
-    {
-        /* must null terminate string */
-        z[NL_MAX_STRING_LENGTH - 1] = L'\0';
-    }
-    else if(len < 0)
-    {
-        /* must null terminate string */
-        z[0] = L'\0';
-    }
-    *y += (strlen((char *)&x[*y]) + 1);
-}
-
-#else /* !_UNICODE */
 #define writeString(x, y, z)    {strcpy((char *)&x[y], (char *)z); y += (strlen((char *)z) + 1);}
 #define readString(x, y, z)     {strcpy((char *)z, (char *)&x[y]); y += (strlen((char *)z) + 1);}
-#endif /* !_UNICODE */
 
 #ifdef __cplusplus
 }  /* extern "C" */

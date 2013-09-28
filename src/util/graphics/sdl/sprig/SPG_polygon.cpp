@@ -21,11 +21,11 @@
 #include "math.h"
 
 /* Globals */
-extern Uint8 spg_alphahack;
+extern "C" Uint8 spg_alphahack;
 extern SPG_bool spg_useerrors;
 extern SPG_bool spg_makedirtyrects;
 extern SPG_DirtyTable* spg_dirtytable_front;
-extern Uint16 spg_thickness;
+extern "C" Uint16 spg_thickness;
 extern SPG_bool spg_usedegrees;
 
 /* We need some internal functions */

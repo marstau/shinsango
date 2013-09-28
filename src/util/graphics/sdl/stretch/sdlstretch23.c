@@ -26,8 +26,8 @@ static char rcsid =
  "@(#) $Id: sdstretch.c $";
 #endif
 
-#include "SDL/SDL_error.h"
-#include "SDL/SDL_video.h"
+#include "SDL_error.h"
+#include "SDL_video.h"
 #include "SDL_stretch.h"
 #include "SDL_stretchasm.h"
 

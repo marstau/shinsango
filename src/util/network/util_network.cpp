@@ -150,14 +150,16 @@ char * dumpStr(char * where, const std::string & str){
 }
 
 string readStr(Socket socket, const uint16_t length){
-    char buffer[length + 1];
+    char* buffer = new char[length + 1];
     NLint bytes = nlRead(socket, buffer, length);
     if (bytes == NL_INVALID){
         throw NetworkException(string("Could not read string.") + getHawkError());
     }
     buffer[length] = 0;
     bytes += 1;
-    return string(buffer);
+    std::string str(buffer);
+	delete buffer;
+	return str;
 }
 
 void sendStr(Socket socket, const string & str){
@@ -334,13 +336,13 @@ bool noDelay(Socket s, bool b){
     return nlSetSocketOpt(s, NL_TCP_NO_DELAY, b) == NL_TRUE;
 }
 
-void listen( Socket s ) throw( NetworkException ){
+void listen( Socket s ){
 	if ( nlListen( s ) == NL_FALSE ){
 		throw CannotListenException( string(nlGetSystemErrorStr( nlGetSystemError() )) );
 	}
 }
 
-Socket accept( Socket s ) throw( NetworkException ){
+Socket accept( Socket s ){
     Socket connection = nlAcceptConnection(s);
     if ( connection == NL_INVALID ){
         /*

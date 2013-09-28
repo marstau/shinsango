@@ -65,18 +65,6 @@ protected:
     ReferenceCount<MusicRenderer> out;
 };
 
-/* uses the GME library, plays nintendo music files and others */
-class GMEPlayer: public MusicPlayer {
-public:
-    GMEPlayer(std::string path);
-    virtual void setVolume(double volume);
-    virtual ~GMEPlayer();
-    virtual void render(void * stream, int length);
-
-protected:
-    Music_Emu * emulator;
-};
-
 #ifdef HAVE_OGG
 struct OggPage{
     struct Page{
@@ -212,31 +200,6 @@ protected:
 #endif
 };
 #endif
-
-/* interface to DUMB, plays mod/s3m/xm/it */
-class DumbPlayer: public MusicPlayer {
-public:
-    DumbPlayer(const Filesystem::AbsolutePath & path);
-    virtual void setVolume(double volume);
-    virtual void render(void * data, int samples);
-
-    virtual ~DumbPlayer();
-
-    class DumbSystem{
-    public:
-        DumbSystem();
-        virtual DUH * loadDumbFile() = 0;
-        virtual ~DumbSystem();
-    };
-
-    // DUH * loadDumbFile(std::string path);
-
-protected:
-    DUH * music_file;
-    DUH_SIGRENDERER * renderer;
-    ReferenceCount<DumbSystem> system;
-};
-
 }
 
 #endif

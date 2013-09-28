@@ -422,16 +422,9 @@ bool Music::internal_loadSong(string path){
     */
 
     try {
-        if (isDumbFile(path)){
-            musicPlayer = new Util::DumbPlayer(Filesystem::AbsolutePath(path));
-            musicPlayer->play();
-            playing = true;
-        } else if (isGMEFile(path)){
-            musicPlayer = new Util::GMEPlayer(path);
-            musicPlayer->play();
-            playing = true;
+		if (false) {
 #ifdef HAVE_OGG
-        } else if (isOggFile(path)){
+        else if (isOggFile(path)){
             musicPlayer = new Util::OggPlayer(Filesystem::AbsolutePath(path));
             musicPlayer->play();
             playing = true;

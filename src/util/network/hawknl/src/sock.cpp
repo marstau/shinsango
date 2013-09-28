@@ -814,7 +814,7 @@ static SOCKET sock_AcceptUDP(NLsocket nlsocket, /*@out@*/struct sockaddr_in *new
     
     /* create the return message */
     writeShort(buffer, count, localport);
-    writeString(buffer, count, (NLchar *)TEXT(NL_REPLY_STRING));
+    writeString(buffer, count, (NLchar *)(NL_REPLY_STRING));
     
     /* send back the reply with our new port */
     if(sendto((SOCKET)sock->realsocket, buffer, count, 0, (struct sockaddr *)newaddr,
@@ -2073,12 +2073,12 @@ NLchar *sock_AddrToString(const NLaddress *address, NLchar *string)
     port = ntohs(((struct sockaddr_in *)address)->sin_port);
     if(port == 0)
     {
-        _stprintf(string, TEXT("%lu.%lu.%lu.%lu"), (addr >> 24) & 0xff, (addr >> 16)
+        sprintf(string, ("%lu.%lu.%lu.%lu"), (addr >> 24) & 0xff, (addr >> 16)
             & 0xff, (addr >> 8) & 0xff, addr & 0xff);
     }
     else
     {
-        _stprintf(string, TEXT("%lu.%lu.%lu.%lu:%u"), (addr >> 24) & 0xff, (addr >> 16)
+        sprintf(string, ("%lu.%lu.%lu.%lu:%u"), (addr >> 24) & 0xff, (addr >> 16)
             & 0xff, (addr >> 8) & 0xff, addr & 0xff, port);
     }
     return string;
@@ -2090,7 +2090,7 @@ NLboolean sock_StringToAddr(const NLchar *string, NLaddress *address)
     NLulong     ipaddress, port = 0;
     int         ret;
 
-    ret = _stscanf((const NLchar *)string, (const NLchar *)TEXT("%lu.%lu.%lu.%lu:%lu"), &a1, &a2, &a3, &a4, &port);
+    ret = sscanf((const NLchar *)string, (const NLchar *)("%lu.%lu.%lu.%lu:%lu"), &a1, &a2, &a3, &a4, &port);
 
     if(a1 > 255 || a2 > 255 || a3 > 255 || a4 > 255 || port > 65535 || ret < 4)
     {
@@ -2227,21 +2227,14 @@ NLchar *sock_GetNameFromAddr(const NLaddress *address, NLchar *name)
     if(hostentry != NULL)
     {
         NLushort port = sock_GetPortFromAddr(address);
-#ifdef _UNICODE
-        NLchar temp[MAXHOSTNAMELEN];
-        /* convert from multibyte char string to wide char string */
-        mbstowcs(temp, (const char *)hostentry->h_name, MAXHOSTNAMELEN);
-        temp[MAXHOSTNAMELEN - 1] = '\0';
-#else
         NLchar *temp = (NLchar *)hostentry->h_name;
-#endif
         if(port != 0)
         {
-            _sntprintf(tempname, (size_t)(NL_MAX_STRING_LENGTH), (const NLchar *)TEXT("%s:%hu"), (const NLchar *)temp, port);
+            _snprintf(tempname, (size_t)(NL_MAX_STRING_LENGTH), (const NLchar *)("%s:%hu"), (const NLchar *)temp, port);
         }
         else
         {
-            _tcsncpy(tempname, (const NLchar *)temp, (size_t)(NL_MAX_STRING_LENGTH));
+            strncpy(tempname, (const NLchar *)temp, (size_t)(NL_MAX_STRING_LENGTH));
         }
         tempname[NL_MAX_STRING_LENGTH - 1] = (NLchar)'\0';
     }
@@ -2249,7 +2242,7 @@ NLchar *sock_GetNameFromAddr(const NLaddress *address, NLchar *name)
     {
         if(((struct sockaddr_in *)address)->sin_addr.s_addr == (unsigned long)INADDR_NONE)
         {
-            _tcsncpy(tempname, (const NLchar *)TEXT("Bad address"), (size_t)(NL_MAX_STRING_LENGTH));
+            strncpy(tempname, (const NLchar *)("Bad address"), (size_t)(NL_MAX_STRING_LENGTH));
         }
         else
         {
@@ -2258,7 +2251,7 @@ NLchar *sock_GetNameFromAddr(const NLaddress *address, NLchar *name)
     }
     /* special copy in case this was called as sock_GetNameFromAddrAsync */
     name[0] = (NLchar)'\0';
-    _tcsncpy(&name[1], (const NLchar *)&tempname[1], (size_t)(NL_MAX_STRING_LENGTH - 1));
+    strncpy(&name[1], (const NLchar *)&tempname[1], (size_t)(NL_MAX_STRING_LENGTH - 1));
     name[0] = tempname[0];
     return name;
 }
@@ -2322,12 +2315,7 @@ NLboolean sock_GetAddrFromName(const NLchar *name, NLaddress *address)
         return NL_TRUE;
     }
     
-#ifdef _UNICODE
-    /* convert from wide char string to multibyte char string */
-    (void)wcstombs(temp, (const NLchar *)name, NL_MAX_STRING_LENGTH);
-#else
     strncpy(temp, name, NL_MAX_STRING_LENGTH);
-#endif
     temp[NL_MAX_STRING_LENGTH - 1] = (NLbyte)'\0';
     pos = (int)strcspn(temp, (const char *)":");
     if(pos > 0)
@@ -2386,7 +2374,7 @@ NLboolean sock_GetAddrFromNameAsync(const NLchar *name, NLaddress *address)
         free(addr);
         return NL_FALSE;
     }
-    _tcsncpy(addr->name, name, (size_t)NL_MAX_STRING_LENGTH);
+    strncpy(addr->name, name, (size_t)NL_MAX_STRING_LENGTH);
     addr->name[NL_MAX_STRING_LENGTH - 1] = '\0';
     addr->address = address;
     Util::Thread::Id thread;

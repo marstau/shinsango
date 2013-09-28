@@ -59,7 +59,7 @@ struct spg_string_node
 
 
 struct spg_uint16_node* spg_thickness_state = NULL;
-extern Uint16 spg_thickness;
+extern "C" Uint16 spg_thickness;
 struct spg_uint8_node* spg_blend_state = NULL;
 struct spg_bool_node* spg_aa_state = NULL;
 struct spg_bool_node* spg_blit_surface_alpha_state = NULL;
@@ -105,6 +105,7 @@ void SPG_PushThickness(Uint16 state)
 }
 Uint16 SPG_PopThickness()
 {
+	struct spg_uint16_node* temp;
     if(spg_thickness_state == NULL)
     {
         if(spg_useerrors)
@@ -112,7 +113,7 @@ Uint16 SPG_PopThickness()
         spg_thickness = 1;
         return 1;
     }
-    struct spg_uint16_node* temp = spg_thickness_state;
+	temp = spg_thickness_state;
     spg_thickness = spg_thickness_state->datum;
     spg_thickness_state = spg_thickness_state->next;
     free(temp);
@@ -132,13 +133,14 @@ void SPG_PushBlend(Uint8 state)
 }
 Uint8 SPG_PopBlend()
 {
+	struct spg_uint8_node* temp;
     if(spg_blend_state == NULL)
     {
         if(spg_useerrors)
             SPG_Error("SPG_PopBlend popped an empty stack!");
         return 0;
     }
-    struct spg_uint8_node* temp = spg_blend_state;
+    temp = spg_blend_state;
     Uint8 result = spg_blend_state->datum;
     spg_blend_state = spg_blend_state->next;
     free(temp);
@@ -165,13 +167,14 @@ void SPG_PushAA(SPG_bool state)
 }
 SPG_bool SPG_PopAA()
 {
+	struct spg_bool_node* temp;
     if(spg_aa_state == NULL)
     {
         if(spg_useerrors)
             SPG_Error("SPG_PopAA popped an empty stack!");
         return 0;
     }
-    struct spg_bool_node* temp = spg_aa_state;
+    temp = spg_aa_state;
     SPG_bool result = spg_aa_state->datum;
     spg_aa_state = spg_aa_state->next;
     free(temp);
@@ -198,14 +201,16 @@ void SPG_PushSurfaceAlpha(SPG_bool state)
 }
 SPG_bool SPG_PopSurfaceAlpha()
 {
+	struct spg_bool_node* temp;
+	SPG_bool result;
     if(spg_blit_surface_alpha_state == NULL)
     {
         if(spg_useerrors)
             SPG_Error("SPG_PopSurfaceAlpha popped an empty stack!");
         return 0;
     }
-    struct spg_bool_node* temp = spg_blit_surface_alpha_state;
-    SPG_bool result = spg_blit_surface_alpha_state->datum;
+    temp = spg_blit_surface_alpha_state;
+    result = spg_blit_surface_alpha_state->datum;
     spg_blit_surface_alpha_state = spg_blit_surface_alpha_state->next;
     free(temp);
     return result;
@@ -225,9 +230,10 @@ SPG_bool SPG_GetSurfaceAlpha()
 
 void SPG_Error(const char* err)
 {
+	struct spg_string_node* node;
     if(err == NULL || _spg_numerrors >= SPG_MAX_ERRORS)
         return;
-    struct spg_string_node* node = (struct spg_string_node*)malloc(sizeof(struct spg_string_node));
+    node = (struct spg_string_node*)malloc(sizeof(struct spg_string_node));
     node->datum = (char*)malloc(strlen(err)+20);
     sprintf(node->datum, "%s at time %ums", err, SDL_GetTicks());
     // push to front
@@ -247,11 +253,13 @@ void SPG_Error(const char* err)
 
 char* SPG_GetError()
 {
+	struct spg_string_node* temp;
+	char* result;
     if(_spg_numerrors == 0 || _spg_errors == NULL)
         return NULL;
     
-    struct spg_string_node* temp = _spg_errors;
-    char* result = _spg_errors->datum;
+    temp = _spg_errors;
+    result = _spg_errors->datum;
     _spg_errors = _spg_errors->next;
     _spg_numerrors--;
     free(temp);
@@ -954,16 +962,18 @@ void SPG_FadedPalette32(SDL_PixelFormat* format, Uint32 color1, Uint32 color2, U
 void SPG_FadedPalette32Alpha(SDL_PixelFormat* format, Uint32 color1, Uint8 alpha1, Uint32 color2, Uint8 alpha2, Uint32* colorArray, Uint16 startIndex, Uint16 stopIndex)
 {
     Uint8 sR, sG, sB, dR, dG, dB;
+	int x0=sR, y0=sG, z0=sB, w0=alpha1;
+	int v[4];
+	int i;
     SDL_GetRGB(color1, format, &sR, &sG, &sB);
     SDL_GetRGB(color2, format, &dR, &dG, &dB);
 	// (sR,sG,sB,sA) and (dR,dG,dB,dA) are two points in hyperspace (the RGBA hypercube). 	
 
 	/* The vector for the straight line */
-	int v[4];
 	v[0]=(int)dR-(int)sR; v[1]=(int)dG-(int)sG; v[2]=(int)dB-(int)sB; v[3]=(int)alpha2-(int)alpha1;
 
 	/* Ref. point */
-	int x0=sR, y0=sG, z0=sB, w0=alpha1;
+	x0=sR; y0=sG; z0=sB; w0=alpha1;
 
 	// The line's equation is:
 	// x= x0 + v[0] * t
@@ -973,7 +983,7 @@ void SPG_FadedPalette32Alpha(SDL_PixelFormat* format, Uint32 color1, Uint8 alpha
 	//
 	// (x,y,z,w) will travel between the two points when t goes from 0 to 1.
 
-	int i = startIndex;
+	i = startIndex;
  	float step = 1.0f/((stopIndex+1)-startIndex);
     float t;
 	for(t=0.0f; t<=1.0f && i<=stopIndex ; t+=step)

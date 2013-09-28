@@ -7,8 +7,7 @@
 #include "sprig/sprig.h"
 #include "stretch/SDL_stretch.h"
 #include <SDL.h>
-#include "image/SDL_image.h"
-#include "image/IMG_savepng.h"
+#include "SDL_image.h"
 #include <math.h>
 #include "util/exceptions/exception.h"
 #include <string>
@@ -1239,7 +1238,7 @@ void Bitmap::Stretch( const Bitmap & where, const int sourceX, const int sourceY
         SDL_LockSurface(dst);
     }
 
-    SDL_StretchSurfaceRect(src, NULL, dst, NULL);
+	SDL_SoftStretch(src, NULL, dst, NULL);
 
     if (SDL_MUSTLOCK(src)){
         SDL_UnlockSurface(src);
@@ -1248,60 +1247,10 @@ void Bitmap::Stretch( const Bitmap & where, const int sourceX, const int sourceY
     if (SDL_MUSTLOCK(dst)){
         SDL_UnlockSurface(dst);
     }
-
-    /*
-    SDL_Surface * src = getData().getSurface();
-    SDL_Surface * dst = where.getData().getSurface();
-    */
-
-    /*
-    float xscale = (float) destWidth / (float) sourceWidth;
-    float yscale = (float) destHeight / (float) sourceHeight;
-    SDL_SetColorKey(src, 0, MaskColor());
-    SPG_TransformX(src, dst, 0, xscale, yscale, sourceX, sourceY, destX, destY, SPG_NONE);
-    */
-
-    /*
-    SDL_Rect source;
-    SDL_Rect destination;
-    source.x = sourceX;
-    source.y = sourceY;
-    source.w = sourceWidth;
-    source.h = sourceHeight;
-
-    destination.x = destX;
-    destination.y = destY;
-    destination.w = destWidth;
-    destination.h = destHeight;
-
-    // SDL_StretchSurfaceRect(getData().getSurface(), &source, where.getData().getSurface(), &destination);
-
-    SDL_Surface * src = getData().getSurface();
-    SDL_Surface * dst = where.getData().getSurface();
-
-    if (SDL_MUSTLOCK(src)){
-        SDL_LockSurface(src);
-    }
-
-    if (SDL_MUSTLOCK(dst)){
-        SDL_LockSurface(dst);
-    }
-
-    SDL_StretchSurfaceRect(src, &source, dst, &destination);
-
-    if (SDL_MUSTLOCK(src)){
-        SDL_UnlockSurface(src);
-    }
-
-    if (SDL_MUSTLOCK(dst)){
-        SDL_UnlockSurface(dst);
-    }
-    */
 }
 
 void Bitmap::save(const std::string & str) const {
     /* always saves as a png for now */
-    IMG_SavePNG(str.c_str(), getData()->getSurface(), IMG_COMPRESS_DEFAULT);
 }
 	
 void Bitmap::triangle( int x1, int y1, int x2, int y2, int x3, int y3, Color color ) const {

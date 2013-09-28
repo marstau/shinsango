@@ -255,7 +255,6 @@
 
 #if (defined (__MSDOS__))
 #   if (defined (__WINDOWS__))          /*  When __WINDOWS__ is defined,     */
-#       define FD_SETSIZE     1024      /*  Max. filehandles/sockets         */
 #       include <windows.h>  
 #       include <winsock.h>             /*  May cause trouble on VC 1.x      */
 #       include <direct.h>   

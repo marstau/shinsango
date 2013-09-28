@@ -121,6 +121,42 @@
     <Filter Include="external\freetype\src">
       <UniqueIdentifier>{cadc9ab6-9c4f-4b1a-88af-1f262fce6ee9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="external\SDL\mixer">
+      <UniqueIdentifier>{c5b8d852-04fb-4bdb-b91e-d577af57f43d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\util\graphic">
+      <UniqueIdentifier>{1054f701-1ae2-468c-b7d0-965817393430}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\freetype\src\FT_MODULES">
+      <UniqueIdentifier>{bd2a7ad2-3f65-47d5-bcc8-7f98a18a2ffd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\SDL\image">
+      <UniqueIdentifier>{460d44ba-9d53-4575-8906-df65cc8bb1fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\libpng">
+      <UniqueIdentifier>{d5e3b793-b735-4283-895e-788a1d407471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\libjpeg">
+      <UniqueIdentifier>{11de5f90-ed9b-4406-8372-2e79062e4048}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\gif">
+      <UniqueIdentifier>{6ed1cac6-89ee-4668-83d9-db30ceb8c7f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\util\graphic\SDL">
+      <UniqueIdentifier>{3f3ab1f6-0991-440e-8eda-751c2aa4e3fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\paintown-engine\platformer">
+      <UniqueIdentifier>{d6323f49-dcd5-43d9-8cb4-a35936ca6346}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\missile-defend">
+      <UniqueIdentifier>{cb61fe8d-73b1-4204-89a6-224b344957da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\asteroids">
+      <UniqueIdentifier>{54ca1e76-6d18-4092-96c1-4c8ae300e059}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paintown\openbor">
+      <UniqueIdentifier>{51f9df6f-a6ab-4936-965e-0e5ab59f994c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
@@ -1401,9 +1437,6 @@
     <ClInclude Include="..\..\..\SDL\src\core\windows\SDL_windows.h">
       <Filter>external\SDL\src</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\SDL\src\joystick\SDL_gamecontrollerdb.h">
-      <Filter>external\SDL\src</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\SDL\src\render\SDL_yuv_sw_c.h">
       <Filter>external\SDL\src</Filter>
     </ClInclude>
@@ -1707,6 +1740,210 @@
     <ClInclude Include="..\..\..\SDL\src\render\opengl\SDL_shaders_gl.h">
       <Filter>external\SDL\src</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\dynamic_mp3.h">
+      <Filter>external\SDL\mixer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\dynamic_ogg.h">
+      <Filter>external\SDL\mixer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\effects_internal.h">
+      <Filter>external\SDL\mixer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\fluidsynth.h">
+      <Filter>external\SDL\mixer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\load_ogg.h">
+      <Filter>external\SDL\mixer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\load_voc.h">
+      <Filter>external\SDL\mixer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\music_flac.h">
+      <Filter>external\SDL\mixer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\music_mad.h">
+      <Filter>external\SDL\mixer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\music_mod.h">
+      <Filter>external\SDL\mixer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\music_modplug.h">
+      <Filter>external\SDL\mixer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\music_ogg.h">
+      <Filter>external\SDL\mixer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\SDL_mixer.h">
+      <Filter>external\SDL\mixer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\wavestream.h">
+      <Filter>external\SDL\mixer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\graphics\bitmap.h">
+      <Filter>paintown\util\graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\graphics\color.h">
+      <Filter>paintown\util\graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\graphics\fire.h">
+      <Filter>paintown\util\graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\graphics\gradient.h">
+      <Filter>paintown\util\graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\library\SDL_image\SDL_image.h">
+      <Filter>external\SDL\image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\cderror.h">
+      <Filter>external\libjpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\cdjpeg.h">
+      <Filter>external\libjpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\jchuff.h">
+      <Filter>external\libjpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\jconfig.h">
+      <Filter>external\libjpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\jdct.h">
+      <Filter>external\libjpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\jdhuff.h">
+      <Filter>external\libjpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\jerror.h">
+      <Filter>external\libjpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\jinclude.h">
+      <Filter>external\libjpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\jmemsys.h">
+      <Filter>external\libjpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\jmorecfg.h">
+      <Filter>external\libjpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\jpegint.h">
+      <Filter>external\libjpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\jpeglib.h">
+      <Filter>external\libjpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\jversion.h">
+      <Filter>external\libjpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\transupp.h">
+      <Filter>external\libjpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\libpng\png.h">
+      <Filter>external\libpng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\libpng\pngconf.h">
+      <Filter>external\libpng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\libpng\pngdebug.h">
+      <Filter>external\libpng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\libpng\pnginfo.h">
+      <Filter>external\libpng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\libpng\pnglibconf.h">
+      <Filter>external\libpng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\libpng\pngpriv.h">
+      <Filter>external\libpng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\wp8_external\libpng\pngstruct.h">
+      <Filter>external\libpng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\load_aiff.h">
+      <Filter>external\SDL\mixer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\graphics\sdl\hqx.h">
+      <Filter>paintown\util\graphic\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\graphics\sdl\xbr.h">
+      <Filter>paintown\util\graphic\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\graphics\sdl\sprig\sprig.h">
+      <Filter>paintown\util\graphic\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\graphics\sdl\sprig\sprig_common.h">
+      <Filter>paintown\util\graphic\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\util\graphics\sdl\sprig\sprig_inline.h">
+      <Filter>paintown\util\graphic\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\libm\math_libm.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SDL\src\libm\math_private.h">
+      <Filter>external\SDL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\openbor\animation.h">
+      <Filter>paintown\openbor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\openbor\display-character.h">
+      <Filter>paintown\openbor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\openbor\mod.h">
+      <Filter>paintown\openbor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\openbor\pack-reader.h">
+      <Filter>paintown\openbor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\openbor\util.h">
+      <Filter>paintown\openbor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\platformer\argument.h">
+      <Filter>paintown\paintown-engine\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\platformer\script\script.h">
+      <Filter>paintown\paintown-engine\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\platformer\object\object.h">
+      <Filter>paintown\paintown-engine\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\platformer\game\animation.h">
+      <Filter>paintown\paintown-engine\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\platformer\game\background.h">
+      <Filter>paintown\paintown-engine\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\platformer\game\camera.h">
+      <Filter>paintown\paintown-engine\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\platformer\game\game.h">
+      <Filter>paintown\paintown-engine\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\platformer\game\options.h">
+      <Filter>paintown\paintown-engine\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\platformer\game\tile.h">
+      <Filter>paintown\paintown-engine\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\platformer\game\world.h">
+      <Filter>paintown\paintown-engine\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\parser\all.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\mugen\parser\gc.h">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\asteroids\argument.h">
+      <Filter>paintown\asteroids</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\asteroids\game.h">
+      <Filter>paintown\asteroids</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\missile-defend\argument.h">
+      <Filter>paintown\missile-defend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\missile-defend\game.h">
+      <Filter>paintown\missile-defend</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -1985,9 +2222,6 @@
     <ClCompile Include="..\..\src\util\input\text-input.cpp">
       <Filter>paintown\util\input</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\util\input\sdl\keyboard.cpp">
-      <Filter>paintown\util\input</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\util\lz4\lz4.c">
       <Filter>paintown\util\lz4</Filter>
     </ClCompile>
@@ -2256,9 +2490,6 @@
       <Filter>paintown\util\sfl</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\util\sound\audio.cpp">
-      <Filter>paintown\util\sound</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\util\sound\music.cpp">
       <Filter>paintown\util\sound</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\util\sound\music-player.cpp">
@@ -2615,16 +2846,7 @@
     <ClCompile Include="..\..\..\SDL\src\filesystem\windows\SDL_sysfilesystem.c">
       <Filter>external\SDL\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\SDL\src\joystick\SDL_gamecontroller.c">
-      <Filter>external\SDL\src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\SDL\src\loadso\windows\SDL_sysloadso.c">
-      <Filter>external\SDL\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\SDL\src\power\SDL_power.c">
-      <Filter>external\SDL\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\SDL\src\power\windows\SDL_syspower.c">
       <Filter>external\SDL\src</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\SDL\src\render\SDL_render.c">
@@ -2894,20 +3116,581 @@
     <ClCompile Include="..\..\src\paintown-engine\object\paintown_animation.cpp">
       <Filter>paintown\paintown-engine\object</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\util\input\util_joystick.cpp">
-      <Filter>paintown\util\input</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\util\input\sdl\joystick.cpp">
-      <Filter>paintown\util\input</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\util\input\util_keyboard.cpp">
-      <Filter>paintown\util\input</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\paintown-engine\game\paintown_character-select.cpp">
       <Filter>paintown\paintown-engine\game</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\paintown-engine\trigger\trigger.cpp">
       <Filter>paintown\paintown-engine\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\dynamic_mp3.c">
+      <Filter>external\SDL\mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\dynamic_ogg.c">
+      <Filter>external\SDL\mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\effect_position.c">
+      <Filter>external\SDL\mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\effect_stereoreverse.c">
+      <Filter>external\SDL\mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\effects_internal.c">
+      <Filter>external\SDL\mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\fluidsynth.c">
+      <Filter>external\SDL\mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\load_ogg.c">
+      <Filter>external\SDL\mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\load_voc.c">
+      <Filter>external\SDL\mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\mixer.c">
+      <Filter>external\SDL\mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\music.c">
+      <Filter>external\SDL\mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\music_flac.c">
+      <Filter>external\SDL\mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\music_mad.c">
+      <Filter>external\SDL\mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\music_mod.c">
+      <Filter>external\SDL\mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\music_modplug.c">
+      <Filter>external\SDL\mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\music_ogg.c">
+      <Filter>external\SDL\mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\wavestream.c">
+      <Filter>external\SDL\mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\input\keyboard.cpp">
+      <Filter>paintown\util\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\input\joystick.cpp">
+      <Filter>paintown\util\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\sound\util_music.cpp">
+      <Filter>paintown\util\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\graphics\bitmap.cpp">
+      <Filter>paintown\util\graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\graphics\fire.cpp">
+      <Filter>paintown\util\graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\graphics\gradient.cpp">
+      <Filter>paintown\util\graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\graphics\image.cpp">
+      <Filter>paintown\util\graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\autofit\autofit.c">
+      <Filter>external\freetype\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\bdf\bdf.c">
+      <Filter>external\freetype\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\cff\cff.c">
+      <Filter>external\freetype\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftbase.c">
+      <Filter>external\freetype\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftbitmap.c">
+      <Filter>external\freetype\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\cache\ftcache.c">
+      <Filter>external\freetype\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\builds\win32\ftdebug.c">
+      <Filter>external\freetype\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftfstype.c">
+      <Filter>external\freetype\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftgasp.c">
+      <Filter>external\freetype\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftglyph.c">
+      <Filter>external\freetype\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\gzip\ftgzip.c">
+      <Filter>external\freetype\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftinit.c">
+      <Filter>external\freetype\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\lzw\ftlzw.c">
+      <Filter>external\freetype\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftstroke.c">
+      <Filter>external\freetype\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftsystem.c">
+      <Filter>external\freetype\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\smooth\smooth.c">
+      <Filter>external\freetype\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftbbox.c">
+      <Filter>external\freetype\src\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftgxval.c">
+      <Filter>external\freetype\src\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftlcdfil.c">
+      <Filter>external\freetype\src\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftmm.c">
+      <Filter>external\freetype\src\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftotval.c">
+      <Filter>external\freetype\src\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftpatent.c">
+      <Filter>external\freetype\src\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftpfr.c">
+      <Filter>external\freetype\src\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftsynth.c">
+      <Filter>external\freetype\src\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\fttype1.c">
+      <Filter>external\freetype\src\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftwinfnt.c">
+      <Filter>external\freetype\src\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftxf86.c">
+      <Filter>external\freetype\src\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\pcf\pcf.c">
+      <Filter>external\freetype\src\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\psaux\psaux.c">
+      <Filter>external\freetype\src\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\pshinter\pshinter.c">
+      <Filter>external\freetype\src\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\psnames\psmodule.c">
+      <Filter>external\freetype\src\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\raster\raster.c">
+      <Filter>external\freetype\src\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\sfnt\sfnt.c">
+      <Filter>external\freetype\src\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\truetype\truetype.c">
+      <Filter>external\freetype\src\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\type1\type1.c">
+      <Filter>external\freetype\src\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\cid\type1cid.c">
+      <Filter>external\freetype\src\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\type42\type42.c">
+      <Filter>external\freetype\src\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\winfonts\winfnt.c">
+      <Filter>external\freetype\src\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\library\SDL_image\IMG.c">
+      <Filter>external\SDL\image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\library\SDL_image\IMG_bmp.c">
+      <Filter>external\SDL\image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\library\SDL_image\IMG_gif.c">
+      <Filter>external\SDL\image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\library\SDL_image\IMG_jpg.c">
+      <Filter>external\SDL\image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\library\SDL_image\IMG_png.c">
+      <Filter>external\SDL\image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\cdjpeg.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcapimin.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcapistd.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jccoefct.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jccolor.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcdctmgr.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jchuff.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcinit.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcmainct.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcmarker.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcmaster.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcomapi.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcparam.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcphuff.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcprepct.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcsample.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jctrans.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdapimin.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdapistd.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdatadst.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdatasrc.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdcoefct.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdcolor.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jddctmgr.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdhuff.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdinput.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdmainct.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdmarker.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdmaster.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdmerge.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdphuff.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdpostct.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdsample.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdtrans.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jerror.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jfdctflt.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jfdctfst.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jfdctint.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jidctflt.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jidctfst.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jidctint.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jidctred.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jmemansi.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jmemmgr.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jquant1.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jquant2.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jutils.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\rdbmp.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\rdcolmap.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\rdgif.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\rdppm.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\rdrle.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\rdswitch.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\rdtarga.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\transupp.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\wrbmp.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\wrgif.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\wrppm.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\wrrle.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\wrtarga.c">
+      <Filter>external\libjpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\libpng\png.c">
+      <Filter>external\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngerror.c">
+      <Filter>external\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngget.c">
+      <Filter>external\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngmem.c">
+      <Filter>external\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngpread.c">
+      <Filter>external\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngread.c">
+      <Filter>external\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngrio.c">
+      <Filter>external\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngrtran.c">
+      <Filter>external\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngrutil.c">
+      <Filter>external\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngset.c">
+      <Filter>external\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngtrans.c">
+      <Filter>external\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngwio.c">
+      <Filter>external\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngwrite.c">
+      <Filter>external\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngwtran.c">
+      <Filter>external\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngwutil.c">
+      <Filter>external\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\load_aiff.c">
+      <Filter>external\SDL\mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\graphics\sdl\hqx.cpp">
+      <Filter>paintown\util\graphic\SDL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\graphics\sdl\xbr.cpp">
+      <Filter>paintown\util\graphic\SDL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\graphics\sdl\sprig\SPG_surface.cpp">
+      <Filter>paintown\util\graphic\SDL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\graphics\sdl\sprig\SPG_rotation.cpp">
+      <Filter>paintown\util\graphic\SDL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\graphics\sdl\sprig\SPG_primitives.cpp">
+      <Filter>paintown\util\graphic\SDL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\graphics\sdl\sprig\SPG_polygon.cpp">
+      <Filter>paintown\util\graphic\SDL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\graphics\sdl\sprig\SPG_misc.cpp">
+      <Filter>paintown\util\graphic\SDL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\graphics\sdl\sprig\SPG_extended.cpp">
+      <Filter>paintown\util\graphic\SDL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\libm\e_atan2.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\libm\e_log.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\libm\e_pow.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\libm\e_rem_pio2.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\libm\e_sqrt.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\libm\k_cos.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\libm\k_rem_pio2.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\libm\k_sin.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\libm\s_atan.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\libm\s_copysign.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\libm\s_cos.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\libm\s_fabs.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\libm\s_floor.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\libm\s_scalbn.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SDL\src\libm\s_sin.c">
+      <Filter>external\SDL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\openbor\openbor_animation.cpp">
+      <Filter>paintown\openbor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\openbor\openbor_data.cpp">
+      <Filter>paintown\openbor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\openbor\openbor_display-character.cpp">
+      <Filter>paintown\openbor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\openbor\openbor_extract.cpp">
+      <Filter>paintown\openbor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\openbor\openbor_mod.cpp">
+      <Filter>paintown\openbor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\openbor\openbor_pack-reader.cpp">
+      <Filter>paintown\openbor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\openbor\openbor_util.cpp">
+      <Filter>paintown\openbor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\platformer\game\platformer_animation.cpp">
+      <Filter>paintown\paintown-engine\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\platformer\platformer_argument.cpp">
+      <Filter>paintown\paintown-engine\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\platformer\game\platformer_background.cpp">
+      <Filter>paintown\paintown-engine\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\platformer\game\platformer_camera.cpp">
+      <Filter>paintown\paintown-engine\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\platformer\game\platformer_game.cpp">
+      <Filter>paintown\paintown-engine\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\platformer\object\platformer_object.cpp">
+      <Filter>paintown\paintown-engine\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\platformer\game\platformer_options.cpp">
+      <Filter>paintown\paintown-engine\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\platformer\script\platformer_script.cpp">
+      <Filter>paintown\paintown-engine\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\platformer\game\platformer_tile.cpp">
+      <Filter>paintown\paintown-engine\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\platformer\game\platformer_world.cpp">
+      <Filter>paintown\paintown-engine\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\parser\air.cpp">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\parser\cmd.cpp">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mugen\parser\def.cpp">
+      <Filter>paintown\mugen\ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\asteroids\asteroids_argument.cpp">
+      <Filter>paintown\asteroids</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\asteroids\asteroids_game.cpp">
+      <Filter>paintown\asteroids</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\missile-defend\missile-defend_argument.cpp">
+      <Filter>paintown\missile-defend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\missile-defend\missile-defend_game.cpp">
+      <Filter>paintown\missile-defend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\pfr\pfr.c">
+      <Filter>external\freetype\src\FT_MODULES</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -2917,5 +3700,10 @@
     <ResourceCompile Include="..\..\..\SDL\src\main\windows\version.rc">
       <Filter>external\SDL\src</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\src\util\graphics\sdl\sprig\Version.txt">
+      <Filter>paintown\util\graphic\SDL</Filter>
+    </Text>
   </ItemGroup>
 </Project>

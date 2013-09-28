@@ -34,12 +34,6 @@
 #include <time.h>
 
 #include <ostream>
-#include "sound/dumb/include/dumb.h"
-#ifdef USE_ALLEGRO
-#include "sound/dumb/include/aldumb.h"
-#include "graphics/allegro/loadpng/loadpng.h"
-#include "graphics/allegro/gif/algif.h"
-#endif
 #include "graphics/bitmap.h"
 #include "funcs.h"
 #include "file-system.h"
@@ -421,7 +415,6 @@ static void initSystem(Global::stream_type & out){
     SDL_WM_SetCaption("Paintown", NULL);
 
     SDL_EnableUNICODE(1);
-    SDL_JoystickEventState(1);
 
     atexit(SDL_Quit);
     // atexit(doSDLQuit);
@@ -456,8 +449,6 @@ bool Global::initNoGraphics(){
 
     /* do implementation specific setup */
     initSystem(out);
-
-    dumb_register_stdfiles();
     
     // Sound::initialize();
 
@@ -472,9 +463,6 @@ bool Global::initNoGraphics(){
     const int sx = Configuration::getScreenWidth();
     const int sy = Configuration::getScreenHeight();
     Graphics::Bitmap::setFakeGraphicsMode(sx, sy);
-       
-    /* music */
-    atexit(&dumb_exit);
 
     out << "Initialize random number generator" << endl;
     /* initialize random number generator */
@@ -608,8 +596,6 @@ bool Global::init(int gfx){
     initSystem(out);
 #endif
 
-    dumb_register_stdfiles();
-    
     Sound::initialize();
 
     // Filesystem::initialize();
@@ -636,9 +622,6 @@ bool Global::init(int gfx){
         out << "Set graphics mode: Failed! (" << gfxCode << ")" << endl;
         return false;
     }
-    
-    /* music */
-    atexit(&dumb_exit);
 
     out << "Initialize random number generator" << endl;
     /* initialize random number generator */

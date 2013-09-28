@@ -146,9 +146,9 @@ public:
 
     int maximumPlayers(){
         if (Keyboard::haveKeyboard()){
-            return numberOfKeyboards() + Joystick::numberOfJoysticks();
+            return numberOfKeyboards();
         }
-        return Joystick::numberOfJoysticks();
+        return 0;
     }
 
     void showError(string what){
@@ -219,13 +219,6 @@ public:
                 out << "Keyboard " << (keyboard + 1);
                 names.push_back(out.str());
             }
-        }
-
-        for (int i = 0; i < Joystick::numberOfJoysticks(); i++){
-            possible.push_back(Util::ReferenceCount<InputSource>(new InputSource(InputSource(false).addJoystick(i))));
-            ostringstream out;
-            out << "Joystick " << (i + 1);
-            names.push_back(out.str());
         }
 
         for (int player = 0; player < players; player++){

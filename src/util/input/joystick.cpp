@@ -2,28 +2,6 @@
 #include "util/configuration.h"
 #include "joystick.h"
 
-/*
-#ifdef LINUX
-#include "linux_joystick.h"
-#endif
-*/
-
-#ifdef USE_ALLEGRO
-#include "allegro/allegro-joystick.h"
-#endif
-#ifdef USE_ALLEGRO5
-#include "allegro5/joystick.h"
-#endif
-#ifdef USE_SDL
-#ifdef WII
-#include "wii/joystick.h"
-#include "sdl/joystick.h"
-#elif MINPSPW
-#include "psp/joystick.h"
-#else
-#include "sdl/joystick.h"
-#endif
-#endif
     
 JoystickListener::JoystickListener(){
 }
@@ -32,30 +10,6 @@ JoystickListener::~JoystickListener(){
 }
 
 Joystick * Joystick::create(int i){
-#ifdef USE_ALLEGRO
-    return new AllegroJoystick();
-#endif
-#ifdef USE_SDL
-#ifdef WII
-    return new SDLJoystick(i);
-    // return new WiiJoystick();
-#elif MINPSPW
-    return new PSPJoystick();
-#else
-    return new SDLJoystick(i);
-#endif
-#endif
-#ifdef USE_ALLEGRO5
-    return new Allegro5Joystick(i);
-#endif
-
-    /* TODO: support allegro5 joystick */
-/*
-#ifdef LINUX
-    return new LinuxJoystick();
-#endif
-    return NULL;
-*/
     return NULL;
 }
 

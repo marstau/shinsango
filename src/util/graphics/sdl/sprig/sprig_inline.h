@@ -3,6 +3,9 @@
 
 
 /* Colors */
+#ifndef __cplusplus
+#define inline
+#endif
 
 static inline Uint8 SPG_GetRed(SDL_PixelFormat* format, Uint32 color)
 {
@@ -41,9 +44,9 @@ static inline Uint32 SPG_MixAlpha(SDL_PixelFormat* format, Uint32 color, Uint8 a
 
 static inline Uint32 SPG_ConvertColor(SDL_PixelFormat* srcfmt, Uint32 srccolor, SDL_PixelFormat* destfmt)
 {
+	Uint8 r, g, b;
     if(srcfmt == NULL || destfmt == NULL)
         return 0;
-    Uint8 r, g, b;
     SDL_GetRGB(srccolor, srcfmt, &r, &g, &b);
     return SDL_MapRGB(destfmt, r, g, b);
 }
@@ -52,7 +55,6 @@ static inline SDL_Color SPG_GetColor(SDL_Surface* Surface, Uint32 Color)
 {
 	SDL_Color rgb;
 	SDL_GetRGB(Color, Surface->format, &(rgb.r), &(rgb.g), &(rgb.b));
-	rgb.unused = 0;
 	return rgb;
 }
 
@@ -233,9 +235,10 @@ static inline SDL_Surface* SPG_CreateSurface32(Uint32 flags, Uint16 width, Uint1
 
 static inline SDL_Surface* SPG_CreateSurfaceFrom(void* linearArray, Uint16 width, Uint16 height, SDL_PixelFormat* format)
 {
+	SDL_Surface* result;
     if(linearArray == NULL || format == NULL)
         return NULL;
-    SDL_Surface* result = SDL_CreateRGBSurfaceFrom(linearArray, width, height, format->BitsPerPixel, width*format->BytesPerPixel, format->Rmask, format->Gmask, format->Bmask, format->Amask);
+    result = SDL_CreateRGBSurfaceFrom(linearArray, width, height, format->BitsPerPixel, width*format->BytesPerPixel, format->Rmask, format->Gmask, format->Bmask, format->Amask);
     if(format->Amask)
         SDL_SetAlpha(result, SDL_SRCALPHA, SDL_ALPHA_OPAQUE);
     return result;

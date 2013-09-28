@@ -1,22 +1,3 @@
-#ifdef USE_ALLEGRO
-#include <allegro.h>
-#endif
-
-#ifdef USE_ALLEGRO5
-#include <allegro5/allegro_audio.h>
-#endif
-
-#ifdef USE_ALLEGRO
-#include "dumb/include/aldumb.h"
-
-#ifdef _WIN32
-/* what do we need winalleg for?
- * reason: ...
- */
-#include <winalleg.h>
-#endif
-
-#endif
 
 #ifdef USE_SDL
 #include "sdl/mixer/SDL_mixer.h"

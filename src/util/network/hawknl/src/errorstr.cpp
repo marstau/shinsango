@@ -25,9 +25,7 @@
 */
 
 #if defined WIN32 || defined WIN64 || defined (_WIN32_WCE)
-#if !defined (_WIN32_WCE)
 #include <errno.h>
-#endif
 #include "hawknl/wsock.h"
 #elif macintosh
 /* POSIX compat Mac systems ie pre OSX with GUSI2 installed */
@@ -157,9 +155,6 @@ HL_EXP const /*@observer@*/  NLchar* HL_APIENTRY nlGetSystemErrorStr(NLint err)
     case EPROTOTYPE:
         lpszRetStr=(NLchar *)TEXT("Protocol wrong type for this socket.");
         break;
-    case ESOCKTNOSUPPORT:
-        lpszRetStr=(NLchar *)TEXT("Socket type not supported for address family.");
-        break;
     case ENOTSOCK:
         lpszRetStr=(NLchar *)TEXT("Descriptor is not a socket.");
         break;
@@ -183,9 +178,6 @@ HL_EXP const /*@observer@*/  NLchar* HL_APIENTRY nlGetSystemErrorStr(NLint err)
         break;
     case ECONNREFUSED:
         lpszRetStr=(NLchar *)TEXT("Connection was refused.");
-        break;
-    case EHOSTDOWN:
-        lpszRetStr=(NLchar *)TEXT("Host is down.");
         break;
     case ENETUNREACH:
         lpszRetStr=(NLchar *)TEXT("Network unreachable.");
@@ -215,9 +207,6 @@ HL_EXP const /*@observer@*/  NLchar* HL_APIENTRY nlGetSystemErrorStr(NLint err)
     case EOPNOTSUPP:
         lpszRetStr=(NLchar *)TEXT("Operation not supported on socket");
         break;
-    case ESHUTDOWN:
-        lpszRetStr=(NLchar *)TEXT("Socket has been shut down.");
-        break;
     case EMSGSIZE:
         lpszRetStr=(NLchar *)TEXT("The message was too large to fit into the specified buffer and was truncated.");
         break;
@@ -226,12 +215,6 @@ HL_EXP const /*@observer@*/  NLchar* HL_APIENTRY nlGetSystemErrorStr(NLint err)
         break;
     case ENOPROTOOPT:
         lpszRetStr=(NLchar *)TEXT("Bad protocol option.");
-        break;
-    case EPFNOSUPPORT:
-        lpszRetStr=(NLchar *)TEXT("Protocol family not supported.");
-        break;
-    case ETOOMANYREFS:
-        lpszRetStr=(NLchar *)TEXT("Too many references; can't splice.");
         break;
     case ELOOP:
         lpszRetStr=(NLchar *)TEXT("Too many levels of symbolic links.");
@@ -244,15 +227,6 @@ HL_EXP const /*@observer@*/  NLchar* HL_APIENTRY nlGetSystemErrorStr(NLint err)
         break;
         
 #if !defined(macintosh)
-    case EUSERS:
-        lpszRetStr=(NLchar *)TEXT("Too many users.");
-        break;
-    case EDQUOT:
-        lpszRetStr=(NLchar *)TEXT("Disc quota exceeded.");
-        break;
-    case ESTALE:
-        lpszRetStr=(NLchar *)TEXT("Stale NFS file handle.");
-        break;
     case EREMOTE:
         lpszRetStr=(NLchar *)TEXT("Too many levels of remote in path.");
         break;

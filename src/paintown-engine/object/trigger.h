@@ -15,10 +15,10 @@ enum TriggerType{
 
 class Trigger{
 public:
-    Trigger();
+	Trigger(){};
     virtual Trigger * copy() const = 0;
     virtual void invoke(const Util::ReferenceCount<Scene> & scene, std::vector<Object*> & add) = 0;
-    virtual ~Trigger();
+	virtual ~Trigger(){};
 };
 
 }

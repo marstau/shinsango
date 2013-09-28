@@ -19,24 +19,13 @@
     Guido Draheim, guidod@gmx.de
 */
 
-#ifdef SAVE_RCSID
-static char rcsid =
- "@(#) $Id: sdlcode.c $";
-#endif
-
-#include "config.h"
 #include <SDL_error.h>
 #include <SDL_video.h>
 #include "SDL_stretchcode.h"
 #include "SDL_stretchasm.h"
+#include "SDL_stdinc.h"
 
-#ifdef SDL_STRETCH_DATA_NOEXEC
-#ifdef __unix__
-#include <unistd.h>
-#include <sys/mman.h>
-#endif
 #include <malloc.h>
-#endif
 
 #ifdef SDL_STRETCH_CALL
 #if defined SDL_STRETCH_I386 || defined SDL_STRETCH_X86_64
@@ -130,6 +119,7 @@ unsigned char SDL_TheRowStretchCode[SDL_STRETCHCODE_BUFFERSIZE];
 #endif
 
 unsigned char* SDL_NewRowStretchCode (unsigned size) {
+	unsigned char* buffer = NULL;
     if (size == 0) size = SDL_STRETCHCODE_BUFFERSIZE;
 #   if defined SDL_STRETCH_DATA_NOEXEC && defined __unix__
     unsigned char* buffer = memalign(getpagesize(), SDL_STRETCHCODE_BUFFERSIZE);
@@ -139,7 +129,7 @@ unsigned char* SDL_NewRowStretchCode (unsigned size) {
         return 0;
     }
 #   else
-    unsigned char* buffer = malloc(SDL_STRETCHCODE_BUFFERSIZE);
+    buffer = (unsigned char*)malloc(SDL_STRETCHCODE_BUFFERSIZE);
 #   endif
     return buffer;
 }
@@ -304,11 +294,12 @@ void           SDL_RunRowStretchCode(unsigned char* code,
 #define DEFINE_COPY_ROW(name, type)			 \
 void name(type *src, int src_w, type *dst, int dst_w)	 \
 {							 \
-	int i = 0;  			                 \
- 	int w = dst_w;					 \
-	type pixel = 0;					 \
-        type* src_max = src + src_w;                     \
+	int i;  			                 \
+ 	int w;					 \
+	type pixel;					 \
+    type* src_max;                     \
   						         \
+	i = 0; w = dst_w; pixel = 0; src_max = src+src_w; \
 	while(src < src_max) {                           \
 	    pixel = *src;                                \
 	draw:                                            \
@@ -319,9 +310,9 @@ void name(type *src, int src_w, type *dst, int dst_w)	 \
 	    do { i -= dst_w; src++; } while (i >= dst_w);\
 	}; return;                                       \
 }
-DEFINE_COPY_ROW(SDL_StretchRow1, Uint8)
-DEFINE_COPY_ROW(SDL_StretchRow2, Uint16)
-DEFINE_COPY_ROW(SDL_StretchRow4, Uint32)
+DEFINE_COPY_ROW(SDL_StretchRow1, unsigned char)
+DEFINE_COPY_ROW(SDL_StretchRow2, unsigned short)
+DEFINE_COPY_ROW(SDL_StretchRow4, unsigned int)
 
 /* The ASM code has a hard time to handle 24-bpp stretch blits */
 void SDL_StretchRow3(Uint8 *src, int src_w, Uint8 *dst, int dst_w)

@@ -20,9 +20,6 @@ capture(0){
 
 void InputManager::installJoysticks(){
     joysticks.clear();
-    for (int i = 0; i < Joystick::numberOfJoysticks(); i++){
-        joysticks[i] = Joystick::create(i);
-    }
 }
     
 const std::map<int, Util::ReferenceCount<Joystick> > & InputManager::getJoysticks(){

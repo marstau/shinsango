@@ -12,7 +12,7 @@ class Object;
 
 class VersusEnemy: public Enemy {
 public:
-	VersusEnemy( const Character & chr ) throw( LoadException );
+	VersusEnemy( const Character & chr );
 	
 	virtual void act( std::vector< Object * > * others, World * world, std::vector< Object * > * add );
 	

@@ -203,7 +203,7 @@ static NLboolean isSafeString(const NLchar *string)
         return NL_FALSE;
     }
     /* check for formating characters */
-    if(_tcsrchr(string, '%') != NULL)
+    if(strchr(string, '%') != NULL)
     {
         return NL_FALSE;
     }
@@ -219,10 +219,10 @@ static void safecat(NLchar *dest, const NLchar *src)
         /* don't do anything */
         return;
     }
-    len = (int)_tcslen(dest);
+    len = (int)strlen(dest);
     if( len < (NL_MAX_STRING_LENGTH - 1))
     {
-        _tcsncat(dest, src, (size_t)(NL_MAX_STRING_LENGTH - len));
+        strcat(dest, src);
         dest[NL_MAX_STRING_LENGTH - 1] = (NLchar)'\0';
     }
 }
@@ -1455,7 +1455,7 @@ HL_EXP const /*@observer@*//*@null@*/ NLchar* HL_APIENTRY nlGetString(NLenum nam
 
     nlSetError(NL_NO_ERROR);
     /* intitialize the version string */
-    _tcsncpy(vstring, (NLchar *)TEXT(NL_VERSION_STRING), (size_t)NL_MAX_STRING_LENGTH);
+    strncpy(vstring, (NLchar *)TEXT(NL_VERSION_STRING), (size_t)NL_MAX_STRING_LENGTH);
     vstring[NL_MAX_STRING_LENGTH - 1] = (NLchar) '\0';
 #ifdef _UNICODE
     /* add the UNICODE string */

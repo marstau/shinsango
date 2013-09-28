@@ -20,6 +20,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110_xp</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -48,8 +49,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;USE_SDL;WINDOWS;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)../src;$(SolutionDir)../../SDL/include;$(SolutionDir)../src/util/network/hawknl;$(SolutionDir)../../wp8_external/zlib;$(SolutionDir)../../wp8_external/freetype-2.4.12/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;USE_SDL;WINDOWS;NOMINMAX;HAVE_NETWORKING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)../src;$(SolutionDir)../../SDL/include;$(SolutionDir)../src/util/network/hawknl;$(SolutionDir)../../wp8_external/zlib;$(SolutionDir)../../wp8_external/freetype-2.4.12/include;$(SolutionDir)../../SDL/library/SDL_mixer;$(SolutionDir)../../SDL/library/SDL_image;$(SolutionDir)../../wp8_external/libpng;$(SolutionDir)../../wp8_external/jpeg-6b;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4244;4996;4150;4800;4101</DisableSpecificWarnings>
     </ClCompile>
     <Link>
@@ -159,6 +160,21 @@
     <ClInclude Include="..\..\..\SDL\include\SDL_types.h" />
     <ClInclude Include="..\..\..\SDL\include\SDL_version.h" />
     <ClInclude Include="..\..\..\SDL\include\SDL_video.h" />
+    <ClInclude Include="..\..\..\SDL\library\SDL_image\SDL_image.h" />
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\dynamic_mp3.h" />
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\dynamic_ogg.h" />
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\effects_internal.h" />
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\fluidsynth.h" />
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\load_aiff.h" />
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\load_ogg.h" />
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\load_voc.h" />
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\music_flac.h" />
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\music_mad.h" />
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\music_mod.h" />
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\music_modplug.h" />
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\music_ogg.h" />
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\SDL_mixer.h" />
+    <ClInclude Include="..\..\..\SDL\library\SDL_mixer\wavestream.h" />
     <ClInclude Include="..\..\..\SDL\src\audio\SDL_audiodev_c.h" />
     <ClInclude Include="..\..\..\SDL\src\audio\SDL_audiomem.h" />
     <ClInclude Include="..\..\..\SDL\src\audio\SDL_audio_c.h" />
@@ -181,7 +197,8 @@
     <ClInclude Include="..\..\..\SDL\src\events\SDL_sysevents.h" />
     <ClInclude Include="..\..\..\SDL\src\events\SDL_touch_c.h" />
     <ClInclude Include="..\..\..\SDL\src\events\SDL_windowevents_c.h" />
-    <ClInclude Include="..\..\..\SDL\src\joystick\SDL_gamecontrollerdb.h" />
+    <ClInclude Include="..\..\..\SDL\src\libm\math_libm.h" />
+    <ClInclude Include="..\..\..\SDL\src\libm\math_private.h" />
     <ClInclude Include="..\..\..\SDL\src\render\mmx.h" />
     <ClInclude Include="..\..\..\SDL\src\render\opengl\SDL_glfuncs.h" />
     <ClInclude Include="..\..\..\SDL\src\render\opengl\SDL_shaders_gl.h" />
@@ -270,6 +287,27 @@
     <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\tttags.h" />
     <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\freetype\ttunpat.h" />
     <ClInclude Include="..\..\..\wp8_external\freetype-2.4.12\include\ft2build.h" />
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\cderror.h" />
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\cdjpeg.h" />
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\jchuff.h" />
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\jconfig.h" />
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\jdct.h" />
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\jdhuff.h" />
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\jerror.h" />
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\jinclude.h" />
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\jmemsys.h" />
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\jmorecfg.h" />
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\jpegint.h" />
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\jpeglib.h" />
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\jversion.h" />
+    <ClInclude Include="..\..\..\wp8_external\jpeg-6b\transupp.h" />
+    <ClInclude Include="..\..\..\wp8_external\libpng\png.h" />
+    <ClInclude Include="..\..\..\wp8_external\libpng\pngconf.h" />
+    <ClInclude Include="..\..\..\wp8_external\libpng\pngdebug.h" />
+    <ClInclude Include="..\..\..\wp8_external\libpng\pnginfo.h" />
+    <ClInclude Include="..\..\..\wp8_external\libpng\pnglibconf.h" />
+    <ClInclude Include="..\..\..\wp8_external\libpng\pngpriv.h" />
+    <ClInclude Include="..\..\..\wp8_external\libpng\pngstruct.h" />
     <ClInclude Include="..\..\..\wp8_external\zlib\crc32.h" />
     <ClInclude Include="..\..\..\wp8_external\zlib\deflate.h" />
     <ClInclude Include="..\..\..\wp8_external\zlib\inffast.h" />
@@ -280,9 +318,13 @@
     <ClInclude Include="..\..\..\wp8_external\zlib\zconf.h" />
     <ClInclude Include="..\..\..\wp8_external\zlib\zconf.in.h" />
     <ClInclude Include="..\..\..\wp8_external\zlib\zlib.h" />
+    <ClInclude Include="..\..\src\asteroids\argument.h" />
+    <ClInclude Include="..\..\src\asteroids\game.h" />
     <ClInclude Include="..\..\src\factory\collector.h" />
     <ClInclude Include="..\..\src\factory\font_render.h" />
     <ClInclude Include="..\..\src\globals.h" />
+    <ClInclude Include="..\..\src\missile-defend\argument.h" />
+    <ClInclude Include="..\..\src\missile-defend\game.h" />
     <ClInclude Include="..\..\src\mugen\animation.h" />
     <ClInclude Include="..\..\src\mugen\argument.h" />
     <ClInclude Include="..\..\src\mugen\ast\all.h" />
@@ -341,6 +383,8 @@
     <ClInclude Include="..\..\src\mugen\object.h" />
     <ClInclude Include="..\..\src\mugen\options.h" />
     <ClInclude Include="..\..\src\mugen\parse-cache.h" />
+    <ClInclude Include="..\..\src\mugen\parser\all.h" />
+    <ClInclude Include="..\..\src\mugen\parser\gc.h" />
     <ClInclude Include="..\..\src\mugen\projectile.h" />
     <ClInclude Include="..\..\src\mugen\random.h" />
     <ClInclude Include="..\..\src\mugen\reader.h" />
@@ -358,6 +402,11 @@
     <ClInclude Include="..\..\src\mugen\versus.h" />
     <ClInclude Include="..\..\src\mugen\widgets.h" />
     <ClInclude Include="..\..\src\mugen\world.h" />
+    <ClInclude Include="..\..\src\openbor\animation.h" />
+    <ClInclude Include="..\..\src\openbor\display-character.h" />
+    <ClInclude Include="..\..\src\openbor\mod.h" />
+    <ClInclude Include="..\..\src\openbor\pack-reader.h" />
+    <ClInclude Include="..\..\src\openbor\util.h" />
     <ClInclude Include="..\..\src\paintown-engine\environment\atmosphere.h" />
     <ClInclude Include="..\..\src\paintown-engine\environment\fog_atmosphere.h" />
     <ClInclude Include="..\..\src\paintown-engine\environment\night_atmosphere.h" />
@@ -421,6 +470,16 @@
     <ClInclude Include="..\..\src\paintown-engine\script\script.h" />
     <ClInclude Include="..\..\src\paintown-engine\trigger\trigger.h" />
     <ClInclude Include="..\..\src\platform.h" />
+    <ClInclude Include="..\..\src\platformer\argument.h" />
+    <ClInclude Include="..\..\src\platformer\game\animation.h" />
+    <ClInclude Include="..\..\src\platformer\game\background.h" />
+    <ClInclude Include="..\..\src\platformer\game\camera.h" />
+    <ClInclude Include="..\..\src\platformer\game\game.h" />
+    <ClInclude Include="..\..\src\platformer\game\options.h" />
+    <ClInclude Include="..\..\src\platformer\game\tile.h" />
+    <ClInclude Include="..\..\src\platformer\game\world.h" />
+    <ClInclude Include="..\..\src\platformer\object\object.h" />
+    <ClInclude Include="..\..\src\platformer\script\script.h" />
     <ClInclude Include="..\..\src\util\7z\7z.h" />
     <ClInclude Include="..\..\src\util\7z\7zAlloc.h" />
     <ClInclude Include="..\..\src\util\7z\7zBuf.h" />
@@ -466,6 +525,15 @@
     <ClInclude Include="..\..\src\util\font_factory.h" />
     <ClInclude Include="..\..\src\util\ftalleg.h" />
     <ClInclude Include="..\..\src\util\funcs.h" />
+    <ClInclude Include="..\..\src\util\graphics\bitmap.h" />
+    <ClInclude Include="..\..\src\util\graphics\color.h" />
+    <ClInclude Include="..\..\src\util\graphics\fire.h" />
+    <ClInclude Include="..\..\src\util\graphics\gradient.h" />
+    <ClInclude Include="..\..\src\util\graphics\sdl\hqx.h" />
+    <ClInclude Include="..\..\src\util\graphics\sdl\sprig\sprig.h" />
+    <ClInclude Include="..\..\src\util\graphics\sdl\sprig\sprig_common.h" />
+    <ClInclude Include="..\..\src\util\graphics\sdl\sprig\sprig_inline.h" />
+    <ClInclude Include="..\..\src\util\graphics\sdl\xbr.h" />
     <ClInclude Include="..\..\src\util\gui\animation.h" />
     <ClInclude Include="..\..\src\util\gui\box.h" />
     <ClInclude Include="..\..\src\util\gui\container.h" />
@@ -608,6 +676,28 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\SDL\library\SDL_image\IMG.c" />
+    <ClCompile Include="..\..\..\SDL\library\SDL_image\IMG_bmp.c" />
+    <ClCompile Include="..\..\..\SDL\library\SDL_image\IMG_gif.c" />
+    <ClCompile Include="..\..\..\SDL\library\SDL_image\IMG_jpg.c" />
+    <ClCompile Include="..\..\..\SDL\library\SDL_image\IMG_png.c" />
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\dynamic_mp3.c" />
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\dynamic_ogg.c" />
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\effects_internal.c" />
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\effect_position.c" />
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\effect_stereoreverse.c" />
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\fluidsynth.c" />
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\load_aiff.c" />
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\load_ogg.c" />
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\load_voc.c" />
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\mixer.c" />
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\music.c" />
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\music_flac.c" />
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\music_mad.c" />
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\music_mod.c" />
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\music_modplug.c" />
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\music_ogg.c" />
+    <ClCompile Include="..\..\..\SDL\library\SDL_mixer\wavestream.c" />
     <ClCompile Include="..\..\..\SDL\src\atomic\SDL_atomic.c" />
     <ClCompile Include="..\..\..\SDL\src\atomic\SDL_spinlock.c" />
     <ClCompile Include="..\..\..\SDL\src\audio\SDL_audio.c" />
@@ -630,10 +720,22 @@
     <ClCompile Include="..\..\..\SDL\src\events\SDL_windowevents.c" />
     <ClCompile Include="..\..\..\SDL\src\filesystem\windows\SDL_sysfilesystem.c" />
     <ClCompile Include="..\..\..\SDL\src\file\SDL_rwops.c" />
-    <ClCompile Include="..\..\..\SDL\src\joystick\SDL_gamecontroller.c" />
+    <ClCompile Include="..\..\..\SDL\src\libm\e_atan2.c" />
+    <ClCompile Include="..\..\..\SDL\src\libm\e_log.c" />
+    <ClCompile Include="..\..\..\SDL\src\libm\e_pow.c" />
+    <ClCompile Include="..\..\..\SDL\src\libm\e_rem_pio2.c" />
+    <ClCompile Include="..\..\..\SDL\src\libm\e_sqrt.c" />
+    <ClCompile Include="..\..\..\SDL\src\libm\k_cos.c" />
+    <ClCompile Include="..\..\..\SDL\src\libm\k_rem_pio2.c" />
+    <ClCompile Include="..\..\..\SDL\src\libm\k_sin.c" />
+    <ClCompile Include="..\..\..\SDL\src\libm\s_atan.c" />
+    <ClCompile Include="..\..\..\SDL\src\libm\s_copysign.c" />
+    <ClCompile Include="..\..\..\SDL\src\libm\s_cos.c" />
+    <ClCompile Include="..\..\..\SDL\src\libm\s_fabs.c" />
+    <ClCompile Include="..\..\..\SDL\src\libm\s_floor.c" />
+    <ClCompile Include="..\..\..\SDL\src\libm\s_scalbn.c" />
+    <ClCompile Include="..\..\..\SDL\src\libm\s_sin.c" />
     <ClCompile Include="..\..\..\SDL\src\loadso\windows\SDL_sysloadso.c" />
-    <ClCompile Include="..\..\..\SDL\src\power\SDL_power.c" />
-    <ClCompile Include="..\..\..\SDL\src\power\windows\SDL_syspower.c" />
     <ClCompile Include="..\..\..\SDL\src\render\opengl\SDL_render_gl.c" />
     <ClCompile Include="..\..\..\SDL\src\render\opengl\SDL_shaders_gl.c" />
     <ClCompile Include="..\..\..\SDL\src\render\SDL_render.c" />
@@ -695,6 +797,120 @@
     <ClCompile Include="..\..\..\SDL\src\video\windows\SDL_windowsshape.c" />
     <ClCompile Include="..\..\..\SDL\src\video\windows\SDL_windowsvideo.c" />
     <ClCompile Include="..\..\..\SDL\src\video\windows\SDL_windowswindow.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\builds\win32\ftdebug.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\autofit\autofit.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftbase.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftbbox.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftbitmap.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftfstype.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftgasp.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftglyph.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftgxval.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftinit.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftlcdfil.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftmm.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftotval.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftpatent.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftpfr.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftstroke.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftsynth.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftsystem.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\fttype1.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftwinfnt.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\base\ftxf86.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\bdf\bdf.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\cache\ftcache.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\cff\cff.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\cid\type1cid.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\gzip\ftgzip.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\lzw\ftlzw.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\pcf\pcf.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\pfr\pfr.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\psaux\psaux.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\pshinter\pshinter.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\psnames\psmodule.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\raster\raster.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\sfnt\sfnt.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\smooth\smooth.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\truetype\truetype.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\type1\type1.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\type42\type42.c" />
+    <ClCompile Include="..\..\..\wp8_external\freetype-2.4.12\src\winfonts\winfnt.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\cdjpeg.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcapimin.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcapistd.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jccoefct.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jccolor.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcdctmgr.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jchuff.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcinit.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcmainct.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcmarker.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcmaster.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcomapi.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcparam.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcphuff.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcprepct.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jcsample.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jctrans.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdapimin.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdapistd.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdatadst.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdatasrc.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdcoefct.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdcolor.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jddctmgr.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdhuff.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdinput.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdmainct.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdmarker.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdmaster.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdmerge.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdphuff.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdpostct.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdsample.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jdtrans.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jerror.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jfdctflt.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jfdctfst.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jfdctint.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jidctflt.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jidctfst.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jidctint.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jidctred.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jmemansi.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jmemmgr.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jquant1.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jquant2.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\jutils.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\rdbmp.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\rdcolmap.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\rdgif.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\rdppm.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\rdrle.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\rdswitch.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\rdtarga.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\transupp.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\wrbmp.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\wrgif.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\wrppm.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\wrrle.c" />
+    <ClCompile Include="..\..\..\wp8_external\jpeg-6b\wrtarga.c" />
+    <ClCompile Include="..\..\..\wp8_external\libpng\png.c" />
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngerror.c" />
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngget.c" />
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngmem.c" />
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngpread.c" />
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngread.c" />
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngrio.c" />
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngrtran.c" />
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngrutil.c" />
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngset.c" />
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngtrans.c" />
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngwio.c" />
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngwrite.c" />
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngwtran.c" />
+    <ClCompile Include="..\..\..\wp8_external\libpng\pngwutil.c" />
     <ClCompile Include="..\..\..\wp8_external\zlib\adler32.c" />
     <ClCompile Include="..\..\..\wp8_external\zlib\compress.c" />
     <ClCompile Include="..\..\..\wp8_external\zlib\crc32.c" />
@@ -707,10 +923,14 @@
     <ClCompile Include="..\..\..\wp8_external\zlib\trees.c" />
     <ClCompile Include="..\..\..\wp8_external\zlib\uncompr.c" />
     <ClCompile Include="..\..\..\wp8_external\zlib\zutil.c" />
+    <ClCompile Include="..\..\src\asteroids\asteroids_argument.cpp" />
+    <ClCompile Include="..\..\src\asteroids\asteroids_game.cpp" />
     <ClCompile Include="..\..\src\factory\collector.cpp" />
     <ClCompile Include="..\..\src\factory\font_render.cpp" />
     <ClCompile Include="..\..\src\globals.cpp" />
     <ClCompile Include="..\..\src\main-menu.cpp" />
+    <ClCompile Include="..\..\src\missile-defend\missile-defend_argument.cpp" />
+    <ClCompile Include="..\..\src\missile-defend\missile-defend_game.cpp" />
     <ClCompile Include="..\..\src\mugen\mugen_animation.cpp" />
     <ClCompile Include="..\..\src\mugen\mugen_argument.cpp" />
     <ClCompile Include="..\..\src\mugen\ast\ast.cpp" />
@@ -736,6 +956,9 @@
     <ClCompile Include="..\..\src\mugen\network.cpp" />
     <ClCompile Include="..\..\src\mugen\option-options.cpp" />
     <ClCompile Include="..\..\src\mugen\parse-cache.cpp" />
+    <ClCompile Include="..\..\src\mugen\parser\air.cpp" />
+    <ClCompile Include="..\..\src\mugen\parser\cmd.cpp" />
+    <ClCompile Include="..\..\src\mugen\parser\def.cpp" />
     <ClCompile Include="..\..\src\mugen\projectile.cpp" />
     <ClCompile Include="..\..\src\mugen\random.cpp" />
     <ClCompile Include="..\..\src\mugen\reader.cpp" />
@@ -755,6 +978,13 @@
     <ClCompile Include="..\..\src\mugen\versus.cpp" />
     <ClCompile Include="..\..\src\mugen\widgets.cpp" />
     <ClCompile Include="..\..\src\mugen\world.cpp" />
+    <ClCompile Include="..\..\src\openbor\openbor_animation.cpp" />
+    <ClCompile Include="..\..\src\openbor\openbor_data.cpp" />
+    <ClCompile Include="..\..\src\openbor\openbor_display-character.cpp" />
+    <ClCompile Include="..\..\src\openbor\openbor_extract.cpp" />
+    <ClCompile Include="..\..\src\openbor\openbor_mod.cpp" />
+    <ClCompile Include="..\..\src\openbor\openbor_pack-reader.cpp" />
+    <ClCompile Include="..\..\src\openbor\openbor_util.cpp" />
     <ClCompile Include="..\..\src\paintown-engine\environment\atmosphere.cpp" />
     <ClCompile Include="..\..\src\paintown-engine\factory\object_factory.cpp" />
     <ClCompile Include="..\..\src\paintown-engine\factory\shadow.cpp" />
@@ -811,6 +1041,16 @@
     <ClCompile Include="..\..\src\paintown-engine\object\versus_player.cpp" />
     <ClCompile Include="..\..\src\paintown-engine\script\script.cpp" />
     <ClCompile Include="..\..\src\paintown-engine\trigger\trigger.cpp" />
+    <ClCompile Include="..\..\src\platformer\platformer_argument.cpp" />
+    <ClCompile Include="..\..\src\platformer\game\platformer_animation.cpp" />
+    <ClCompile Include="..\..\src\platformer\game\platformer_background.cpp" />
+    <ClCompile Include="..\..\src\platformer\game\platformer_camera.cpp" />
+    <ClCompile Include="..\..\src\platformer\game\platformer_game.cpp" />
+    <ClCompile Include="..\..\src\platformer\game\platformer_options.cpp" />
+    <ClCompile Include="..\..\src\platformer\game\platformer_tile.cpp" />
+    <ClCompile Include="..\..\src\platformer\game\platformer_world.cpp" />
+    <ClCompile Include="..\..\src\platformer\object\platformer_object.cpp" />
+    <ClCompile Include="..\..\src\platformer\script\platformer_script.cpp" />
     <ClCompile Include="..\..\src\util\7z\7zAlloc.c" />
     <ClCompile Include="..\..\src\util\7z\7zBuf.c" />
     <ClCompile Include="..\..\src\util\7z\7zBuf2.c" />
@@ -847,6 +1087,18 @@
     <ClCompile Include="..\..\src\util\7z\XzDec.c" />
     <ClCompile Include="..\..\src\util\7z\XzEnc.c" />
     <ClCompile Include="..\..\src\util\7z\XzIn.c" />
+    <ClCompile Include="..\..\src\util\graphics\bitmap.cpp" />
+    <ClCompile Include="..\..\src\util\graphics\fire.cpp" />
+    <ClCompile Include="..\..\src\util\graphics\gradient.cpp" />
+    <ClCompile Include="..\..\src\util\graphics\image.cpp" />
+    <ClCompile Include="..\..\src\util\graphics\sdl\hqx.cpp" />
+    <ClCompile Include="..\..\src\util\graphics\sdl\sprig\SPG_extended.cpp" />
+    <ClCompile Include="..\..\src\util\graphics\sdl\sprig\SPG_misc.cpp" />
+    <ClCompile Include="..\..\src\util\graphics\sdl\sprig\SPG_polygon.cpp" />
+    <ClCompile Include="..\..\src\util\graphics\sdl\sprig\SPG_primitives.cpp" />
+    <ClCompile Include="..\..\src\util\graphics\sdl\sprig\SPG_rotation.cpp" />
+    <ClCompile Include="..\..\src\util\graphics\sdl\sprig\SPG_surface.cpp" />
+    <ClCompile Include="..\..\src\util\graphics\sdl\xbr.cpp" />
     <ClCompile Include="..\..\src\util\util_argument.cpp" />
     <ClCompile Include="..\..\src\util\configuration.cpp" />
     <ClCompile Include="..\..\src\util\console.cpp" />
@@ -882,11 +1134,9 @@
     <ClCompile Include="..\..\src\util\input\input-manager.cpp" />
     <ClCompile Include="..\..\src\util\input\input-source.cpp" />
     <ClCompile Include="..\..\src\util\input\input.cpp" />
-    <ClCompile Include="..\..\src\util\input\util_joystick.cpp" />
-    <ClCompile Include="..\..\src\util\input\util_keyboard.cpp" />
+    <ClCompile Include="..\..\src\util\input\joystick.cpp" />
+    <ClCompile Include="..\..\src\util\input\keyboard.cpp" />
     <ClCompile Include="..\..\src\util\input\linux_joystick.cpp" />
-    <ClCompile Include="..\..\src\util\input\sdl\joystick.cpp" />
-    <ClCompile Include="..\..\src\util\input\sdl\keyboard.cpp" />
     <ClCompile Include="..\..\src\util\input\text-input.cpp" />
     <ClCompile Include="..\..\src\util\language-string.cpp" />
     <ClCompile Include="..\..\src\util\loading.cpp" />
@@ -990,7 +1240,7 @@
     <ClCompile Include="..\..\src\util\sound\audio.cpp" />
     <ClCompile Include="..\..\src\util\sound\music-player.cpp" />
     <ClCompile Include="..\..\src\util\sound\music-renderer.cpp" />
-    <ClCompile Include="..\..\src\util\sound\music.cpp" />
+    <ClCompile Include="..\..\src\util\sound\util_music.cpp" />
     <ClCompile Include="..\..\src\util\sound\sound.cpp" />
     <ClCompile Include="..\..\src\util\system.cpp" />
     <ClCompile Include="..\..\src\util\thread.cpp" />
@@ -1015,6 +1265,9 @@
   <ItemGroup>
     <ResourceCompile Include="..\..\..\SDL\src\main\windows\version.rc" />
     <ResourceCompile Include="shinsangon2.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\src\util\graphics\sdl\sprig\Version.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

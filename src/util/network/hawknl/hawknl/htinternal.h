@@ -47,7 +47,6 @@
 #endif /* _MSC_VER */
 
 #define HT_WIN_THREADS
-#define ETIMEDOUT		WSAETIMEDOUT
 
 #endif /* HL_WINDOWS_APP */
 

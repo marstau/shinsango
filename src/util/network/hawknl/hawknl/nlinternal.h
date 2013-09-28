@@ -56,7 +56,6 @@ extern time_t time(time_t *timer);
 
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
-#include <tchar.h>
 
 #ifdef _MSC_VER
 #pragma warning (default:4201)
@@ -67,23 +66,6 @@ extern time_t time(time_t *timer);
 
 /* part of portable unicode support */
 #if !defined _TCHAR_DEFINED && !(defined _WCHAR_T_DEFINED && defined (__LCC__))
-#ifdef _UNICODE
-#define TEXT(x)    L##x
-#define _tcsncat    wcsncat
-#define _stprintf   swprintf
-#define _sntprintf  snwprintf
-#define _stscanf    swscanf
-#define _tcsncpy    wcsncpy
-#define _tcscspn    wcscspn
-#define _tcschr     wcschr
-#define _tcslen     wcslen
-#define _tcsrchr    wcsrchr
-#ifdef HL_WINDOWS_APP
-#define _ttoi       _wtoi
-#else /* !HL_WINDOWS_APP*/
-#define _ttoi       wtoi
-#endif /* !HL_WINDOWS_APP*/
-#else /* !UNICODE */
 #define TEXT(x)    x
 #define _tcsncat    strncat
 #define _stprintf   sprintf
@@ -95,7 +77,6 @@ extern time_t time(time_t *timer);
 #define _tcslen     strlen
 #define _ttoi       atoi
 #define _tcsrchr    strrchr
-#endif /* !UNICODE */
 #endif /* _INC_TCHAR */
 
 /* internally for TCP packets and UDP connections, all data is big endien,

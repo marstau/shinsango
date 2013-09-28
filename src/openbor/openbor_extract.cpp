@@ -4,25 +4,20 @@
 #include <fstream>
 #include <algorithm>
 #include <iostream>
+#include <direct.h>
 #include "util/file-system.h"
 
 using namespace std;
 
 namespace Util{
 
-Filesystem::AbsolutePath getDataPath2(){
-    return Filesystem::AbsolutePath(".");
-}
+// Filesystem::AbsolutePath getDataPath2(){
+//     return Filesystem::AbsolutePath(".");
+// }
 
 static int upperCase(int c){
     return toupper(c);
 }
-
-string upperCaseAll(std::string str){
-    std::transform(str.begin(), str.end(), str.begin(), upperCase);
-    return str;
-}
-
 }
 
 void mkdirs(string path){
@@ -34,7 +29,7 @@ void mkdirs(string path){
     while (slash != string::npos){
         string part = dir.substr(start, slash - start);
         // cout << "Create dir '" << (sofar + "/" + part) << "'" << endl;
-        mkdir((sofar + "/" + part).c_str(), 0775);
+        _mkdir((sofar + "/" + part).c_str());
         sofar += "/" + part;
         start = slash + 1;
         slash = dir.find('/', start);
@@ -62,7 +57,7 @@ string lowercase(string in){
 }
 
 void doExtract(Bor::PackReader & reader, string where){
-    mkdir(where.c_str(), 0775);
+    _mkdir(where.c_str());
     ifstream stream;
     for (std::map<std::string, Bor::PackReader::File>::const_iterator it = reader.getFiles().begin(); it != reader.getFiles().end(); it++){
         string path = lowercase(replaceSlashes((*it).first));
@@ -84,23 +79,25 @@ void doExtract(Bor::PackReader & reader, string where){
     }
 }
 
+#if 0
 int main(int argc, char ** argv){
-    string file;
-    bool extract = false;
-    for (int i = 1; i < argc; i++){
-        if (string(argv[i]) == "extract"){
-            extract = true;
-        } else {
-            file = string(argv[i]);
-        }
-    }
-    if (file != ""){
-        Filesystem::AbsolutePath path(file);
-        Bor::PackReader reader(path);
-        if (extract){
-            doExtract(reader, file + "-out");
-        } else {
-            cout << file << " ok. Give 'extract' to extract the files" << endl;
-        }
-    }
+	string file;
+	bool extract = false;
+	for (int i = 1; i < argc; i++){
+		if (string(argv[i]) == "extract"){
+			extract = true;
+		} else {
+			file = string(argv[i]);
+		}
+	}
+	if (file != ""){
+		Filesystem::AbsolutePath path(file);
+		Bor::PackReader reader(path);
+		if (extract){
+			doExtract(reader, file + "-out");
+		} else {
+			cout << file << " ok. Give 'extract' to extract the files" << endl;
+		}
+	}
 }
+#endif

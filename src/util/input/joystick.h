@@ -90,7 +90,6 @@ public:
 
     /* create the ith joystick */
     static Joystick * create(int i);
-    static int numberOfJoysticks();
 
     enum Key{
         Invalid = -1,

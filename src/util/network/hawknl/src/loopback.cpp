@@ -666,7 +666,7 @@ NLint loopback_Write(NLsocket socket, const NLvoid *buffer, NLint nbytes)
 
 NLchar *loopback_AddrToString(const NLaddress *address, NLchar *string)
 {
-    _stprintf(string, TEXT("127.0.0.1:%u"), loopback_GetPortFromAddr(address));
+    sprintf(string, ("127.0.0.1:%u"), loopback_GetPortFromAddr(address));
 
     return string;
 }
@@ -679,11 +679,11 @@ NLboolean loopback_StringToAddr(const NLchar *string, NLaddress *address)
     memset(address, 0, sizeof(NLaddress));
     address->valid = NL_TRUE;
     /* check for a port number */
-    st = _tcschr((NLchar*) string, TEXT(':'));
+    st = strchr((NLchar*) string, (':'));
     if(st != NULL)
     {
         st++;
-        port = _ttoi(st);
+        port = atoi(st);
         if(port < 0 || port > 65535)
         {
             nlSetError(NL_BAD_ADDR);
@@ -725,7 +725,7 @@ NLboolean loopback_SetLocalAddr(const NLaddress *address)
 
 NLchar *loopback_GetNameFromAddr(const NLaddress *address, NLchar *name)
 {
-    _stprintf(name, TEXT("%s:%u"), TEXT("localhost"), loopback_GetPortFromAddr(address));
+    sprintf(name, ("%s:%u"), ("localhost"), loopback_GetPortFromAddr(address));
     return name;
 }
 

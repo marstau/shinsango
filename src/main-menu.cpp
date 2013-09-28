@@ -3,11 +3,6 @@
 #include <sstream>
 #include <vector>
 
-#ifdef PS3
-/* For network debugging */
-#include <net/net.h>
-#endif
-
 /* Default debug level. On most pc's it should be 0 to get normal warnings/info.
  * On consoles set it to -1 to disable all text output.
  * If you are debugging then higher values like 1 or 2 are ok.

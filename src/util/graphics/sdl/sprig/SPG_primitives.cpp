@@ -37,9 +37,10 @@ extern SPG_bool spg_usedegrees;
 extern SPG_bool spg_makedirtyrects;
 extern SPG_DirtyTable* spg_dirtytable_front;
 
+extern "C" {
 Uint16 spg_thickness = 1;
 Uint8 spg_alphahack = 0;
-
+}
 
 
 
@@ -3211,7 +3212,7 @@ void spg_ellipseblendaa(SDL_Surface *surface, Sint16 xc, Sint16 yc, float rx, fl
     int ds = 2 * a2;
     int dt = 2 * b2;
 
-    int dxt = (int)(a2 / sqrt(a2 + b2));
+    int dxt = (int)(a2 / sqrt(1.0f * a2 + b2));
 
     int t = 0;
     int s = -2 * a2 * (Sint16)(ry);
@@ -3512,7 +3513,7 @@ void spg_ellipsefilledaa(SDL_Surface *surface, Sint16 xc, Sint16 yc, float rx, f
     int ds = 2 * a2;
     int dt = 2 * b2;
 
-    int dxt = (int)(a2 / sqrt(a2 + b2));
+    int dxt = (int)(a2 / sqrt(1.0f * a2 + b2));
 
     int t = 0;
     int s = -2 * a2 * (Sint16)(ry);

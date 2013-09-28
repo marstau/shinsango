@@ -14,7 +14,7 @@ static const int DO_NOTHING = 0;
 static const int DO_WALK_FORWARD = 1;
 static const int DO_WALK_BACKWARD = 2;
 
-VersusEnemy::VersusEnemy( const Character & chr ) throw( LoadException ):
+VersusEnemy::VersusEnemy( const Character & chr ):
 Enemy( chr ),
 what_to_do( DO_NOTHING ){
 }
